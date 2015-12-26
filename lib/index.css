@@ -1,0 +1,59 @@
+﻿body {
+    font-family: "Microsoft YaHei", "微软雅黑", "MicrosoftJhengHei", Arial, Tahoma, "Times New Roman";
+}
+
+hgroup {
+    text-align: center;
+}
+
+.main-content p {
+    font-size: 13px;
+    line-height: 24px;
+}
+
+.nav-tabs li {
+    width: 25%;
+    text-align: center;
+}
+
+.tab-pane {
+    padding: 20px 25px;
+    border: 1px solid #dedede;
+    border-top: none;
+    overflow: hidden;
+}
+
+.tab-pane h3.info {
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+.tab-pane div.links {
+    line-height: 32px;
+}
+
+.tab-pane .go_link {
+    float: right;
+    margin: 20px 0;
+}
+
+#footer,
+#footer .beian {
+    color: #666;
+}
+
+#about,
+#footer {
+    text-align: center;
+}
+a:hover{text-decoration: none;color: #159957;}
+.main-content-wrap {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-right: 30px;
+    padding-left: 30px;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    padding-bottom: 40px;
+}
