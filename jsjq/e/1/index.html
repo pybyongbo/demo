@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>去除左右空格!</title>
+	 <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
+
+	 <style type="text/css" media="screen">
+	 .demo1{width:480px;margin:50px auto;}
+	 .demo1 input {width:220px;float:left;margin-right:20px;}
+	 .demo1 .tit{font-size:14px;font-family:"Microsoft Yahei";font-weight:bold;margin-bottom:25px;}
+	 </style>
+ 
+</head>
+<body>
+
+	<div class="demo1 tc">
+		
+
+		<H2 class='tit'>JQUERY内部 unicode编码:\u00A0和\u00A0表示空格</H2>
+		<input type="text" name="" value="[     需要过滤的空格      ]" id="input" class="form-control">
+
+		<button type="button" class="btn  btn-primary" id="btn">过滤0</button>
+
+	</div>
+	
+
+	<div class="demo1 tc">
+
+		<H2 class='tit'>js正则表达式:\s+表示一个或多个空格</H2>
+		
+		<input type="text" name="" value="[     第二种测试方法           ]" id="input1" class="form-control">
+
+		<button type="button" class="btn  btn-primary" id="btn1" >过滤1</button>
+
+	</div>
+
+	
+</body>
+</html>
+
+<script type="text/javascript">
+	
+
+	(function(){
+		var input = document.getElementById('input');
+		var btn = document.getElementById('btn');
+		btn.onclick = function(){
+
+			input.value = input.value.replace(/(\s|\u00A0)+|(\s|\u00A0)+/g,'');
+
+		}
+
+	}());
+
+	//正则匹配空格:
+	function trim(str) {
+
+		// return str.replace(/(^\s*)|(\s*$)/g, ""); replace(/^\s+|\s+$/g,"")
+		return str.replace(/\s+/g, "");
+
+	}
+
+	var btn1 = document.getElementById('btn1');
+	var text_val = document.getElementById('input1').value;
+
+	btn1.onclick = function() {
+		// console.log(text_val.replace(/\s+/g, ""));
+		console.log(trim(text_val));
+		document.getElementById('input1').value = trim(text_val);
+	}
+</script>
