@@ -91,7 +91,7 @@
             if(j == 0){
                 sub += '<li><h1><a href="javascript:;" title="' + son.title + '">' + son.title + '</a></h1><dl class="sub-dl">';
             } else {
-                sub += '<dd><em>('+j+')</em><a href="' + son.url + '" target="_blank" title="' + son.title + '">' + son.title + '</a></dd>';
+                sub += '<dd><em>('+formatNum(j)+')</em><a href="' + son.url + '" target="_blank" title="' + son.title + '">' + son.title + '</a></dd>';
             }
             if(j == items.length - 1){
                 sub += '</dl></li>';
@@ -122,4 +122,10 @@
         }
     }
 
+
+    function formatNum(n){
+
+        n>10?n:'0'+n
+
+    }
 </script>
