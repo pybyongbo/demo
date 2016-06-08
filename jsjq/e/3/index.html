@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>静止用户输入!</title>
+    <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
+    <script type="text/javascript" src="../../../lib/jquery-1.10.2.min.js"></script>
+    <style type="text/css" media="screen">
+    .demo1 {
+        width: 980px;
+        margin: 20px auto;
+       
+    }
+    
+    .demo1 input {
+        width: 220px;
+        float: left;
+        margin-right: 20px;
+    }
+    .demo1 input[type='checkbox']{
+
+    	width:auto!important;
+    }
+    .demo1 .tit {
+        font-size: 14px;
+        font-family: "Microsoft Yahei";
+        font-weight: bold;
+        margin-bottom: 25px;
+
+    }
+    .demo1 form{float:left;margin-right:50px;}
+    em {
+        font-style: normal;
+    }
+    
+    #number {
+        float: left;
+        border: 1px solid #333;
+        width: 120px;
+        height: 24px;
+    }
+    
+    .flow_charts .line em,
+    .radio,
+    .data_input,
+    .sub_btn,
+    .add_btn,
+    .peo_type i,
+    .valid_symbol,
+    input.input_error,
+    .bg-pic,
+    .peo-pic,
+    .sub_btn_false,
+    .add_btn_false,
+    .order-pop-close,
+    .order-pop-content i,
+    .chose_peo_tip {
+        background: url("../../img/order_icon.png") no-repeat;
+    }
+    
+    .list_left {}
+    
+    .num_box {
+        width: 68px;
+        height: 22px;
+        border: 1px solid #cccccc;
+        overflow: hidden;
+        float: left;
+        clear: none;
+        border-radius: 3px;
+    }
+    
+    .num_box a {
+        display: block;
+        width: 20px;
+        height: 20px;
+        overflow: hidden;
+        float: left;
+    }
+    
+    .num_box input {
+        width: 24px;
+        height: 21px;
+        font: 12px/21px "microsoft yahei";
+        float: left;
+        overflow: hidden;
+        border: none;
+        color: #333333;
+        text-align: center;
+        background-color: #ffffff;
+        margin-right: 0;
+    }
+    
+    .num_box a.sub_btn,
+    .num_box a.sub_btn:hover {
+        border-right: 1px solid #cccccc;
+        background-position: -13px -143px;
+        border-radius: 2px 0 0 2px;
+    }
+    
+    .num_box a.sub_btn_false,
+    .num_box a.sub_btn_false:hover {
+        background-position: -12px -223px;
+        cursor: default;
+        border-right: 1px solid #cccccc;
+        border-radius: 2px 0 0 2px;
+    }
+    
+    .num_box a.add_btn,
+    .num_box a.add_btn:hover {
+        border-left: 1px solid #cccccc;
+        background-position: 8px -144px;
+        border-radius: 0 2px 2px 0;
+    }
+    
+    .num_box a.add_btn_false,
+    .num_box a.add_btn_false:hover {
+        background-position: 8px -222px;
+        border-left: 1px solid #cccccc;
+        border-radius: 0 2px 2px 0;
+    }
+    
+    .list_right i {
+        color: #fe4229;
+        padding-left: 20px;
+        margin-left: 10px;
+        background-position: 0 -107px;
+    }
+
+    .info{margin-top:-20px;float:left;width:460px;}
+    .info code h1,form code h1{font-size:18px;}
+
+    </style>
+</head>
+
+<body>
+    <div class="demo1 tc">
+        
+        <form class="form-horizontal user-input" id="form" role="form">
+        <h2 class='tit'>用户个人中心(的用户邮箱信息)</h2>
+            <div class="form-group">
+                <label for="user" class="col-sm-2 control-label">邮箱</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="user" value="pyb901214@163.com" disabled="disabled" title="disabled">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-sm-2 control-label">密码</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" placeholder="密码">
+                </div>
+            </div>
+         
+            <div class="chose_peo form-group" id="chose_peo">
+                <label for="msg" class="col-sm-2 control-label"><span class="list_left">台数</span></label>
+                <div class="col-sm-10" style="padding-top:5px;">
+                    <span class="list_right chose_peo">
+			        <span class="num_box">
+			            <a href="javascript:void(0);" class="sub_btn sub_btn_false"></a>
+			            <input  type="text" min="1" max="10" maxlength="2" value="1" id="numBox0" class="inputbox" readonly="readonly" title="readonly">
+			            <label for="numBox0"></label>
+			            <a href="javascript:void(0);" class="add_btn"></a>
+			        </span>
+                    <em>（本产品最少<span id="BookMin">1</span>台，最多<span id="BookMax">10</span>台起订）</em>
+                    </span>
+                </div>
+            </div>
+               <div class="form-group">
+                <label for="msg" class="col-sm-2 control-label">备注</label>
+                <div class="col-sm-10">
+                    <textarea class="from-control" name="" id="msg" placeholder="备注" cols="47" rows="6"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> 记住我
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button id="btn" type="button" class="btn btn-primary" style="width:160px">提 交</button>
+                </div>
+            </div>
+
+            <code style="width:420px;float:left">
+					<h1>disabled和readonly的相同点</h1>
+	
+					<ol>
+						<li><pre>都不能编辑和获取焦点。</pre></li>
+						<li><pre>ps 小技巧: 可以给readonly设置一个css样式：style="background-color:#cccccc;"</pre></li>
+					</ol>
+
+				</code>
+        </form>
+
+
+        	<div class="info">
+				
+				<code>
+					<h1>disabled和readonly的区别是什么</h1>
+						
+						<h3>一.作用范围不同:</h3>
+					<ol>
+						<li><pre>disabled属性可以用语所有的表单元素。</pre></li>
+						<li><pre>readonly属性只对<xmp><input type="text">、<textarea></textarea></xmp>和<xmp><input type="password"></xmp>有效。</pre></li>
+					</ol>
+
+						<h3>二.对元素的影响程度不同:</h3>
+					<ol>
+						<li><pre>disabled属性阻止对元素的一切操作，例如获取焦点，点击事件等等。</pre></li>
+						<li><pre>readonly属性只是将元素设置为只读，其他操作正常。</pre></li>
+					</ol>
+
+						<h3>三.表单提交:</h3>
+					<ol>
+						<li><pre>disabled属性可以让表单元素的值无法被提交。</pre></li>
+						<li><pre>readonly属性则不影响提交问题。</pre></li>
+					</ol>
+
+				</code>
+
+
+			</div>
+    </div>
+
+
+
+</body>
+
+</html>
+<script type="text/javascript">
+(function() {
+
+	var curVal = $("#numBox0").val();
+	var minVal = $("#numBox0").attr("min"),maxVal = $("#numBox0").attr("max");
+
+	if(curVal == minVal) {$(".sub_btn").addClass("sub_btn_false")};
+
+
+	$(".num_box").on("click",".sub_btn",function(){
+        console.log(curVal+'---'+minVal);
+        if(curVal<=minVal) {
+            
+            $(".sub_btn").addClass("sub_btn_false");
+
+            alert("最少预定"+minVal+"台!");
+            return false;
+
+        } else {
+            $(".sub_btn").removeClass("sub_btn_false");
+            $(".add_btn").removeClass("add_btn_false");
+        }
+        curVal--;
+        $("#numBox0").val(curVal);
+
+        if(curVal == minVal) {
+
+            return false;
+        }
+
+    });
+
+
+     $(".num_box").on("click",".add_btn",function(){
+        //alert(curVal);
+        console.log(curVal+'---'+minVal);
+        if(curVal >= maxVal) {
+           
+           
+            $(".add_btn").addClass("add_btn_false");
+             alert("最多预定"+maxVal+"台!");
+            return false;
+
+        } else {
+
+            $(".sub_btn").removeClass("sub_btn_false");
+            $(".add_btn").removeClass("add_btn_false");
+        }
+
+        curVal++;
+        $("#numBox0").val(curVal);
+
+    });
+
+     //如果可以输入的话.进行检测
+    $("#numBox0").keyup(function(){
+        checkBtnCanUse();
+    });
+
+
+    //检测加减按钮是否可用.
+    function checkBtnCanUse(){
+
+        var curNum = parseInt($("#numBox0").val()) || 1;
+
+        var curMax = parseInt($("#numBox0").attr('max')) || 1;
+        var curMin = parseInt($("#numBox0").attr('min')) || 1;
+
+
+        if(curNum>=curMax) {
+
+          $("#numBox0").val(curMax);
+          $(".add_btn").addClass("add_btn_false");
+
+        } else {
+
+            $(".add_btn").removeClass("add_btn_false").addClass("add_btn");
+        }
+
+        if(curNum<=curMin) {
+
+            $("#numBox0").val(curMin);
+            $(".sub_btn").addClass("sub_btn_false");
+
+        } else {
+
+            $(".sub_btn").removeClass("sub_btn_false").addClass("sub_btn");
+
+        }
+
+    }
+
+}());
+</script>
