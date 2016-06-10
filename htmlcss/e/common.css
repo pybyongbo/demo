@@ -1,0 +1,13 @@
+
+.wrapper{width:980px;margin:0 auto;}
+xmp{float:left;}
+.part {margin-bottom:30px;}
+.part p{text-indent: 2em;}
+textarea{
+resize: none;overflow-y:visible;text-align: left;}
+
+p.notice{color:red;}
+.demo_pic{margin-bottom: 10px;text-align: center;}
+.demo_pic img{max-width:980px;}
+
+
