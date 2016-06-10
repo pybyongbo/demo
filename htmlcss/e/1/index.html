@@ -1,12 +1,192 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-	
 
-	
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../code-highlight/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../common.css" media="screen">
+    <script type="text/javascript" src="../../../lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../../lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../code-highlight/jquery.flexText.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="part">
+            <h2 class="tit">外部样式表</h2>
+            <h3>(1).使用link标记</h3>
+            <p>在link标记中rel和href属性是必须的，type属性和media属性可省略</p>
+            <textarea name="" class="form-control textare_code" readonly="readonly"><link rel="stylesheet" type="text/css" href="sheet1.css" media="all" /> </textarea>
+            <textarea name="" class="form-control textare_code" readonly="readonly" resize="none;">
+                <!DOCTYPE html>
+                <html lang="en">
+
+                <head>
+                    <meta charset="UTF-8">
+                    <link rel="stylesheet" href="sheet1.css">
+                    <title>Document</title>
+                </head>
+
+                <body>
+                </body>
+
+                </html>
+            </textarea>
+        </div>
+        <div class="part">
+            <h2 class="tit">候选样式表</h2>
+            <h3>(1).使用link标记</h3>
+            <p>将rel属性的设置为alternate stylesheet可以定义候选样式表，只有在用户选择这个样式表时才会用于文档表现。如果浏览器能使用候选样式表，它会使用link元素的title属性值生成一个候选样式列表，可在菜单栏中查看->样式中进行选择。(IE和firefox支持)</p>
+            <p class="notice">[注意]若一个候选样式表没有设置title，那么它将无法在候选样式列表中出现，则无法被引用　</p>
+            <textarea name="" class="form-control textare_code" readonly="readonly">
+                <link rel="stylesheet" type="text/css" href="sheet1.css" />
+                <link rel="alternate stylesheet" type="text/css" href="sheet2.css" title="sheet2" />
+            </textarea>
+            <textarea name="" class="form-control textare_code" readonly="readonly" resize="none;">
+                <!DOCTYPE html>
+                <html lang="en">
+
+                <head>
+                    <meta charset="UTF-8">
+                    <link rel="stylesheet" href="sheet1.css">
+                    <title>Document</title>
+                </head>
+
+                <body></body>
+
+                </html>
+            </textarea>
+			<div class="demo_pic">
+				<img src="../../img/demo1.gif" height="901" width="1169" alt="">
+			</div>
+			<textarea name="" class="form-control textare_code"  readonly="readonly">
+	            /*sheet1*/
+				body{
+				    background-color: red;
+				}</textarea>
+
+			<textarea name="" class="form-control textare_code"  readonly="readonly">
+	           /*sheet2*/
+				body{
+				    height: 100px;
+				    border: 10px solid black;
+				}</textarea>
+        </div>
+
+        <div class="part">
+        	<h2 class="tit">使用@import指令</h2>
+
+        	<p>与link类似，@import指令用于指示Web浏览器加载一个外部样式表，并在表现HTML文档时使用其样式。唯一的区别在于命令的具体语法和位置。@import指令常用于样式表需要使用另一个样式表中的样式的情况。</p>
+
+        	<textarea name="" class="form-control textare_code"  readonly="readonly">
+	         <style>
+			@import url(sheet2.css);
+			body{
+			    background-color: red;
+			}    
+			</style>
+			</textarea>
+
+			<p class="notice">[注意]@import必须出现在style元素中，且要放在其他CSS规则之前，否则将根本不起作用。</p>
+
+			<textarea name="" class="form-control textare_code"  readonly="readonly">
+	  		<!DOCTYPE html>
+				<html lang="en">
+				<head>
+				<meta charset="UTF-8">
+				<style>
+				/*将@import放置在CSS规则之后将不起使用*/
+				body{
+				    background-color: red;
+				}    
+				@import url(sheet2.css);
+				</style>
+				<title>Document</title>
+				</head>
+				<body>
+				</body>    
+				</html> 
+			</textarea>
+
+        </div>
+
+        <div class="part">
+        	<h2 class="tit">多个@import指令</h2>
+
+        	<p>可以使用@import指令导入多个CSS样式表，且可以使用media来限制应用场景。</p>
+
+        	<textarea class="form-control textare_code"  readonly="readonly">
+        		
+        		<!DOCTYPE html>
+				<html lang="en">
+				<head>
+				<meta charset="UTF-8">
+				<style>
+				@import url(sheet1.css) all;    
+				@import url(sheet2.css);
+				</style>
+				<title>Document</title>
+				</head>
+				<body>
+				</body>    
+				</html>        
+        	</textarea>
+
+        	<h3>行间样式(内联样式)</h3>
+
+        	<p>如果只是想为单个元素指定一些样式，而不需要嵌套或外部样式表，可以使用HTML的style属性来设置一个行间样式。</p>
+
+
+        	<textarea class="form-control textare_code"  readonly="readonly">
+        		
+        		<!DOCTYPE html>
+				<html lang="en">
+				<head>
+				<meta charset="UTF-8">
+				<title>Document</title>
+				</head>
+				<body style="background-color: red; height: 100px; border: 10px solid black;" style="background-color: red;">
+				</body>    
+				</html>    
+        	</textarea>
+			<p class="notice">
+				　[注意]行间样式若存在多个style属性，只能识别第一个
+			</p>
+
+			<textarea class="form-control textare_code"  readonly="readonly">
+				<!DOCTYPE html>
+				<html lang="en">
+				<head>
+				<meta charset="UTF-8">
+				<title>Document</title>
+				</head>
+				<!-- 只能识别第一个style属性的值，所以页面显示为红色-->
+				<body style="background-color: red; height: 100px; border: 10px solid black;" style="background-color: blue;">
+				</body>    
+				</html>  
+			</textarea>
+
+			<div class="demo_pic">
+				<img src="../../img/demo_2.jpg">
+			</div>
+        </div>
+
+        <div class="part">
+        	
+        	<h2 class="tit">优先级</h2>
+        	<p>外部、内部、行间这三种引入CSS的方式并无优先级之分，按照html的解析顺序，后面覆盖前面(如果存在多个!important的情况，也是后面覆盖前面)</p>
+
+        	<textarea class="form-control textare_code"  readonly="readonly">[注意]<style>标签和<link>标签也是可以写在<body>标签里的</textarea>		
+        </div>
+    </div>
 </body>
+
 </html>
+<script type="text/javascript">
+$(function() {
+    $('.textare_code').flexText();
+   
+});
+</script>

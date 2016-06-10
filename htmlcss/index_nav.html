@@ -7,7 +7,10 @@
     <link rel="stylesheet" type="text/css" href="../demostyle/normalize.css" media="screen">
     <link href='../lib/reset.css' rel='stylesheet' type='text/css'>
    <link rel="stylesheet" type="text/css" href="../lib/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../lib/index.css" media="screen">
+   <link rel="stylesheet" type="text/css" href="../lib/index.css" media="screen">
+   <style type="text/css" media="screen">
+    .wrap{width:860px;}
+   </style>
   </head>
   <body>
  
@@ -28,59 +31,117 @@
     var str = '',
         data = [
             [
-                { title : '第一章 表单常用代码'},
-                { url : 'e/1/index.html', title : '去除字符串左右的空格' },
-                { url : 'e/2/index.html', title : '验证用户是否输入' },
-                { url : 'e/3/index.html', title : '禁止用户输入' },
-                { url : 'e/4/index.html', title : '关闭用户中文输入法' },
-                { url : 'e/5/index.html', title : '禁止用户复制和粘贴' },
-                { url : 'e/6/index.html', title : '限制只能输入数字' },
-                { url : 'e/7/index.html', title : '限制字符串长度' },
-                { url : 'e/8/index.html', title : '仿微博提示可输入剩余字数' },
-                { url : 'e/9/index.html', title : '换行文本自动滚动' },
-                { url : 'e/10/index.html', title : 'Ctrl + Return提交表单' },
-                { url : 'e/11/index.html', title : '文本内容进行关键字过滤' },
-                { url : 'e/12/index.html', title : '全选反选少选复选框' },
-                { url : 'e/13/index.html', title : '动态操作下拉选项' },
-                { url : 'e/14/index.html', title : '级联菜单' },
-                { url : 'e/15/index.html', title : '可添加的下拉选项' }
+                { title : '第一章 css基础知识'},
+                { url : 'e/1/index.html', title : '引入css' },
+                { url : 'e/2/index.html', title : 'css选择器' },
+                { url : 'e/3/index.html', title : 'css层叠' },
+                { url : 'e/4/index.html', title : 'css默认可继承样式' },
+                { url : 'e/5/index.html', title : 'initial、inherit、unset、revert和all' },
+                { url : 'e/6/index.html', title : '深入理解css中的长度单位' },
+                { url : 'e/7/index.html', title : '理解css中的数学表达式calc()' }
+               
             ],
             [
-                { title : '第二章 常用图片相关代码'},
-                { url : 'e/16/index.html', title : '可添加的下拉选项' },
-                { url : 'e/17/index.html', title : '图片放大镜效果' },
-                { url : 'e/18/index.html', title : '点击图片逐渐放大' }
+                { title : '第二章 字体和文本'},
+                { url : 'e/8/index.html', title : 'css字体' },
+                { url : 'e/9/index.html', title : 'css中常见6种文本样式' },
+                { url : 'e/10/index.html', title : '深入理解css中的换行和空白符' },
+                { url : 'e/11/index.html', title : '文本溢出和文本阴影' },
             ],
             [
-                { title : '第三章 内容展示常用代码'},
-                { url : 'e/19/index.html', title : '单元行上鼠标悬停提示' },
-                { url : 'e/20/index.html', title : '隔行换色鼠标经过换色' },
-                { url : 'e/21/index.html', title : '添加或删除表格行' },
-                // { url : 'e/22/index.html', title : '表格的行拖动' },
-                { url : 'c/1/index.html', title : '可拖动的弹出层' },
-                { url : 'c/2/index.html', title : '选项卡轮播' },
-                { url : 'c/3/index.html', title : '模拟滚动条' },
-                { url : 'c/4/index.html', title : '缓动的对联广告' },
-                { url : 'c/5/index.html', title : '拖动滑块验证' }
+                { title : '第三章 背景和颜色'},
+                { url : 'e/12/index.html', title : '深入理解css中6种颜色模式' },
+                { url : 'e/13/index.html', title : 'css颜色模式转换器的实现' },
+                { url : 'e/14/index.html', title : 'css前景色和透明度' },
+                { url : 'e/15/index.html', title : '深入理解css背景' },
+                { url : 'e/16/index.html', title : 'css光标cursor' }
+              
             ],
             [
-                { title : '第四章 常用图片轮换'},
-                { url : 'slide/01/index.html', title : '百度爱玩 - 图片轮换' },
-                { url : 'slide/02/bd02.html', title : '百度爱玩 - 遮罩下拉' },
-                { url : 'slide/03/bd03.html', title : '百度爱玩 - 榜单tab切换' },
-                { url : 'slide/04/index.html', title : 'css3弹出层' },
-                { url : 'slide/05/index.html', title : '米4-活动页面' },
-                { url : 'slide/06/index.html', title : '百度爱玩 - 图片轮换' },
-                { url : 'slide/07/index.html', title : '百度微购－中秋送好礼' },
-                { url : 'slide/08/index.html', title : '商品分类' },
-                { url : 'slide/10/index.html', title : '渐显的tab菜单2' },
-                { url : 'slide/09/index.html', title : '经典图片轮换－单个滚动' },
-                { url : 'slide/13/index.html', title : '经典图片轮换－整个翻页' }
+                { title : '第四章 css中和模型的理解'},
+                { url : 'e/17/index.html', title : '深入理解盒模型' },
+                { url : 'e/18/index.html', title : '理解css边框' },
+                { url : 'e/19/index.html', title : '深入理解css中margin负值' },
+                { url : 'e/20/index.html', title : 'css轮廓outline' },
+                { url : 'e/21/index.html', title : '深入理解css弹性盒模型flex' },
+                { url : 'e/22/index.html', title : 'css旧版flex及其兼容' },
+                { url : 'e/23/index.html', title : 'css弹性盒模型flex在布局中的应用' }
+              
             ],
             [
-                { title : '第五章 移动端效果'},
-                { url : 'm/01/index.html', title : '选项卡切换' }
-            ]
+                { title : '第五章 普通流'},
+                { url : 'e/24/index.html', title : '深入理解display属性' },
+                { url : 'e/25/index.html', title : 'haslayout详解' },
+                { url : 'e/26/index.html', title : '深入理解BFC' },
+                { url : 'e/27/index.html', title : '快级元素视觉格式化' },
+                { url : 'e/28/index.html', title : '行内元素视觉格式化' },
+                { url : 'e/29/index.html', title : 'css文本方向' },
+            ],
+            [
+                { title : '第六章 浮动和定位'},
+                { url : 'e/30/index.html', title : '深入理解css浮动' },
+                { url : 'e/31/index.html', title : 'css清理浮动' },
+                { url : 'e/32/index.html', title : '深入理解css定位中的偏移' },
+                { url : 'e/33/index.html', title : '深入理解css定位中的堆叠z-inde' },
+                { url : 'e/34/index.html', title : '深入理解css绝对定位' },
+                { url : 'e/35/index.html', title : 'css中绝对定位的应用' },
+                { url : 'e/36/index.html', title : '理解css中相对定位和固定定位' },
+            ],
+            [
+                { title : '第七章 浮动和定位'},
+                { url : 'e/37/index.html', title : 'css中溢出overflow' },
+                { url : 'e/38/index.html', title : 'css裁剪clip' },
+                { url : 'e/39/index.html', title : 'css拉伸resize' },
+                { url : 'e/40/index.html', title : 'css滚动条' },
+                { url : 'e/41/index.html', title : '深入理解css可见性visibility' }
+
+            ],
+            [
+                { title : '第八章 伪类和伪元素'},
+                { url : 'e/42/index.html', title : '深入理解伪元素' },
+                { url : 'e/43/index.html', title : '深入理解css计数器' },
+                { url : 'e/44/index.html', title : '深入理解伪类' }
+            ],
+
+             [
+                { title : '第九章 伪类和伪元素'},
+                { url : 'e/42/index.html', title : '深入理解css伪元素' },
+                { url : 'e/43/index.html', title : '深入理解css计数器' },
+                { url : 'e/44/index.html', title : '深入理解css伪类' }
+            ],
+             [
+                { title : '第十章 伪类和伪元素'},
+                { url : 'e/45/index.html', title : '深入理解css过渡transition' },
+                { url : 'e/46/index.html', title : '深入理解css变形transform(2d)' },
+                { url : 'e/47/index.html', title : '深入理解css变形transform(3d)'},
+                { url : 'e/48/index.html', title : '深入理解css线性渐变liner-gradient'},
+                { url : 'e/49/index.html', title : '深入理解css径向渐变radial-gradient' },
+                { url : 'e/50/index.html', title : '深入理解css动画animation' },
+                { url : 'e/51/index.html', title : '动画animation的三个应用(漂浮的白云,旋转的星球和正方体合成)' }
+            ],
+
+            [
+                { title : '第十一章 布局'},
+                { url : 'e/52/index.html', title : 'css多列布局' },
+                { url : 'e/53/index.html', title : 'css实现水平居中的四种思路' },
+                { url : 'e/54/index.html', title : 'css实现水平垂直居中的5种思路'},
+                { url : 'e/55/index.html', title : '两列布局中单列定宽单列自适应布局的5种思路'},
+                { url : 'e/56/index.html', title : '两列自适应布局的3种思路' },
+                { url : 'e/57/index.html', title : 'css三列布局' },
+                { url : 'e/58/index.html', title : '实现css等分布局的4种方式' },
+                { url : 'e/59/index.html', title : 'css等高布局的6种方式' },
+                { url : 'e/60/index.html', title : 'css全屏布局的5种方式' },
+                { url : 'e/61/index.html', title : '三栏布局(所谓的圣杯和双飞翼布局)' },
+            ],
+            [
+                { title : '第十一章 效果'},
+                { url : 'e/62/index.html', title : '元素显示影藏的9种思路' },
+                { url : 'e/63/index.html', title : '实现滑动门的3种方法' },
+                { url : 'e/64/index.html', title : 'css画出的图'}
+            ],
+
+
+
         ];
     for(var i = 0; i < data.length; i++){
         console.log(i);
