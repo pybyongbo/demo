@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../code-highlight/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../common.css" media="screen">
+    <script type="text/javascript" src="../../../lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../../lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../code-highlight/jquery.flexText.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>css默认可继承样式</h1>
+        <div class="part">
+            <h2 class="tit">前面的话</h2>
+            <p>一直想总结出一份可继承样式的列表。常听说，颜色和字体是可继承的，盒模型样式是不可继承的，但其他样式呢？本文内容包括所有可继承的样式</p>
+            
+            <p class="notice">[注意]<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" target="_blank">关于样式的详细信息移步至此</a></p>
+        </div>
+        <div class="part">
+            <h2 class="tit">常用可继承样式</h2>
+           
+
+            <textarea name="" class="form-control textare_code"  readonly="readonly">
+                color
+                cursor
+                direction
+                font
+                letter-spacing
+                line-height
+                list-style
+                text-align
+                text-indent
+                text-shadow
+                text-transform
+                white-space
+                word-break
+                word-spacing
+                word-wrap
+                writing-mode
+            </textarea>
+        </div>
+        <div class="part">
+            <h2 class="tit">不可常用继承样式</h2>
+            <p>重要声明：在声明的结束分号之前插入!important来标志</p>
+
+            <textarea name="" class="form-control textare_code"  readonly="readonly">
+            caption-side
+            empty-cells
+            text-combine-upright
+            text-orientation
+            text-rendering
+            text-underline-position
+            widows
+            </textarea>
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+$(function() {
+    $('.textare_code').flexText();
+});
+</script>

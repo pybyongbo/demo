@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>静止用户输入!</title>
+    <title>禁止用户输入!</title>
     <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
     <script type="text/javascript" src="../../../lib/jquery-1.10.2.min.js"></script>
     <style type="text/css" media="screen">
@@ -243,12 +243,15 @@
 
 
 	$(".num_box").on("click",".sub_btn",function(){
+
+
         console.log(curVal+'---'+minVal);
         if(curVal<=minVal) {
             
             $(".sub_btn").addClass("sub_btn_false");
 
             alert("最少预定"+minVal+"台!");
+
             return false;
 
         } else {
@@ -273,7 +276,8 @@
            
            
             $(".add_btn").addClass("add_btn_false");
-             alert("最多预定"+maxVal+"台!");
+
+            alert("最多预定"+maxVal+"台!");
             return false;
 
         } else {
