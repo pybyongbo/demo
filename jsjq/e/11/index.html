@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>文本内容进行过滤!</title>
+    <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
+    <script type="text/javascript" src="../../../lib/jquery-1.10.2.min.js"></script>
+    <style type="text/css" media="screen">
+    .demo1 {
+        width: 720px;
+        margin: 50px auto;
+    }
+    
+    .demo1 .form-horizontal label {
+        width: 90px;
+        text-align: right;
+        float: left;
+    }
+    
+    input.form-control {
+        width: 240px;
+        float: left;
+    }
+    
+    p input[type='checkbox'] {vertical-align:top;margin-right:5px;}
+    #btn{width:180px;margin-bottom:15px;}
+    
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="demo1 tc">
+       
+ <h3>当选项为部分选中的时候,全选按钮也为部分选中状态.</h3>
+
+
+        <pre>小成本实现部分选中的复选框,indeterminate 属性(js实现全选,反选效果)</pre>
+
+        <h5><input type="checkbox" id="all" name="" value=""><label for="all">全选选项</label></h5>
+
+
+        <p><input type="checkbox" name="item" id="num1"><label for="num1">选项一</label></p>
+        <p><input type="checkbox" name="item" id="num2"><label for="num2">选项二</label></p>
+        <p><input type="checkbox" name="item" id="num3"><label for="num3">选项三</label></p>
+        <p><input type="checkbox" name="item" id="num4"><label for="num4">选项四</label></p>
+        <p><input type="checkbox" name="item" id="num5"><label for="num5">选项五</label></p>
+        <p><input type="checkbox" name="item" id="num6"><label for="num6">选项六</label></p>
+        <p><input type="checkbox" name="item" id="num7"><label for="num7">选项七</label></p>
+        <p><input type="checkbox" name="item" id="num8"><label for="num8">选项八</label></p>
+        <p><input type="checkbox" name="item" id="num9"><label for="num9">选项九</label></p>
+        <p><input type="checkbox" name="item" id="num10"><label for="num10">选项十</label></p>
+    
+
+         
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+(function() {
+
+
+    var all = document.getElementById('all');
+
+    var check = document.getElementsByTagName('input');
+
+    var len = check.length-1;
+
+    all.onclick = function(){
+
+        choose(this.checked);
+    }
+
+    function each(arr,callback) {
+
+        var len = arr.length;
+        for(var i=1;i<len;i++) {
+
+            if(callback.call(arr[i],i,arr[i]) === false) {
+
+                break;
+            }
+        }
+
+        return arr;
+    }
+
+
+    function choose(t) {
+
+        each(check,function(i) {
+
+            check[i].checked = t;
+
+        });
+
+
+    }
+
+    each(check,function(i){
+
+        check[i].onclick = function(){
+            if(!this.checked) {
+
+                all.checked = false;
+            }
+
+            if(checkLen()== len) {
+                all.indeterminate = false;
+                all.checked =true;
+            } else if(checkLen()<len && checkLen()>0) {
+
+                document.getElementById('all').indeterminate = true;
+
+            } else if(checkLen()==0) {
+
+                document.getElementById('all').indeterminate = false;
+
+            }
+        } 
+    })
+
+    function checkLen(){
+
+        var n=0;
+        each(check,function(i) {
+
+            if (this.checked) {
+
+                n++;
+            };
+        })
+
+        console.log(n);
+        return n;
+    }
+
+    checkLen();
+
+}());
+
+</script>

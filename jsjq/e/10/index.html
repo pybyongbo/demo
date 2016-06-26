@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>文本内容进行过滤!</title>
+    <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
+    <script type="text/javascript" src="../../../lib/jquery-1.10.2.min.js"></script>
+    <style type="text/css" media="screen">
+    .demo1 {
+        width: 720px;
+        margin: 50px auto;
+    }
+    
+    .demo1 .form-horizontal label {
+        width: 90px;
+        text-align: right;
+        float: left;
+    }
+    
+    input.form-control {
+        width: 240px;
+        float: left;
+    }
+    
+    
+    textarea{border-radius:5px;border:1px solid #dedede;resize:none;outline:none;}
+    #btn{width:180px;margin-bottom:15px;}
+    
+    </style>
+</head>
+
+<body>
+    <div class="demo1 tc">
+       
+            <form class="form-horizontal user-input" id="form">
+
+                <div class="form-group">
+                    
+                        <label for="msg" class="col-sm-2 control-label">
+                            
+                            备注
+
+                        </label>
+
+                        <div class="col-sm-10">
+                            
+                            <textarea name="" id="msg" cols="47" rows="10" maxlength="50" placeholder="女|美少妇|日本|操 将会被过滤"></textarea>
+
+                        </div>
+
+
+                </div>
+
+                <div class="from-group">
+                    
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" id="btn" class="btn btn-primary btn-block">过滤</button>
+                    </div>
+
+
+                </div>
+
+
+                <div class="form-group">
+                        
+                        <label for="msg2" class="col-sm-2 control-label">
+
+                            备注
+
+                        </label>
+
+
+                        <div class="col-sm-10">
+                            
+                            <textarea name="" class="from-control" id="msg2" maxlength="50" placeholder="备注" cols="47" rows="10"></textarea>
+
+                        </div>
+
+
+                </div>
+                
+            </form>
+
+
+
+         
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+(function() {
+
+   var msg = document.getElementById('msg');
+   var msg2 = document.getElementById('msg2');
+
+   var btn = document.getElementById('btn');
+
+   var key = /女|美少妇|日本|操/g;
+
+   var v = '';
+
+   btn.onclick = function() {
+
+    v = msg.value;
+    alert(v.length);
+    msg2.value = v.replace(key,function(str) {
+
+        var r = '';
+        for(var i=0;i<str.length;i++) {
+
+            r+='<strong>*</strong>';
+        }
+        return r;
+    });
+
+    return false;
+   }
+
+
+}());
+
+</script>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标移入移出改变透明度效果!</title>
+    <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
+    <script type="text/javascript" src="../../../lib/jquery-1.10.2.min.js"></script>
+    <style type="text/css" media="screen">
+    .demo1 {
+        width: 720px;
+        margin: 20px auto;
+    }
+    
+    .demo1 .form-horizontal label {
+        width: 90px;
+        text-align: right;
+        float: left;
+    }
+    
+    
+    .test{width:680px;margin-top:30px;}
+
+    .test .box{width:150px;height:150px;background:red;line-height:150px;text-align:center;float:left;color:#fff;margin-right:10px;cursor: pointer;}
+    
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="demo1 tc">
+       
+    <h3>鼠标移入移出改变图片透明度效果</h3>
+    
+
+    <img id="img" src="http://img13.360buyimg.com/n1/jfs/t253/339/684583987/309716/5da5fdcb/53ef8a13Ncc2614f0.jpg" alt=""/>
+
+    
+    <div class="test" id="testdiv">
+
+        <div class="box">测试div</div>
+        <div class="box">测试div</div>
+        <div class="box">测试div</div>
+        <div class="box">测试div</div>
+        
+    </div>
+         
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+(function() {
+
+    var img = document.getElementById('img');
+    var testdiv = document.getElementById('testdiv');
+    var box = testdiv.getElementsByTagName('div');
+
+
+    img.onmouseover = function(){
+
+        fade(this,30);
+    }
+
+    img.onmouseout = function(){
+
+        fade(this,100);
+
+    }
+
+    for(var i=0;i<box.length;i++) {
+
+        box[i].onmouseover = function(){
+
+            fade(this,30);
+        }
+
+        box[i].onmouseout = function(){
+            fade(this,100);
+        }
+    }
+
+
+    function css(obj,attr) {
+        if(obj.currentStyle) {
+
+            return obj.currentStyle[attr];
+        } else {
+
+            return getComputedStyle(obj,false)[attr];
+        }
+    }
+
+    function fade(obj,target){
+
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function(){
+            var alpha = 0;
+            var cur = css(obj,'opacity')*100;
+            alpha = (target-cur)/8;
+            alpha = alpha>0?Math.ceil(alpha):Math.floor(alpha);
+            var stop = true;
+            if(cur != target) {
+
+                stop = false;
+            }
+
+            cur += alpha;
+            obj.style.filter = 'alpha(opacity = '+cur+')';
+            obj.style.opacity = cur/100;
+
+            if(stop) {
+                clearInterval(obj.timer);
+                obj.timer = null;
+            }
+        },30)
+    }
+
+   }());
+
+</script>

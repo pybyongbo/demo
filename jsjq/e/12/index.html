@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>动态操作下拉选项.</title>
+    <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
+    <script type="text/javascript" src="../../../lib/jquery-1.10.2.min.js"></script>
+    <style type="text/css" media="screen">
+    .demo1 {
+        width: 720px;
+        margin: 50px auto;
+    }
+    
+    .demo1 .form-horizontal label {
+        width: 90px;
+        text-align: right;
+        float: left;
+    }
+    
+    input.form-control {
+        width: 240px;
+        float: left;
+    }
+
+    #btn{width:180px;margin-bottom:15px;}
+    .mb10{margin-bottom:10px;}
+    .pd10{padding-bottom:10px;}
+
+    #add{line-height:32px;margin-left:15px;}
+    #country{width:160px;}
+
+    #del{width:65px;margin-top:10px;}
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="demo1 tc">
+       	
+
+       	<div class="mb10">
+       			
+       			<input type="text" name="" id="txt" value="" class="form-control">
+
+       			<a href="javascript:void(0);" id="add">添加</a>
+
+
+
+       	</div>
+
+       	 <select name="" id="country" class="form-control">
+       	 	<option value="中国人">中国人</option>
+       	 	<option value="蒙古人">蒙古人</option>
+       	 	<option value="朝鲜人">朝鲜人</option>
+       	
+       	 </select>
+ 			
+ 		<div class="pt10">
+ 			<!-- <a href="javascript:void(0);" id="del">删除</a> -->
+
+ 			<button id="del" type="button" class="btn btn-primary btn-block">删除</button>
+ 		</div>
+         
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+(function() {
+
+	var txt = document.getElementById('txt');
+
+	var add = document.getElementById('add');
+
+	var del = document.getElementById('del');
+
+	var country = document.getElementById('country');
+
+	add.onclick = function(){
+
+		var v = checkTxt(txt);
+
+		if(v) {
+
+			country.options.add(new Option(v,v));
+		}
+
+		document.getElementById('txt').value = '';
+	}
+
+	del.onclick = function(){
+
+		var i = country.selectedIndex;
+		country.options.remove(i);
+
+	}
+    
+
+    function checkTxt(obj) {
+
+    	if(obj.value.length<1) {
+    		alert('选项不能为空!');
+    		return false;
+    	}
+
+    	return obj.value;
+    }
+
+}());
+
+</script>

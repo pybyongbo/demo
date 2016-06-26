@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ctrl+enter提交表单!</title>
+    <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
+    <script type="text/javascript" src="../../../lib/jquery-1.10.2.min.js"></script>
+    <style type="text/css" media="screen">
+    .demo1 {
+        width: 720px;
+        margin: 50px auto;
+    }
+    
+    .demo1 .form-horizontal label {
+        width: 90px;
+        text-align: right;
+        float: left;
+    }
+    
+    input.form-control {
+        width: 240px;
+        float: left;
+    }
+    
+    #btn{width:180px;}
+    
+    </style>
+</head>
+
+<body>
+    <div class="demo1 tc">
+        <form class="form-horizontal user-input" id="form" role="form">
+            <div class="form-group">
+                <label for="user" class="col-sm-2 control-label">用户名</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control noreg" data-ime="1" id="user" placeholder="用户名">
+                  
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-sm-2 control-label">密码</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control noreg" id="password" placeholder="密码">
+              
+                </div>
+            </div>
+
+
+             <div class="form-group">
+                <label for="msg" class="col-sm-2 control-label">备注</label>
+                <div class="col-sm-10">
+                    <textarea class="from-control" name="content" id="msg" placeholder="备注" cols="47" rows="6" ></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button id="btn" type="button" class="btn btn-primary btn-block">提 交</button>
+                </div>
+            </div>
+
+        </form>
+
+
+         
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+(function() {
+
+    var form = document.getElementById('form');
+
+    // alert(form);
+    
+    var input = form.getElementsByTagName('input');
+
+    var textarea = form.getElementsByTagName('textarea');
+    var btn = document.getElementById('btn');
+
+    btn.onclick = function(){
+
+        // return false;
+
+
+    }
+
+    document.onkeydown = function(e) {
+
+        var e = e || window.event;
+
+        var keyCode = e.keyCode || e.which;
+
+        if(e.ctrlKey && keyCode == 13) {
+
+            alert('表单已提交');
+
+        }
+
+
+        // return false;
+    }
+
+
+}());
+
+</script>

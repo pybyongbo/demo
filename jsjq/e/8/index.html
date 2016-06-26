@@ -39,6 +39,7 @@
     }
     
     #faceimg {
+        width:270px;
         margin-right: 5px;
     }
     
@@ -177,7 +178,7 @@
             <div class="form-group">
                 <!--  <label for="user" class="col-sm-2 control-label">选择头像</label> -->
                 <div class="col-sm-10">
-                    <input type="text" class="form-control input_txt" id="faceimg" placeholder="用户头像">
+                    <input type="text" class="form-control input_txt" id="faceimg" placeholder="用户头像" readonly="readonly">
                     <p id="face">
                         <img src="../../img/face1.gif" class="current" />
                         <img src="../../img/face2.gif" />
@@ -519,7 +520,7 @@
                             var oA = document.createElement("a");                   
                             oA.innerHTML = "删除";
                             oA.className = "del";
-                            oA.href = "javascript:;";
+                            oA.href = "javascript:void(0);";
                             oTmp.appendChild(oA)
                         }
                         else

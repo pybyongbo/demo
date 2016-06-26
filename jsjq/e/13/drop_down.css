@@ -1,0 +1,349 @@
+a:hover{text-decoration: none;}
+.info-section3{width:300px;border:1px solid #e2e8ee;}
+.info-section3 .b-title {
+    border-bottom: 1px solid #e2e8ee;
+    color: #333;
+    font-size: 16px;
+    padding: 15px 0 15px 20px
+}
+
+.info-section3 .at-plan {
+    padding: 20px
+}
+
+.info-section3 .at-plan .regist_and_getPlan {
+    -moz-user-select: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    white-space: nowrap;
+    background-color: #ff9c00;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    height: 42px;
+    line-height: 42px;
+    padding: 0;
+    text-align: center;
+    width: 256px
+}
+
+.info-section3 .at-plan .regist_and_getPlan:hover {
+    background-color: #f78400
+}
+
+.info-section3 .at-plan .bottom-hint {
+    font-size: 14px;
+    color: #818181;
+    text-align: center;
+    line-height: 32px;
+}
+
+.info-section3 .at-plan .bottom-hint span {
+    color: #fd9b27
+}
+
+.info-app {
+    border: 1px solid #e2e8ee;
+    width: 308px;
+    height: 108px;
+    margin: 30px 0 20px
+}
+
+.info-app dl {
+    height: 80px;
+    margin-right: 10px;
+    padding: 15px 10px 10px 120px;
+    position: relative
+}
+
+.info-app dl dt {
+    height: 80px;
+    left: 20px;
+    overflow: hidden;
+    position: absolute;
+    top: 15px;
+    width: 80px
+}
+
+.info-app dl dd h6 {
+    font-size: 16px;
+    color: #333;
+    font-weight: 700
+}
+
+.info-app dl dd div {
+    margin-bottom: 5px
+}
+
+.info-app dl dd p .ios {
+    background: rgba(0,0,0,0) url(http://s2.51offer.com/51offer/global/img/2015-08-12/global-info.png) no-repeat scroll 0 -60px;
+    display: block;
+    float: left;
+    height: 20px;
+    margin-right: 3px;
+    width: 68px
+}
+
+.info-app dl dd p .android {
+    background: rgba(0,0,0,0) url(http://s2.51offer.com/51offer/global/img/2015-08-12/global-info.png) no-repeat scroll -77px -60px;
+    display: block;
+    float: left;
+    height: 20px;
+    width: 68px
+}
+
+.hot-school {
+    width: 100%;
+    float: none
+}
+
+.hot-school h2 {
+    color: #333
+}
+
+.hot-school .info-scontent .info-schoolList {
+    *zoom:1;display: block;
+    padding: 20px 0;
+    border-bottom: 1px dashed #e2e8ee
+}
+
+.hot-school .info-scontent .info-schoolList:before,.hot-school .info-scontent .info-schoolList:after {
+    display: table;
+    content: "";
+    clear: both
+}
+
+.hot-school .info-scontent .info-schoolList img {
+    width: 130px;
+    height: 50px;
+    vertical-align: top;
+    float: left
+}
+
+.hot-school .info-scontent .info-schoolList .info-sr {
+    float: left;
+    margin-left: 8px;
+    max-width: 170px
+}
+
+.hot-school .info-scontent .info-schoolList .info-sr .info-schoolName {
+    font-size: 16px;
+    color: #333;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    margin-bottom: 2px
+}
+
+.hot-school .info-scontent .info-schoolList .info-sr .info-schoolName:hover {
+    color: #259
+}
+
+.hot-school .info-scontent .info-schoolList .info-sr .info-schoolApply {
+    font-size: 12px;
+    color: #818181;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis
+}
+
+.hot-school .info-scontent .info-schoolList .info-sr .info-schoolApply span {
+    color: #fd9b27
+}
+
+.hot-school .info-scontent .info-schoolList .info-sr .info-schoolApply:hover {
+    color: #259
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+    *zoom:1}
+
+.form-group:before,.form-group:after {
+    display: table;
+    content: "";
+    clear: both
+}
+
+.form-group .state-bar {
+    position: relative;
+    float: left;
+    margin-right: 5px
+}
+
+.form-group .check {
+    background-color: #fff;
+    border: 1px solid #c6c9cc;
+    color: #999;
+    cursor: pointer;
+    display: block;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    width: 69px
+}
+
+.form-group .check.error {
+    border-color: #e84c3d;
+    color: #e84c3d
+}
+
+.form-group .icons {
+    background: url(http://s2.51offer.com/51offer/images/2014-09-02/icon-15.png) no-repeat;
+    display: none;
+    height: 19px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 22px
+}
+
+.form-group .check.checked {
+    border-color: #43a0ff;
+    color: #43a0ff
+}
+
+.form-group .check.checked .icons {
+    display: block
+}
+
+.form-group .input-control.dropdown {
+    display: block;
+    float: none;
+    height: auto;
+    margin-right: 10px;
+    padding: 0
+}
+
+.form-group .input-control.dropdown .dropdown-toggle {
+    background-color: #fff;
+    height: 32px;
+    line-height: 32px;
+    width: 254px;
+    border: 1px solid #c6c9cc;
+    color: #cdcdcd;
+    cursor: pointer;
+    display: block;
+    font-size: 12px;
+    padding: 0 6px
+}
+
+.form-group .input-control.dropdown .dropdown-toggle span {
+    height: 32px;
+    line-height: 32px
+}
+
+.form-group .input-control.dropdown .dropdown-toggle .caret {
+    top: 13px;
+    color: gray;
+    float: right;
+    position: relative
+}
+
+.form-group .input-control.dropdown .dropdown-toggle.checked {
+    color: #333
+}
+
+.form-group .input-control.dropdown .dropdown-menu {
+    top: 29px;
+    width: 254px;
+    border: 1px solid #c6c9cc;
+    color: #cdcdcd;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 24px;
+    max-height: 240px;
+    overflow-y: auto
+}
+
+.form-group .input-control.dropdown .dropdown-menu a {
+    height: 32px;
+    line-height: 32px;
+    background-color: #fff;
+    color: #818181;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0 7px;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.form-group .input-control.dropdown .dropdown-menu a:hover {
+    background-color: #f5f7f7
+}
+
+.form-group .input-control.dropdown .error {
+    border-color: #d9534f
+}
+
+.form-group .input-control.dropdown .error .caret {
+    color: #d9534f
+}
+
+.form-group .input-control.dropdown.w116p {
+    width: 118px;
+    float: left
+}
+
+.form-group .input-control.dropdown.w116p .dropdown-toggle {
+    width: 104px
+}
+
+.form-group .input-control.dropdown.w116p .dropdown-menu {
+    width: 116px
+}
+
+.form-group .input-control.dropdown.w159p {
+    width: 161px;
+    float: right;
+    margin-right: 0
+}
+
+.form-group .input-control.dropdown.w159p .dropdown-toggle {
+    width: 147px
+}
+
+.form-group .input-control.dropdown.w159p .dropdown-menu {
+    width: 159px
+}
+
+.form-group .btn {
+    background-color: #ff9c00;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    height: 42px;
+    line-height: 42px;
+    padding: 0;
+    text-align: center;
+    width: 286px
+}
+
+.form-group .btn:hover {
+    background-color: #f78400
+}
+
+.form-group div.error {
+    color: #e84c3d;
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 100%
+}
+
+.form-group div.error span.err {
+    margin: 0 2px;
+    position: relative;
+    top: 3px
+}
+
+.dropdown-menu{border-radius: 0px;}
