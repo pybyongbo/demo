@@ -4,11 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../code-highlight/style.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../common.css" media="screen">
+    <link type="text/css" rel="stylesheet" href="../syntaxhlighter/styles/shCoreDefault.css"/>
     <script type="text/javascript" src="../../../lib/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../../../lib/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../code-highlight/jquery.flexText.js"></script>
+    <script type="text/javascript" src="../syntaxhlighter/shCore.js"></script>
+    <script type="text/javascript" src="../syntaxhlighter/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../syntaxhlighter/shBrushXml.js"></script>
+    <script type="text/javascript" src="../syntaxhlighter/shBrushCss.js"></script>
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
     <title>Document</title>
 </head>
 
@@ -23,32 +27,31 @@
         </div>
         <div class="part">
             <h2 class="tit">常用可继承样式</h2>
-           
 
-            <textarea name="" class="form-control textare_code"  readonly="readonly">
-                color
-                cursor
-                direction
-                font
-                letter-spacing
-                line-height
-                list-style
-                text-align
-                text-indent
-                text-shadow
-                text-transform
-                white-space
-                word-break
-                word-spacing
-                word-wrap
-                writing-mode
-            </textarea>
+            <pre class="brush: css;">
+            color
+            cursor
+            direction
+            font
+            letter-spacing
+            line-height
+            list-style
+            text-align
+            text-indent
+            text-shadow
+            text-transform
+            white-space
+            word-break
+            word-spacing
+            word-wrap
+            writing-mode
+            </pre>
         </div>
         <div class="part">
             <h2 class="tit">不可常用继承样式</h2>
             <p>重要声明：在声明的结束分号之前插入!important来标志</p>
 
-            <textarea name="" class="form-control textare_code"  readonly="readonly">
+           <pre class="brush: css;">
             caption-side
             empty-cells
             text-combine-upright
@@ -56,7 +59,7 @@
             text-rendering
             text-underline-position
             widows
-            </textarea>
+            </pre>
         </div>
     </div>
 </body>
@@ -64,6 +67,6 @@
 </html>
 <script type="text/javascript">
 $(function() {
-    $('.textare_code').flexText();
+    // $('.textare_code').flexText();
 });
 </script>

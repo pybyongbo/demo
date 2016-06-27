@@ -1,9 +1,10 @@
-
+.toolbar{display: none;}
+.toolbar_item.command_help.help{display: none!important;}
 .wrapper{width:980px;margin:0 auto;}
 xmp{float:left;}
 .part {margin-bottom:30px;}
 .part p{text-indent: 2em;}
-.wrapper h3{font-size:20px;}
+.wrapper h3{font-size:20px;text-indent:2rem;}
 .wrapper h2.tit{font-size:24px;}
 textarea{
 resize: none;overflow-y:visible;text-align: left;}

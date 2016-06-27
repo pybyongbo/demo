@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../common.css" media="screen">
+    <link type="text/css" rel="stylesheet" href="../syntaxhlighter/styles/shCoreFadeToGrey.css"/>
+    <script type="text/javascript" src="../../../lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../../lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../syntaxhlighter/shCore.js"></script>
+    <script type="text/javascript" src="../syntaxhlighter/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../syntaxhlighter/shBrushXml.js"></script>
+    <script type="text/javascript" src="../syntaxhlighter/shBrushCss.js"></script>
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>元素显示影藏的9中思路</h1>
+        
+
+        <div class="part">
+            <h2 class="tit">前面的话</h2>
+            <p>在网页制作中，元素的显示隐藏是非常常见的需求。本文将介绍元素显示隐藏的9种思路</p>
+      
+        </div>
+
+        <div class="part">
+            <h2>思路一:display</h2>
+
+            <p>对于元素显隐来说，最常见就是display:none | display:block，但是使用这种方法有个问题，元素的display属性在隐藏前并不都是block，还有可能是inline、inline-block等</p>
+
+            <p class="notice">[注意]如果要适用于任何元素需要提前储存元素的display值</p>
+            
+
+            <pre class="brush: xml;">
+                    
+                    <button id="show">显示</button>
+                    <button id="hide">隐藏</button>
+                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;">测试文字</div>
+
+            </pre>
+
+             <pre class="brush: js;">
+                    
+                   show.onclick = function(){
+                        test.style.display = 'block';
+                    }    
+                    hide.onclick = function(){
+                        test.style.display = 'none';
+                    }
+
+            </pre>
+
+
+            <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/z3r0vdak" frameborder="0" width="320" height="240"></iframe>
+                
+        </div>
+
+        <div class="part">
+            <h2>思路二: visibility</h2>
+            
+            <p>　　visibility:hidden与display:none作为隐藏元素的两种方式，常常被人们拿来比较。其实区别很简单，前者不脱离文档流，保留隐藏之前元素占据的物理区域；而后者则脱离文档流，如果重新显示则需要页面的重新绘制。还有一点区别却很少人提到，如果父级设置display:none;子级设置display:block也不会显示；而如果父级设置visibility:hidden;子级设置visibility:visible时子级会显示出来</p>
+
+            <p class="notice">
+                [注意]visilibity可应用transition属性。因为visibility是离散步骤，在0到1数字范围之内，0表示隐藏，1表示显示。visibility:hidden可以看成visibility:0；visibility:visible可以看成visibility:1。于是，visibility应用transition等同于0~1之间的过渡效果。实际上，只要visibility的值大于0就是显示的。由于这个现象，我们可以利用transition实现元素的延时显示隐藏
+            </p>
+
+             <pre class="brush: xml;">
+                 <button id="show">显示</button>
+                 <button id="hide">隐藏</button>
+                 <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;">测试文字</div>
+            </pre>
+
+            <pre class="brush: js;">
+                    
+                show.onclick = function(){
+                    test.style.transition = 'none';
+                    test.style.visibility = 'visible';
+                }    
+                hide.onclick = function(){
+                    test.style.transition = 'visibility 0.2s 0.5s';
+                    test.style.visibility = 'hidden';
+                }
+    
+            </pre>
+
+            <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/keropkrn" frameborder="0" width="320" height="240"></iframe>
+
+            </div>
+
+            <div class="part">
+                <h2>思路三: hidden</h2>
+
+                <p>可能有些人不太熟悉，HTML有个hidden全局属性，专门用于显示隐藏元素，与display:none的作用类似，元素隐藏时脱离文档流，无法接受javascript事件</p>
+
+                <p class="notice">[注意]IE7-不支持，IE10-不支持test.hidden='hidden'写法，只支持test.setAttribute('hidden','hidden')写法</p>
+
+                <pre class="brush: xml;">
+                    
+                    <button id="show">显示</button>
+                    <button id="hide">隐藏</button>
+                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;">测试文字</div>
+
+                </pre>
+
+
+                <pre class="brush: js;">
+
+                    show.onclick = function(){
+                        test.removeAttribute('hidden');
+                        /*test.hidden = '';*/
+                    }    
+                    hide.onclick = function(){
+                        test.setAttribute('hidden','hidden');
+                        /*test.hidden = 'hidden';*/
+                    }
+
+                </pre>
+
+                <iframe style="width: 100%; height: 120px;" src="http://sandbox.runjs.cn/show/ranpqyy8" frameborder="0" width="320" height="240"></iframe>
+
+
+            </div>
+
+
+            <div class="part">
+                
+                <h2>思路四:opacity</h2>
+
+                <p>对于元素显隐，opacity的使用频率也挺多。opacity的好处是，即使opacity为0的元素，仍然可以接受javascript事件，这是display:none和visiblity:hidden所不具备的。</p>
+                
+                 <pre class="brush: xml;">
+                    
+                    <button id="show">显示</button>
+                    <button id="hide">隐藏</button>
+                    <button id="reset">还原</button>
+                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;">测试文字</div>
+
+                 </pre>
+
+                  <pre class="brush: js;">
+
+                    show.onclick = function(){
+                        test.style.transition = 'none';
+                        test.style.opacity = '1';
+                    }    
+                    hide.onclick = function(){
+                        test.style.transition = 'opacity 0.2s';
+                        test.style.opacity = '0';
+                    }
+                    test.onclick = function(){
+                        this.style.width = '200px';
+                    }
+                    reset.onclick = function(){
+                        history.go();
+                    }
+
+                </pre>
+
+                <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/4yldm4b7" frameborder="0" width="320" height="240"></iframe>
+
+            </div>
+            
+            <div class="part">
+                
+                <h2>思路五:overflow</h2>
+
+                <p>CSS中有一个属性是overflow，overflow:hidden代表着溢出隐藏。我们可以利用父级的overflow:hidden配合父级的height:0或width:0来实现元素的显隐</p>
+
+                <p class="notice">[注意]当设置overflow的元素在绝对定位元素和其包含块之间的时候，overflow属性会失效</p>
+                
+
+                <pre class="brush: css;">
+                    
+                    #testWrap{
+                        height: 70px;
+                        transition: height 1s;
+                        overflow: hidden;
+                    }
+
+                 </pre>
+
+                 <pre class="brush: xml;">
+                    
+                    <button id="show">显示</button>
+                    <button id="hide">隐藏</button>
+                    <div id="testWrap">
+                        <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;">测试内容</div>        
+                    </div>
+
+                 </pre>
+
+                <pre class="brush: xml;">
+                    
+                    show.onclick = function(){
+                        testWrap.style.height = '70px';
+                    }    
+                    hide.onclick = function(){
+                        testWrap.style.height = '0';
+                    }
+                </pre>
+
+                <iframe style="line-height: 1.5; width: 100%; height: 120px;" src="http://sandbox.runjs.cn/show/eytkfwyb" frameborder="0" width="320" height="240"></iframe>
+
+            </div>
+
+
+            <div class="part">
+                
+                <h2>思路六: clip</h2>
+                
+                <p>CSS裁剪clip这个属性平时用的不多，当clip:rect(top,right,bottom,left)中的top>=bottom，或者left>=right时，可实现元素的隐藏效果，效果类似于visibility:hidden</p>
+
+                <p class="notice">[注意]clip属性只能应用在绝对定位元素上</p>
+
+
+                <pre class="brush: xml;">
+
+                    <button id="show">显示</button>
+                    <button id="hide">隐藏</button>
+                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;">测试内容</div>  
+
+                 </pre>
+
+                 <pre class="brush: js;">
+
+                    show.onclick = function(){
+                        test.style.position ='static';
+                        test.style.clip = 'auto';
+                    }    
+                    hide.onclick = function(){
+                        test.style.position ='absolute';
+                        test.style.clip = 'rect(0 0 0 0)';
+                    }
+
+                 </pre>
+
+
+                 <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/z8lqwpzd" frameborder="0" width="320" height="240"></iframe>
+
+            </div>
+
+
+            <div class="part">
+                
+                <h2>思路七: transform</h2>
+
+                <p>CSS变形transform是一些效果的集合，主要是移动、旋转、缩放和倾斜这四种基本操作，还可以通过设置matrix矩阵来实现更复杂的效果。通过不同的变形函数可以实现元素显隐效果</p>
+
+                <p class="notice">[注意]IE9-浏览器不支持，safari3.1-8、android2.1-4.4.4、IOS3.2-8.4都需要添加前缀</p>
+
+                <h3>【1】scale</h3>
+
+                <p>transform:scale(0)时，元素被隐藏</p>
+
+                <pre class="brush: xml;">
+
+                    <button id="show">显示</button>
+                    <button id="hide">隐藏</button>
+                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;transition: 0.5s;">测试内容</div>
+
+                 </pre>
+
+
+                 <pre class="brush: js;">
+
+                    show.onclick = function(){
+                        test.style.transform ='scale(1)';
+                    }    
+                    hide.onclick = function(){
+                        test.style.transform ='scale(0)';
+                    }
+
+                 </pre>
+
+                 <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/yu695kms" frameborder="0" width="320" height="240"></iframe>
+
+                 <h3>【2】rotate</h3>
+
+                 <p>transform:rotateX(90deg)时，元素被隐藏</p>
+
+                 <pre class="brush: xml;">
+
+                    <button id="show">显示</button>
+                    <button id="hide">隐藏</button>
+                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;transition: 0.5s;">测试内容</div>
+
+                 </pre>
+
+                 <pre class="brush: js;">
+                    
+                    show.onclick = function(){
+                        test.style.transform ='rotateX(0)';
+                    }    
+                    hide.onclick = function(){
+                        test.style.transform ='rotateX(90deg)';
+                    }
+
+                 </pre>
+
+
+                 <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/olletl6l" frameborder="0" width="320" height="240"></iframe>
+
+                 <h3>【3】skew</h3>
+
+                 <p>transform:skew(90deg)时，元素被隐藏</p>
+
+                  <pre class="brush: xml;">
+
+                    <button id="show">显示</button>
+                    <button id="hide">隐藏</button>
+                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;transition: 0.5s;">测试内容</div>
+
+                 </pre>
+
+                  <pre class="brush: js;">
+                    
+                        show.onclick = function(){
+                            test.style.transform ='skew(0)';
+                        }    
+                        hide.onclick = function(){
+                            test.style.transform ='skew(90deg)';
+                        }
+
+                  </pre>
+
+                  <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/e1hw0hpa" frameborder="0" width="320" height="240"></iframe>
+
+
+            </div>
+            
+
+             <div class="part">
+                
+                <h2>思路八: 覆盖</h2>
+
+                <p>利用定位元素可以覆盖普通流元素的特性。为元素的before伪元素设置相同的尺寸，通过控制伪元素的定位属性，实现显隐效果</p>
+
+
+                 <pre class="brush: css;">
+
+                   #test:hover:before{
+                        content: "";
+                        position: absolute;
+                        width: 100px;
+                        height: 60px;
+                        background-color: white;
+                    }    
+
+                 </pre>
+
+
+                 <pre class="brush: xml;">
+                    <div style="background:lightblue;width:100px;height:60px;margin-top: 10px;">测试内容</div>
+                 </pre>
+
+                 <p>//鼠标移入移出会出现元素的显隐效果</p>
+
+                <iframe style="width: 100%; height: 90px;" src="http://sandbox.runjs.cn/show/cddm2l5b" frameborder="0" width="320" height="240"></iframe>
+
+            </div>
+            
+
+            <div class="part">
+                
+                <h2>思路九: 偏移</h2>
+
+                <P>元素显示隐藏的另一种常见思路是偏移，将元素移动到视窗范围外，也可以实现等价的显隐效果</P>
+
+                    <h3>【1】margin-top</h3>
+
+                    <p>利用负margin将元素移出视窗外，要注意的是设置负margin的元素并没有脱离普通流，后续元素会跟着一起移动</p>
+
+                <pre class="brush: xml;">
+
+                    <button id="show">显示</button>
+                    <button id="hide">隐藏</button>
+                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;transition: 0.5s;">测试内容</div>
+
+                </pre>
+
+                <pre class="brush: js;">
+                    
+                    show.onclick = function(){
+                        test.style.marginTop ='10px';
+                    }    
+                    hide.onclick = function(){
+                        test.style.marginTop ='-9999px';
+                    }
+
+                </pre>
+
+                <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/dwaqql1f" frameborder="0" width="320" height="240"></iframe>
+
+                
+                <h3>【2】left</h3>
+
+                <p>通过设置相对定位或绝对定位元素的偏移属性，将元素移动到视窗外</p>
+
+                <pre class="brush: css;">
+
+                    #test{
+                        position: relative;
+                    /*  position: absolute; */
+                    }    
+
+                </pre>
+
+                <pre class="brush: xml;">
+
+                    <button id="show">显示</button>
+                    <button id="hide">隐藏</button>
+                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;transition: 0.5s;">测试内容</div> 
+
+                </pre>
+
+                 <pre class="brush: js;">
+                    
+                    show.onclick = function(){
+                        test.style.left ='0';
+                    }    
+                    hide.onclick = function(){
+                        test.style.left ='-9999px';
+                    }
+
+                 </pre>
+
+                 <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/l5qylzd6" frameborder="0" width="320" height="240"></iframe>
+
+                 <h3>【2】translate</h3>
+
+                <pre class="brush: xml;">
+
+                    <button id="show">显示</button>
+                    <button id="hide">隐藏</button>
+                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;transition: 0.5s;">测试内容</div> 
+
+                </pre>
+                    
+                <pre class="brush: js;">
+                    
+                    show.onclick = function(){
+
+                        test.style.transform ='translate(0,0)';
+
+                    }    
+                    hide.onclick = function(){
+
+                        test.style.transform ='translate(-9999px,-9999px)';
+
+                    }
+
+                 </pre>
+
+
+            </div>
+
+
+            <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/cqrthtib" frameborder="0" width="320" height="240"></iframe>
+
+
+        </div>
+      
+    
+</body>
+
+</html>
+
