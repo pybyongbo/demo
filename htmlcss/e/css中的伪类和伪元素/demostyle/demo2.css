@@ -1,0 +1,502 @@
+ body {
+        font-family: 'Droid Sans', sans-serif;
+        background: #eee;
+        color: #888;
+        padding: 0;
+        margin: 0;
+        font-size: 72.5%;
+    }
+    /*Headers*/
+    
+    h1,
+    h1 a,
+    h1 a:hover {
+        color: #FFF;
+        font-family: Arial;
+        margin: 10px;
+    }
+    
+    article h1,
+    article h1 a,
+    article h1 a:hover,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        line-height: 1.1em;
+        color: #444;
+        font-family: 'PT Sans Narrow', Calibri, 'Myriad Pro', Tahoma, Arial;
+        padding: 10px 0;
+        margin: 0;
+    }
+    
+    article h1,
+    article h1 a,
+    h2 {
+        font-size: 30px;
+        letter-spacing: -1px;
+    }
+    
+    h3 {
+        font-size: 30px;
+    }
+    
+    h4 {
+        font-size: 22px;
+        font-weight: normal;
+        padding-bottom: 10px;
+    }
+    
+    h5 {
+        font-size: 14px;
+    }
+    
+    h6 {}
+    /*Links*/
+    
+    a {
+        color: #36C;
+        text-decoration: none;
+        font-weight: normal;
+        font-size: 105%;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    /*Generic*/
+    
+    p {
+        font-size: 115%;
+    }
+    
+    .aligncenter {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        clear: both;
+    }
+    
+    .no_list {
+        list-style: none;
+    }
+    
+    .no_list li {
+        padding: 0;
+        margin: 0;
+    }
+    
+    input[type=text].text {
+        padding: 6px;
+        position: relative;
+        top: -4px;
+    }
+    
+    .button,
+    .read_more,
+    input[type=button],
+    input[type=submit] {
+        background: #f5f5f5;
+        padding: 6px 10px;
+        font-weight: bold;
+        color: #444;
+        text-decoration: none;
+        border: 1px solid #888;
+    }
+    
+    .button:hover,
+    .read_more:hover,
+    input[type=button]:hover,
+    input[type=submit]:hover {
+        border: 1px solid #36C;
+        color: #444;
+    }
+    
+    .read_more {
+        float: right;
+        margin: 10px 0;
+    }
+    /*Header*/
+    
+    header {
+        height: 40px;
+        width: 100%;
+        background: #111;
+    }
+    
+    footer {
+        height: 50px;
+        width: 100%;
+        padding: 5px 0;
+        background: #2D2D2D;
+    }
+    
+    header ul {
+        list-style: none;
+    }
+    
+    header li a {
+        float: right;
+        width: 120px;
+        font-size: 14px;
+        line-height: 14px;
+        padding: 10px 5px;
+        color: #FFF;
+        font-weight: bold;
+    }
+    
+    header li a span {
+        font-size: 10px;
+        color: #a1a1a1;
+    }
+    
+    header li a:hover {
+        text-decoration: none;
+        background: #a1a1a1;
+        color: #2D2D2D;
+    }
+    
+    header li a:hover span {
+        color: #FFF;
+    }
+    /*Footer*/
+    
+    footer {
+        float: left;
+        min-height: 200px;
+        padding: 20px 0;
+        color: #FFF;
+    }
+    
+    footer a,
+    footer a:hover {
+        color: #FFF;
+    }
+    
+    .halfwidth {
+        width: 48%;
+    }
+    
+    .return {
+        float: right;
+        padding: 10px 20px;
+        color: #FFF;
+        font-size: 12px;
+    }
+    
+    .return a {
+        color: #fff;
+    }
+    
+    .social_main_buttons {
+        display: inline-block;
+        margin: 0 10px;
+    }
+    /*Button*/
+    
+    .download_button {
+        background: #4284c6;
+        background: -moz-linear-gradient(top, #6cb5ff, #4284c6);
+        background: -webkit-gradient(linear, left top, left bottom, from(#6cb5ff), to(#4284c6));
+        background-image: -o-linear-gradient(#6cb5ff, #4284c6);
+        -pie-background: linear-gradient(#6cb5ff, #4284c6);
+        padding: 10px;
+        text-decoration: none;
+        color: #FFF;
+        font-weight: bold;
+        text-align: center;
+        border: 1px solid #FFF;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        margin-bottom: 10px;
+        min-width: 90px;
+        display: inline-block;
+    }
+    
+    .download_button:hover {
+        cursor: pointer;
+        text-decoration: none;
+        color: #FFF;
+        border: 1px solid #555;
+        background: #2a77c4;
+        background: -moz-linear-gradient(top, #46a0fc, #2a77c4);
+        background: -webkit-gradient(linear, left top, left bottom, from(#46a0fc), to(#2a77c4));
+    }
+    /*Container*/
+    
+    .container {
+        width: 1200px;
+        margin: 30px auto;
+        padding: 25px;
+        min-height: 400px;
+        height: auto;
+    }
+    
+    .container h2 {
+        margin-top: 30px;
+    }
+    
+    .box h3 {
+        text-align: center;
+        position: relative;
+        top: 80px;
+    }
+    
+    .box {
+        width: 21%;
+        height: 200px;
+        background: #FFF;
+        margin: 40px 20px;
+
+        float:left;
+    }
+    /*==================================================
+ * Effect 1
+ * ===============================================*/
+    
+    .effect1 {
+        -webkit-box-shadow: 0 10px 6px -6px #777;
+        -moz-box-shadow: 0 10px 6px -6px #777;
+        box-shadow: 0 10px 6px -6px #777;
+    }
+    /*==================================================
+ * Effect 2
+ * ===============================================*/
+    
+    .effect2 {
+        position: relative;
+    }
+    
+    .effect2:before,
+    .effect2:after {
+        z-index: -1;
+        position: absolute;
+        content: "";
+        bottom: 15px;
+        left: 10px;
+        width: 50%;
+        top: 80%;
+        max-width: 300px;
+        background: #777;
+        -webkit-box-shadow: 0 15px 10px #777;
+        -moz-box-shadow: 0 15px 10px #777;
+        box-shadow: 0 15px 10px #777;
+        -webkit-transform: rotate(-3deg);
+        -moz-transform: rotate(-3deg);
+        -o-transform: rotate(-3deg);
+        -ms-transform: rotate(-3deg);
+        transform: rotate(-3deg);
+    }
+    
+    .effect2:after {
+        -webkit-transform: rotate(3deg);
+        -moz-transform: rotate(3deg);
+        -o-transform: rotate(3deg);
+        -ms-transform: rotate(3deg);
+        transform: rotate(3deg);
+        right: 10px;
+        left: auto;
+    }
+    /*==================================================
+ * Effect 3
+ * ===============================================*/
+    
+    .effect3 {
+        position: relative;
+    }
+    
+    .effect3:before {
+        z-index: -1;
+        position: absolute;
+        content: "";
+        bottom: 15px;
+        left: 10px;
+        width: 50%;
+        top: 80%;
+        max-width: 300px;
+        background: #777;
+        -webkit-box-shadow: 0 15px 10px #777;
+        -moz-box-shadow: 0 15px 10px #777;
+        box-shadow: 0 15px 10px #777;
+        -webkit-transform: rotate(-3deg);
+        -moz-transform: rotate(-3deg);
+        -o-transform: rotate(-3deg);
+        -ms-transform: rotate(-3deg);
+        transform: rotate(-3deg);
+    }
+    /*==================================================
+ * Effect 4
+ * ===============================================*/
+    
+    .effect4 {
+        position: relative;
+    }
+    
+    .effect4:after {
+        z-index: -1;
+        position: absolute;
+        content: "";
+        bottom: 15px;
+        right: 10px;
+        left: auto;
+        width: 50%;
+        top: 80%;
+        max-width: 300px;
+        background: #777;
+        -webkit-box-shadow: 0 15px 10px #777;
+        -moz-box-shadow: 0 15px 10px #777;
+        box-shadow: 0 15px 10px #777;
+        -webkit-transform: rotate(3deg);
+        -moz-transform: rotate(3deg);
+        -o-transform: rotate(3deg);
+        -ms-transform: rotate(3deg);
+        transform: rotate(3deg);
+    }
+    /*==================================================
+ * Effect 5
+ * ===============================================*/
+    
+    .effect5 {
+        position: relative;
+    }
+    
+    .effect5:before,
+    .effect5:after {
+        z-index: -1;
+        position: absolute;
+        content: "";
+        bottom: 25px;
+        left: 10px;
+        width: 50%;
+        top: 80%;
+        max-width: 300px;
+        background: #777;
+        -webkit-box-shadow: 0 35px 20px #777;
+        -moz-box-shadow: 0 35px 20px #777;
+        box-shadow: 0 35px 20px #777;
+        -webkit-transform: rotate(-8deg);
+        -moz-transform: rotate(-8deg);
+        -o-transform: rotate(-8deg);
+        -ms-transform: rotate(-8deg);
+        transform: rotate(-8deg);
+    }
+    
+    .effect5:after {
+        -webkit-transform: rotate(8deg);
+        -moz-transform: rotate(8deg);
+        -o-transform: rotate(8deg);
+        -ms-transform: rotate(8deg);
+        transform: rotate(8deg);
+        right: 10px;
+        left: auto;
+    }
+    /*==================================================
+ * Effect 6
+ * ===============================================*/
+    
+    .effect6 {
+        position: relative;
+        -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    }
+    
+    .effect6:before,
+    .effect6:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        top: 50%;
+        bottom: 0;
+        left: 10px;
+        right: 10px;
+        -moz-border-radius: 100px / 10px;
+        border-radius: 100px / 10px;
+    }
+    
+    .effect6:after {
+        right: 10px;
+        left: auto;
+        -webkit-transform: skew(8deg) rotate(3deg);
+        -moz-transform: skew(8deg) rotate(3deg);
+        -ms-transform: skew(8deg) rotate(3deg);
+        -o-transform: skew(8deg) rotate(3deg);
+        transform: skew(8deg) rotate(3deg);
+    }
+    /*==================================================
+ * Effect 7
+ * ===============================================*/
+    
+    .effect7 {
+        position: relative;
+        -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    }
+    
+    .effect7:before,
+    .effect7:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        top: 0;
+        bottom: 0;
+        left: 10px;
+        right: 10px;
+        -moz-border-radius: 100px / 10px;
+        border-radius: 100px / 10px;
+    }
+    
+    .effect7:after {
+        right: 10px;
+        left: auto;
+        -webkit-transform: skew(8deg) rotate(3deg);
+        -moz-transform: skew(8deg) rotate(3deg);
+        -ms-transform: skew(8deg) rotate(3deg);
+        -o-transform: skew(8deg) rotate(3deg);
+        transform: skew(8deg) rotate(3deg);
+    }
+    /*==================================================
+ * Effect 8
+ * ===============================================*/
+    
+    .effect8 {
+        position: relative;
+        -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    }
+    
+    .effect8:before,
+    .effect8:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        top: 10px;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        -moz-border-radius: 100px / 10px;
+        border-radius: 100px / 10px;
+    }
+    
+    .effect8:after {
+        right: 10px;
+        left: auto;
+        -webkit-transform: skew(8deg) rotate(3deg);
+        -moz-transform: skew(8deg) rotate(3deg);
+        -ms-transform: skew(8deg) rotate(3deg);
+        -o-transform: skew(8deg) rotate(3deg);
+        transform: skew(8deg) rotate(3deg);
+    }

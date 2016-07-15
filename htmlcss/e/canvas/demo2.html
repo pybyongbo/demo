@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTMl5---canvas测试!</title>
+	<link rel="stylesheet" href="../bootstrap.min.css">
+	<style>
+		.demo{width:400px;}
+
+		.demo .text-align{}
+
+		.clear{clear:both;}
+		.fl{float:left;}
+	</style>
+	<!--下面excanvas.js需下载才能在IE下支持canvas--> 
+	<!--[if IE]> 
+	<script src="http://a.tbcdn.cn/p/fp/2011a/html5.js"></script> 
+	<script src="http://api.html5media.info/1.1.4/html5media.min.js"></script> 
+	<script src="excanvas.js"></script> 
+	<![endif]--> 
+</head>
+<body>
+	
+
+	<div class="demo fl">
+		
+	
+
+	  <h2 class="text-align">canvas绘制矩形</h2>
+
+
+		<canvas id="myCanvas" width="200" height="200">
+			
+		</canvas>
+
+	
+	</div>
+
+
+	<table class="table table-bordered" style="width:480px;float:left">
+    <tbody>
+        <tr>
+            <th style="width:25%;">参数</th>
+            <th>描述</th>
+        </tr>
+        <tr>
+            <td><i>x</i></td>
+            <td>矩形左上角的 x 坐标</td>
+        </tr>
+        <tr>
+            <td><i>y</i></td>
+            <td>矩形左上角的 y 坐标</td>
+        </tr>
+        <tr>
+            <td><i>width</i></td>
+            <td>矩形的宽度，以像素计</td>
+        </tr>
+        <tr>
+            <td><i>height</i></td>
+            <td>矩形的高度，以像素计</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+	<div class="demo">
+		
+	
+
+	  <h2 class="text-align">canvas绘制正方形</h2>
+
+
+		<canvas id="myCanvas2" width="200" height="200">
+			
+		</canvas>
+
+	
+	</div>
+
+	<div class="demo fl">
+		
+	
+
+	  <h2 class="text-align">canvas绘制圆圈</h2>
+
+
+		<canvas id="myCanvas3" width="200" height="200">
+			
+		</canvas>
+
+	
+	</div>
+	
+
+			<table class="table table-bordered" style="width:480px;float:left">
+			    <tbody>
+			        <tr>
+			            <th>参数</th>
+			            <th>描述</th>
+			        </tr>
+			        <tr>
+			            <td><i>x</i></td>
+			            <td>圆的中心的 x 坐标。</td>
+			        </tr>
+			        <tr>
+			            <td><i>y</i></td>
+			            <td>圆的中心的 y 坐标。</td>
+			        </tr>
+			        <tr>
+			            <td><i>r</i></td>
+			            <td>圆的半径。</td>
+			        </tr>
+			        <tr>
+			            <td><i>sAngle</i></td>
+			            <td>起始角，以弧度计。（弧的圆形的三点钟位置是 0 度）。</td>
+			        </tr>
+			        <tr>
+			            <td><i>eAngle</i></td>
+			            <td>结束角，以弧度计。</td>
+			        </tr>
+			        <tr>
+			            <td><i>counterclockwise</i></td>
+			            <td>可选。规定应该逆时针还是顺时针绘图。False = 顺时针，true = 逆时针。</td>
+			        </tr>
+			    </tbody>
+			</table>
+
+
+	<div class="clear"></div>
+
+	<div class="code">
+		
+		<pre>
+			fillRect(x, y, width, height)绘制一个填充的矩形
+
+			上面提供的方法之中每一个都包含了相同的参数。x与y指定了在canvas画布上所绘制的矩形的左上角（相对于原点）的坐标。width和height设置矩形的尺寸
+
+		</pre>
+
+		<pre>
+			
+			javascript语法
+
+			<mark>context.arc(x,y,r,sAngle,eAngle,counterclockwise);</mark>
+		</pre>
+
+
+	</div>
+
+	
+	<div class="demo fl">
+		
+	
+
+	  <h2 class="text-align">canvas绘制圆型</h2>
+
+
+		<canvas id="myCanvas4" width="200" height="200">
+			
+		</canvas>
+
+	
+	</div>
+
+	<div class="demo fl">
+		
+			<h2 class="text-align">canvas绘制圆弧</h2>
+
+
+			<canvas id="myCanvas5" width="200" height="200">
+				
+			</canvas>
+
+	</div>
+
+		
+	
+</body>
+</html>
+
+<script>
+
+var canvas = document.getElementById('myCanvas');
+var canvas2 = document.getElementById('myCanvas2');
+
+var canvas3 = document.getElementById('myCanvas3');
+var canvas4 = document.getElementById('myCanvas4');
+
+var canvas5 = document.getElementById('myCanvas5');
+
+
+
+if(canvas.getContext) {
+
+	var ctx = canvas.getContext('2d');
+
+}
+
+ctx.fillStyle = 'yellow';
+ctx.fillRect(0,50,200,100);
+
+if(canvas2.getContext) {
+
+	var ctx = canvas2.getContext('2d');
+
+}
+
+ctx.fillStyle = 'red';
+ctx.fillRect(0,0,100,100)
+
+
+
+
+
+if(canvas3.getContext) {
+
+	var ctx = canvas3.getContext('2d');
+
+}
+
+// ctx.beginPath(); 
+// ctx.arc(60, 60, 50, 0, Math.PI*2, true); 
+// ctx.fillStyle = "#000000"; 
+// ctx.fill();
+
+ctx.beginPath(); 
+ctx.arc(50, 60, 50, 0, Math.PI*2, true); 
+ctx.lineWidth = 2.0; 
+ctx.strokeStyle = "#000"; 
+ctx.stroke();
+
+
+if(canvas4.getContext) {
+
+	var ctx = canvas4.getContext('2d');
+
+}
+
+
+ctx.beginPath(); 
+ctx.arc(50, 60, 50, 0, Math.PI*2, true); 
+ctx.fillStyle = "blue"; 
+ctx.fill();
+
+
+if(canvas5.getContext) {
+
+	var ctx = canvas5.getContext('2d');
+
+}
+
+// ctx.beginPath(); 
+// ctx.arc(60, 60, 50, 0, Math.PI*2, true); 
+// ctx.fillStyle = "#000000"; 
+// ctx.fill();
+
+ctx.beginPath(); 
+ctx.arc(60, 60, 40, 0*Math.PI,1.5*Math.PI, false); 
+
+// arc(100,100,50,0*Math.PI,1.5*Math.PI,false);
+ctx.lineWidth = 2.0; 
+ctx.strokeStyle = "#000"; 
+ctx.stroke();
+
+
+
+</script>

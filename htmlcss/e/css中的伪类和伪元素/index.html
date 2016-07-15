@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    h1.a_tit {
+        font-size: 24px;
+        text-align: center;
+        margin: 20px auto;
+    }
+    .clear { clear: both; }
+    .fl{float:left;}
+    .tab2{margin-left:20px;}
+    .tab3{margin-top:10px;}
+    .tab3 code{border:1px solid #dedede;display:block;width:460px;margin-top:20px;margin-left:20px;}
+    .example{margin-top:20px;}
+    </style>
+    <link rel="stylesheet" href="https://sf-static.b0.upaiyun.com/v-577df1f7/global/css/global.css">
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <title>css中的伪类和伪元素!</title>
+</head>
+
+<body>
+
+
+    
+    <h1 class="a_tit">css中的伪类和伪元素的相关应用</h1>
+
+    <div class="article fmt article__content">
+        
+
+        <h2 id="articleHeader1">CSS伪类与CSS伪元素的由来</h2>
+
+        <p>无论是<mark> <strong>伪类</strong></mark>还是 <mark> <strong>伪元素</strong></mark>，都属于CSS选择器的范畴。所以它们的定义可以在CSS标准的选择器章节找到。分别是<mark> <strong> CSS2.1 Selectors </strong></mark>和 <mark> <strong>CSS Selector Level 3</strong></mark>，两者都已经是推荐标准。</p>
+
+
+        <p>在CSS2.1里，<a href="http://www.w3.org/TR/CSS2/selector.html#pseudo-elements">5.10 Pseudo-elements and pseudo-classes</a> 描述了这两个概念的由来，它们是被一同提及的。但到了 Selector Level 3 里，它们就被分开到两个小节里加以区分。但无论如何，伪类和伪元素的引入都是因为在文档树里有些信息无法被充分描述，比如CSS没有“段落的第一行”之类的选择器，而这在一些出版场景里又是必须的。用标准里的话说：</p>
+        
+        <blockquote>
+          <p>CSS introduces the concepts of pseudo-elements and pseudo-classes to permit formatting based on information that lies outside the document tree.</p>
+        </blockquote>
+
+        <p>简单翻译一下，就是：</p>
+
+        <blockquote>
+          <p>CSS 引入伪类和伪元素的概念是为了实现基于文档树之外的信息的格式化</p>
+        </blockquote>
+
+
+        <p class="alert alert-danger">这么说很抽象，其实就是为了描述一些现有CSS无法描述的东西。缺少什么，则引入什么</p>
+
+        <h2 id="articleHeader0">介绍:</h2>
+
+
+        <p>伪类和伪元素是css中很常见的两个概念，利用的好，能够很方便的实现一些特殊效果。伪类与伪元素由于用法相近，导致平时使用并不能很好的区分这两个概念。
+            伪类（<code>pseudo-classes</code>）： 伪类类似于class，用于对已有元素增加特殊状态，比如<code>:hover</code>, <code>:active</code>, <code>:lang</code>, <code>:first-child</code>等。
+            伪元素（<code>pseudo-elements</code>）：伪元素类似于element，用于在DOM中增加一个特殊的element节点，比如<code>:after</code>, <code>:before</code>, <code>:first-line</code>等。</p>
+
+
+        <h2 id="articleHeader2">伪类</h2>
+
+
+        <p>伪类包括<code>:hover</code>, <code>:active</code>, <code>:link</code>, <code>:focus</code>, <code>:visited</code>, <code>:lang</code>, <code>:first-child</code>。其中每一个的作用如下图：<br><br>
+        <img src="img/1.jpg" style="cursor: pointer; display: inline;">
+
+
+        <h2 id="articleHeader3">伪元素</h2>
+
+
+        <p>伪元素包括<code>:first-line</code>, <code>:first-letter</code>, <code>:before</code>, <code>:after</code>。其中每一个的作用如下图：<br><br>
+        <img src="img/2.jpg" style="cursor: pointer; display: inline;">
+      
+    
+    <blockquote>
+        <p> :before在元素前添加一个元素。<br>
+        :after在元素后添加一个元素。<br>
+        有一些效果会有一个小尖头，可以很方便的用:before,:after来实现
+        </p>
+    </blockquote>
+    
+    
+    <h2 id="articleHeader4">例如:请看下面的实例应用:</h2>
+
+    <iframe style="width: 100%; height:800px;" src="demo1.html" frameborder="0" width="100%" height="800"></iframe>
+    
+    <div class="clear"></div>
+    <br>
+
+    例如商城服务商品列表页面:(该效果完全可以用样式来实现..)
+
+    <br> <br>
+
+    <img src="img/51_1.png" height="459" width="1168" alt="">
+
+
+
+    
+    <h2 id="articleHeader5">伪元素是一个冒号还是两个冒号？</h2>
+
+
+        <p>简单回答：多数情况下，都行。</p>
+
+        <p>两个冒号（::）是CSS3为了区分::before、::after这样的伪元素和:hover、:active等伪类才引入的。除了IE8及以下版本，所有浏览器都支持两个冒号的伪元素表示法。</p>
+
+
+        <ul>
+            <li>伪类用一个冒号表示 :first-child</li>
+            <li>伪元素则使用两个冒号表示 ::first-line</li>
+        </ul>
+
+     <h2 id="articleHeader6">理解:Before和:After伪元素</h2>
+
+     <div class="alert alert-danger">
+         
+
+         CSS样式表的主要作用是修饰Web页面上的HTML标记，但有时候，为了实现某个效果而往页面里反复添加某个HTML标记很繁琐，或者是显得多余，或者是由于某种原因而做不到。<br><br>
+         这就是 <code>CSS伪元素(Pseudo-Element)</code>可以发挥作用的地方，所谓‘伪元素’，就是本身不存在的页面元素，HTML代码里并没有这样的元素，但在页面显示时，你却能看到这些本来不存在的元素发挥着作用。
+     </div>
+
+    
+
+    <h2 id="articleHeader6">Before和After的一些实际应用</h2>
+
+    <div class="example">
+
+        <h2 id="articleHeader7">例1: 阴影效果实例应用:</h2>
+        
+        <iframe style="width: 100%; height:800px;" src="demo2.html" frameborder="0" width="100%" height="800"></iframe>
+    </div>
+
+
+    <div class="example">
+
+        <h2 id="articleHeader8">例2: 3D按钮实例应用:</h2>
+        
+        <iframe style="width: 100%; height:400px;" src="demo3.html" frameborder="0" width="100%" height="650"></iframe>
+
+    </div>
+
+
+
+     <div class="example">
+
+         <h2 id="articleHeader9">例3: CSS3伪元素照片堆叠效果实例应用:</h2>
+        
+        <iframe style="width: 100%; height:400px;" src="demo4.html" frameborder="0" width="100%" height="550"></iframe>
+
+    </div>
+
+  
+  	<br><br>
+
+	
+	<h2 id="articleHeader10">伪元素target的一些高级应用实例？</h2>
+
+	
+	<div class="example">
+
+        <h2 id="articleHeader11" style="text-indent:1em;">Example 1 - Hiding & Showing Content:</h2>
+        <iframe style="width: 100%; height:800px;" src="hide-show.html" frameborder="0" width="100%" height="1000"></iframe>
+
+     </div>
+
+
+     <div class="example">
+
+        <h2 id="articleHeader11" style="text-indent:1em;">Example 2 - 一个滑动抽屉导航</h2>
+        <iframe style="width: 100%; height:1200px;" src="slide-out.html" frameborder="0" width="100%" height="1500"></iframe>
+
+     </div>
+	
+
+	<div class="example">
+
+        <h2 id="articleHeader11" style="text-indent:1em;">Example 3 - A Pop-Up Modal</h2>
+        <iframe style="width: 100%; height:800px;" src="modal.html" frameborder="0" width="100%" height="800"></iframe>
+
+     </div>
+
+
+    <!--
+
+    	demo:http://www.zcfy.cc/article/the-target-trick-801.html
+
+       <div class="alert alert-danger">
+            .svg文件,常见写法是需要xml申明的,如果是直接在HTML中使用svg的话,就不用在写xml申明了...
+        </div>
+     
+    	<p>无论是伪类还是伪元素，都属于CSS选择器的范畴。</p>
+
+    	<h3>标准的定义</h3>
+
+    	<p>在CSS2.1里，5.10 Pseudo-elements and pseudo-classes 描述了这两个概念的由来，它们是被一同提及的。但到了 Selector Level 3 里，它们就被分开到两个小节里加以区分。但无论如何，伪类和伪元素的引入都是因为在文档树里有些信息无法被充分描述，比如CSS没有“段落的第一行”之类的选择器，而这在一些出版场景里又是必须的。用标准里的话说：</p>
+
+
+    	伪类与伪元素的区别
+
+
+    	先看一个伪元素 first-line 例子。现在有一段HTML，内容是一个段落：
+
+
+    	https://swordair.com/origin-and-difference-between-css-pseudo-classes-and-pseudo-elements/
+
+
+    	http://www.webhek.com/understanding-pseudo-element-before-and-after
+
+    	http://www.zcfy.cc/article/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements-smashing-magazine-239.html#h4-table-of-contents-in-alphabetical-order-link
+
+
+    	http://qiutc.me/post/CSS-伪类before-after-content内容生成技术-纯CSS实现tooltip.html
+
+    	https://segmentfault.com/a/1190000000474414
+
+    	https://segmentfault.com/a/1190000004246691
+
+    	https://segmentfault.com/a/1190000004379813
+
+    	http://www.zcfy.cc/article/the-target-trick-801.html
+        
+    -->
+        
+    </div>
+</body>
+
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>canvas画图!</title>
+	<link rel="stylesheet" href="../bootstrap.min.css">
+	<style>
+		#canvas{height:400px;border:2px solid #333;padding:20px 35px;}
+		#global_val{width:180px;}
+	</style>
+	<script src="../jquery.js"></script>
+</head>
+<body>
+
+	<canvas id="canvas"> 
+
+	</canvas>
+	
+	
+	<h3>请选择对应的属性测试:</h3>
+	<select name="" id="global_val" class="form-control">
+
+       	 	<option value="source-over">source-over</option>
+       	 	<option value="destination-over">destination-over</option>
+       	 	<option value="source-in">source-in</option>
+       	 	<option value="destination-in">destination-in</option>
+       	 	<option value="source-out">source-out</option>
+       	 	<option value="destination-out">destination-out</option>
+       	 	<option value="source-atop">source-atop</option>
+       	 	<option value="destination-atop">destination-atop</option>
+       	 	<option value="lighter">lighter</option>
+       	 	<option value="darker">darker</option>
+       	 	<option value="xor">xor</option>
+       	 	<option value="copy">copy</option>
+       	
+       	 </select>
+
+</body>
+</html>
+
+<script>
+
+window.onload = function(){
+
+
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+
+	ctx.globalCompositeOperation = "xor";
+
+
+	ctx.fillStyle = "#0098ff";
+	ctx.fillRect(10, 5, 100, 100);
+
+	ctx.arc(100, 100, 50, 0, Math.PI*2, true); 
+	ctx.fillStyle = "blue"; 
+	ctx.fill();
+	
+
+	
+	$("#global_val").change(function(){
+
+
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+
+		// ctx.globalCompositeOperation = "xor";
+		var g_attribute = $(this).children('option:selected').val();
+		console.log($(this).children('option:selected').val());
+
+
+		ctx.globalCompositeOperation = g_attribute;
+
+		ctx.fillStyle = "#0098ff";
+		ctx.fillRect(10, 5, 100, 100);
+
+		ctx.arc(100, 100, 50, 0, Math.PI*2, true); 
+		ctx.fillStyle = "blue"; 
+		ctx.fill();
+
+		// ctx.globalCompositeOperation = ;
+
+	})
+
+	
+}
+
+
+
+</script>

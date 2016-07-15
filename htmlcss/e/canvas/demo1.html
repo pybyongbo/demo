@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTMl5---canvas测试!</title>
+	<link rel="stylesheet" href="../bootstrap.min.css">
+	<style>
+		.demo{width:400px;}
+
+		.demo .text-align{}
+	</style>
+</head>
+<body>
+	
+
+	<div class="demo">
+		
+	
+
+	  <h2 class="text-align">canvas画线</h2>
+
+
+		<canvas id="myCanvas" width="200" height="200">
+			
+		</canvas>
+
+	
+	</div>
+
+
+	<div class="code">
+		
+		<pre>
+			每个canvas元素都有一个对应的context对象（上下文对象），Canvas API定义在这个context对象上面，所以需要获取这个对象，方法是使用getContext方法。
+
+			<mark>var canvas = document.getElementById('myCanvas');
+
+			if (canvas.getContext) {
+			    var ctx = canvas.getContext('2d');
+			}
+
+			</mark>
+
+			<mark>
+			ctx.beginPath(); // 开始路径绘制
+			ctx.moveTo(20, 20); // 设置路径起点，坐标为(20,20)
+			ctx.lineTo(200, 20); // 绘制一条到(200,20)的直线
+			ctx.lineWidth = 1.0; // 设置线宽
+			ctx.strokeStyle = "#CC0000"; // 设置线的颜色
+			ctx.stroke(); // 进行线的着色，这时整条线才变得可见
+			</mark>
+
+		</pre>
+
+
+	</div>
+		
+	
+</body>
+</html>
+
+<script>
+
+var canvas = document.getElementById('myCanvas');
+
+if(canvas.getContext) {
+
+	var ctx = canvas.getContext('2d');
+
+}
+
+ctx.beginPath();
+ctx.moveTo(20,20);
+
+ctx.lineTo(200,20);
+ctx.lineWidth = '1';
+ctx.strokeStyle = "#cc0000";
+
+ctx.stroke();
+
+
+
+</script>
