@@ -1,0 +1,185 @@
+//Google Fonts
+// @import url(http://fonts.googleapis.com/css?family=Archivo+Narrow:700); /*Thick font*/
+// @import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two); /*Script font*/
+// @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic); /*Reading font*/
+
+//Variables
+$bk: #272822;
+$r: #c03;
+$g: #429032;
+$b: #2963BD;
+$y: #c90;
+
+*, *:before, *:after { box-sizing:border-box; }
+html { height: 100%; }
+body { padding: 30px; color:white; text-align: center; font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; background:lighten($bk,5%); background-image:radial-gradient(lighten($bk,5%),($bk,80%)); }
+
+a, a:visited { color:lighten($b,20); }
+a:hover { color:$y; text-decoration: none; }
+
+hr { margin: 30px auto;  border: none; border-top: #666 1px dotted; }
+h1 { text-align: center; margin-top: 0; text-transform: capitalize; }
+ul { padding-left: 15px; }
+li { margin-bottom: 20px; }
+
+time { font-size: 12px; color:rgba(white,.2); }
+
+code, pre { padding: 5px; font-style: italic; background: rgba(black,.15); font: 14px Courier; box-shadow:inset 0 0 1px rgba(black,.5); color:#999; }
+
+.new-window { position: relative; padding-right: 16px;
+  &:after { content:''; display: block; width: 11px; height: 11px; position: absolute; top: 10%; right: 0; background: url(http://i.imgur.com/EAxm4BB.gif) no-repeat; }
+}
+
+//New Window icons
+//Arrow:   width: 11px; height: 11px; url(http://i.imgur.com/EAxm4BB.gif)
+//Windows: width: 14px; height: 12px; url(http://i.stack.imgur.com/3H2PQ.png)
+
+//Clearfix - http://davidwalsh.name/css-clear-fix
+.clear:before,
+.clear:after { content: ""; display: table; }
+.clear:after { clear: both; }
+//Put this whole mixin in your .scss file:
+@mixin ribbon( $ribbon-color:black, $size-left:1em, $size-right:1em) {
+    position: relative;
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+    }
+    &:before {
+        border-top: $size-left solid $ribbon-color;
+        bottom: -$size-left;
+        border-left: $size-left solid transparent;
+        left: 0;
+    }
+    &:after {
+        border-top: $size-right solid $ribbon-color;
+        bottom: -$size-right;
+        border-right: $size-right solid transparent;
+        right: 0;
+    }
+}
+
+
+/*Usage:
+.selector { @include ribbon($y, 1em, 0); }
+
+Explanation of mixin values:
+A. $y: Is the color, I used a Sass variable but you can use whatever you want: #f00 - red - #ff0000
+B. 1em: Is the dimensions of the ribbon(s)
+C. "1em, 0": Means you're only doing the ribbon on the left
+D. "0, 1em": Means you're only doing the ribbon on the right
+E. "1em, 1em": Means you're  doing both ribbons  on left and right
+*/
+
+//This is the container to which you're going to apply the ribbon to
+.container {
+    display: inline;
+    margin: 0 2%;
+    padding: 40px 20px;
+    background: $b;
+}
+
+//These are the ribbons themselves:
+//Left ribbon
+.b1 {
+    @include ribbon($y, 1em, 0);
+}
+
+//Right ribbon
+.b2 {
+    @include ribbon($y, 0, 1em);
+}
+
+//Both ribbons
+.b3 {
+    @include ribbon($y, 1em, 1em);
+}
+
+
+/*=========*/
+
+//Demos on the right side with red headers
+.demo {
+    margin-bottom: 20px;
+    &:last-of-type {
+        margin: 0;
+    }
+}
+
+//The red headings use the ribbons, see @include property below
+h2 {
+    @include ribbon(darken($r, 30%), 15px, 15px);
+    width: 300px;
+    margin: auto;
+    padding: 2%;
+    background: $r;
+}
+
+//Blue boxes under the header
+.box {
+    width: 270px;
+    margin: auto;
+    padding: 4%;
+    clear: both;
+    background: $g;
+    box-shadow: inset 0 3px 0 rgba(black, .2);
+    font-weight: bold;
+}
+
+//Gradient box, fancier-looking demo
+.fancy {
+    text-shadow: 0 -1px 0 rgba(black, 1);
+    h2 {
+        background-image: linear-gradient($r, darken($r, 20%));
+        box-shadow: 0 2px 2px 1px rgba(black, .2);
+
+        top:100px;
+    }
+    .box {
+        border-radius: 0 0 5px 5px;
+        background-image: linear-gradient(darken($b, 25%), darken($b, 30%));
+        box-shadow: 0 2px 4px 1px rgba(black, .2);
+        height: 260px;
+        p{
+            line-height:260px;
+        }
+    }
+}
+
+//***********NOT NEEDED FOR DEMO***********
+.wrapper {
+    display: flex;
+    & > div {
+        padding: 20px 20px 30px;
+        margin: 10px;
+        background: rgba(white, .05);
+        display: inline-block;
+        width: 100%;
+        border: rgba(white, .06) 1px solid;
+        border-radius: 2px;
+        box-shadow: 0 2px 2px rgba(black, .1);
+    }
+}
+
+.basic {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-around;
+    width: auto;
+}
+
+.new-window {
+    position: relative;
+    padding-right: 16px;
+    &:after {
+        content: '';
+        display: block;
+        width: 14px;
+        height: 12px;
+        position: absolute;
+        top: 10%;
+        right: 0;
+        background: url(http://i.stack.imgur.com/3H2PQ.png) no-repeat;
+    }
+}

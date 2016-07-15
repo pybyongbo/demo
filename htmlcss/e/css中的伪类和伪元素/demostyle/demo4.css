@@ -1,0 +1,122 @@
+/* CSS reset */
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+    margin:0;
+    padding:0;
+}
+fieldset,img { 
+    border:0;
+}
+ol,ul {
+    list-style:none;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-size:100%;
+    font-weight:normal;
+}
+/* General Demo Style */
+body{
+    font-family: Constantia, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+    background: #f8f8f8 url(../img/bg.jpg) repeat top left;
+    font-weight: 400;
+    font-size: 15px;
+    color: #416c80;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.ie7 body{
+    overflow:hidden;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+body {background: #ccd3d7;}
+
+.container{width:1000px;margin:0 auto;}
+
+div[class*='stack'] {
+    float: left;
+    position: relative;
+    margin: 50px;
+}
+
+div[class*='stack'], div[class*='stack']:before, div[class*='stack']:after {
+    border: 6px solid #fff;
+    height: 200px; width: 200px;
+    -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    -moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+ 
+div[class*='stack']:before, div[class*='stack']:after {
+    background: #768590;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    
+    /*Dirty IE8 hack*/  
+    height: 0px\9; width: 0px\9; 
+    border: none\9;
+}
+ 
+div[class*='stack']:before {
+    background: #eff4de;
+}
+
+/*STACK ONE*/
+.stackone:before {
+    top: 4px;
+    left: -6px;
+}
+ 
+.stackone:after {
+    top: -2px;
+    left: -6px;
+}
+ 
+/*STACK TWO*/
+.stacktwo:before {
+    top: 0px;
+    left: -10px;
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+}
+ 
+.stacktwo:after {
+    top: 5px; left: 0px;
+    -webkit-transform: rotate(4deg);
+    -moz-transform: rotate(4deg);
+    -o-transform: rotate(4deg);
+    -ms-transform: rotate(4deg);
+    transform: rotate(4deg);
+}
+ 
+/*STACK THREE*/
+.stackthree:before {
+    top: 5px;
+    left: -15px;
+    z-index: -1;
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+}
+ 
+.stackthree:after {
+    top: -2px;
+    left: -10px;
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+}
