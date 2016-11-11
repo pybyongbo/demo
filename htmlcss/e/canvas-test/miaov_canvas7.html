@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTMl5---canvas测试--方块移动!</title>
+	<style>
+		body{background: black;}
+		#c1{background:white;}
+		span{color:#fff;font-size:24px;}
+		#img1{background: #fff;margin-left:10px;}
+	</style>
+	<script type="text/javascript">
+	window.onload = function(){
+
+
+		var oImg = document.getElementById('img1');
+		var oC = document.getElementById('c1');
+		var oGC = oC.getContext('2d');
+
+		oGC.fillStyle= 'blue';
+		oGC.fillRect(0,0,100,100);
+
+		oGC.fillStyle= 'red';
+		// oGC.globalAlpha = 0.5;
+		
+		// oGC.globalCompositeOperation = 'destination-over';
+		oGC.globalCompositeOperation = 'xor';
+
+		oGC.fillRect(50,50,200,100);
+
+		oGC.beginPath();
+		oGC.arc(200,225,50,0,2*Math.PI);
+		oGC.lineWidth = "10";
+		oGC.stroke();
+
+		console.log(oC.toDataURL());
+
+		oImg.src = oC.toDataURL();
+
+
+
+		
+
+	}
+	</script>
+</head>
+<body>
+	
+
+	<canvas id="c1" width="400" height="400"><!-- 默认的宽度:300,高度150 -->
+
+
+		<span>不支持canvas的浏览器</span>
+
+		
+	</canvas>
+		
+
+	<img  id="img1" src="" alt="">
+
+	
+</body>
+</html>
