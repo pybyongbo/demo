@@ -4,15 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
-    <link type="text/css" rel="stylesheet" href="../syntaxhlighter/styles/shCoreDefault.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../lib/prism.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../common.css" media="screen">
     <script type="text/javascript" src="../../../lib/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../../../lib/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../syntaxhlighter/shCore.js"></script>
-    <script type="text/javascript" src="../syntaxhlighter/shBrushJScript.js"></script>
-    <script type="text/javascript" src="../syntaxhlighter/shBrushXml.js"></script>
-    <script type="text/javascript" src="../syntaxhlighter/shBrushCss.js"></script>
-    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script type="text/javascript" src="../../../lib/prism.js"></script>
     <title>Document</title>
 </head>
 
@@ -27,24 +23,21 @@
         <div class="part">
             <h2 class="tit">特殊性</h2>
             <p>选择器的特殊性由选择器本身的组件确定。特殊性值表述为4个部分:</p>
+<pre><code class="language-css">【1】内联样式 -> 1,0,0,0
+【2】ID属性值 -> 0,1,0,0
+【3】类属性值、属性选择或伪类 -> 0,0,1,0
+【4】元素或伪元素 -> 0,0,0,1
+【5】结合符和通配选择器 -> 0,0,0,0
+</code></pre>
 
-            <pre class="brush: xml;">
-            【1】内联样式 -> 1,0,0,0
-            【2】ID属性值 -> 0,1,0,0
-            【3】类属性值、属性选择或伪类 -> 0,0,1,0
-            【4】元素或伪元素 -> 0,0,0,1
-            【5】结合符和通配选择器 -> 0,0,0,0
-            </pre>
-
-           <pre class="brush: css;">
-                h1{} -> 0,0,0,1
-                p em{} -> 0,0,0,2
-                .grape{} -> 0,0,1,0
-                *.bright{} -> 0,0,1,0
-                p.bright em.dark{} -> 0,0,2,2
-                #id121{} -> 0,1,0,0
-                div#side *[href]{} -> 0,1,1,1
-            </pre>
+<pre><code class="language-css">h1{} -> 0,0,0,1
+p em{} -> 0,0,0,2
+.grape{} -> 0,0,1,0
+*.bright{} -> 0,0,1,0
+p.bright em.dark{} -> 0,0,2,2
+#id121{} -> 0,1,0,0
+div#side *[href]{} -> 0,1,1,1
+</code></pre>
         </div>
         <div class="part">
             <h2 class="tit">重要性</h2>
@@ -61,12 +54,7 @@
             <p>【1】按来源及重要性排序。读者!important > 创作人员!important > 创作人员 > 读者 > 用户代理</p>
             <p>【2】按特殊性排序</p>
             <p>【3】按出现顺序排序，一个声明在样式表或文档中越后出现，权重越大</p>
-            
         </div>
-     
-    
-        
-        
     </div>
 </body>
 

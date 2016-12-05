@@ -4,15 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../../lib/prism.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../common.css" media="screen">
-    <link type="text/css" rel="stylesheet" href="../syntaxhlighter/styles/shCoreDefault.css"/>
     <script type="text/javascript" src="../../../lib/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../../../lib/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../syntaxhlighter/shCore.js"></script>
-    <script type="text/javascript" src="../syntaxhlighter/shBrushJScript.js"></script>
-    <script type="text/javascript" src="../syntaxhlighter/shBrushXml.js"></script>
-    <script type="text/javascript" src="../syntaxhlighter/shBrushCss.js"></script>
-    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script type="text/javascript" src="../../../lib/prism.js"></script>
     <title>Document</title>
 </head>
 
@@ -34,23 +30,19 @@
 
 　　   <p>兼容性: IE不支持</p>
 
-　　    <pre class="brush: html;">
-		//display在官方CSS规范中定义的默认值是inline
-		<style>
-		.test{display: initial;}
-		</style>
-		<div class="box">
-		    <div class="test">测试一</div><span>文字</span>
-		    <br>
-		    <div >测试二</div><span>文字</span>
-		</div>
+<pre><code class="language-markup">//display在官方CSS规范中定义的默认值是inline
+&lt;style&gt;
+.test{display: initial;}
+&lt;/style&gt;
+&lt;div class="box"&gt;
+    &lt;div class="test"&gt;测试一&lt;/div&gt;&lt;span&gt;文字&lt;/span&gt;
+    &lt;br&gt;
+    &lt;div &gt;测试二&lt;/div&gt;&lt;span&gt;文字&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
 
 
-		</pre>
-
-
-		 <iframe style="line-height: 1.5; width: 100%; height: 70px;" src="http://sandbox.runjs.cn/show/hz1ribde" frameborder="0" width="320" height="240"></iframe>
-
+ <iframe style="line-height: 1.5; width: 100%; height: 70px;" src="http://sandbox.runjs.cn/show/hz1ribde" frameborder="0" width="320" height="240"></iframe>
 
 		<h3 class="anchor"> unset </h3>
 
@@ -60,53 +52,45 @@
 
 		<p>【常用默认可继承样式】</p>
 
+<pre><code class="language-css">color
+cursor
+direction
+font
+letter-spacing
+line-height
+list-style
+text-align
+text-indent
+text-shadow
+text-transform
+white-space
+word-break
+word-spacing
+word-wrap
+writing-mode
+</code></pre>
 
-		<pre class="brush: css">
-			
-			color
-			cursor
-			direction
-			font
-			letter-spacing
-			line-height
-			list-style
-			text-align
-			text-indent
-			text-shadow
-			text-transform
-			white-space
-			word-break
-			word-spacing
-			word-wrap
-			writing-mode
-
-		</pre>
-
-		<pre class="brush: html">
-			
-			//内容为测试一的元素和内容为测试二的元素的样式是一样的
-			<style>
-			.box{
-			    border: 1px solid black;
-			    padding: 10px;
-			    width: 100px;
-			    color: red;
-			}
-			.test1{
-			    border: unset;
-			    color: unset;
-			}
-			</style>
-			<div class="box">
-			    <div class="test">测试一</div>
-			    <div>测试二</div>
-			</div>
-
-
-		</pre>
+<pre><code class="language-markup">		
+//内容为测试一的元素和内容为测试二的元素的样式是一样的
+<style>
+.box{
+    border: 1px solid black;
+    padding: 10px;
+    width: 100px;
+    color: red;
+}
+.test1{
+    border: unset;
+    color: unset;
+}
+</style>
+<div class="box">
+    <div class="test">测试一</div>
+    <div>测试二</div>
+</div>
+</code></pre>
 
 		<iframe style="width: 100%; height: 80px;" src="http://sandbox.runjs.cn/show/letvak8l" frameborder="0" width="320" height="240"></iframe>
-
 
 		<h3 class="anchor">revert </h3>
 
@@ -120,31 +104,23 @@
 		<p>表示重设除unicode-bidi和direction之外的所有CSS属性的属性值，取值只能是initial、inherit、unset和revert</p>
 
 	　　<p>兼容性: IE不支持，safari9-不支持，ios9.2-不支持，android4.4-不支持</p>
-
-
-		<pre class="brush: css">
-			
-			<style>
-			.test{
-			    border: 1px solid black;
-			    padding: 20px;
-			    color: red;
-			}
-			.in{
-			/*  all: initial;
-			    all: inherit;
-			    all: unset;
-			    all: revert; */
-			}
-			</style>
-			<div class="test">
-			    <div class="in">测试文字</div>            
-			</div>
-
-		</pre>
- 
-    </div>
+<pre><code class="language-css"><style>.test{
+    border: 1px solid black;
+    padding: 20px;
+    color: red;
+}
+.in{
+/* all: initial;
+   all: inherit;
+   all: unset;
+   all: revert; */
+}
+</style>
+<div class="test">
+<div class="in">测试文字</div>            
+</div>
+</code></pre>
+</div>
 </body>
-
 </html>
 

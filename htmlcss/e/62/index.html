@@ -4,15 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../../lib/prism.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../common.css" media="screen">
-    <link type="text/css" rel="stylesheet" href="../syntaxhlighter/styles/shCoreFadeToGrey.css"/>
     <script type="text/javascript" src="../../../lib/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../../../lib/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../syntaxhlighter/shCore.js"></script>
-    <script type="text/javascript" src="../syntaxhlighter/shBrushJScript.js"></script>
-    <script type="text/javascript" src="../syntaxhlighter/shBrushXml.js"></script>
-    <script type="text/javascript" src="../syntaxhlighter/shBrushCss.js"></script>
-    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script type="text/javascript" src="../../../lib/prism.js"></script>
     <title>Document</title>
 </head>
 
@@ -33,31 +29,23 @@
             <p>对于元素显隐来说，最常见就是display:none | display:block，但是使用这种方法有个问题，元素的display属性在隐藏前并不都是block，还有可能是inline、inline-block等</p>
 
             <p class="notice">[注意]如果要适用于任何元素需要提前储存元素的display值</p>
-            
+<pre><code class="language-markup">&lt;button id="show"&gt;显示&lt;/button&gt;
+&lt;button id="hide"&gt;隐藏&lt;/button&gt;
+&lt;div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;"&gt;测试文字&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">
+show.onclick = function(){
+    test.style.display = 'block';
+}    
+hide.onclick = function(){
+    test.style.display = 'none';
+}
 
-            <pre class="brush: xml;">
-                    
-                    <button id="show">显示</button>
-                    <button id="hide">隐藏</button>
-                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;">测试文字</div>
+</code></pre>
 
-            </pre>
-
-             <pre class="brush: js;">
-                    
-                   show.onclick = function(){
-                        test.style.display = 'block';
-                    }    
-                    hide.onclick = function(){
-                        test.style.display = 'none';
-                    }
-
-            </pre>
-
-
-            <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/z3r0vdak" frameborder="0" width="320" height="240"></iframe>
+<iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/z3r0vdak" frameborder="0" width="320" height="240"></iframe>
                 
-        </div>
+</div>
 
         <div class="part">
             <h2>思路二: visibility</h2>
@@ -67,60 +55,46 @@
             <p class="notice">
                 [注意]visilibity可应用transition属性。因为visibility是离散步骤，在0到1数字范围之内，0表示隐藏，1表示显示。visibility:hidden可以看成visibility:0；visibility:visible可以看成visibility:1。于是，visibility应用transition等同于0~1之间的过渡效果。实际上，只要visibility的值大于0就是显示的。由于这个现象，我们可以利用transition实现元素的延时显示隐藏
             </p>
+<pre><code class="language-markup">&lt;button id="show"&gt;显示&lt;/button&gt;
+ &lt;button id="hide"&gt;隐藏&lt;/button&gt;
+ &lt;div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;"&gt;测试文字&lt;/div&gt;       
+</code></pre>
+<pre><code class="language-javascript">             
+show.onclick = function(){
+    test.style.transition = 'none';
+    test.style.visibility = 'visible';
+}    
+hide.onclick = function(){
+    test.style.transition = 'visibility 0.2s 0.5s';
+    test.style.visibility = 'hidden';
+}
+</code></pre>
+<iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/keropkrn" frameborder="0" width="320" height="240"></iframe>
 
-             <pre class="brush: xml;">
-                 <button id="show">显示</button>
-                 <button id="hide">隐藏</button>
-                 <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;">测试文字</div>
-            </pre>
-
-            <pre class="brush: js;">
-                    
-                show.onclick = function(){
-                    test.style.transition = 'none';
-                    test.style.visibility = 'visible';
-                }    
-                hide.onclick = function(){
-                    test.style.transition = 'visibility 0.2s 0.5s';
-                    test.style.visibility = 'hidden';
-                }
-    
-            </pre>
-
-            <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/keropkrn" frameborder="0" width="320" height="240"></iframe>
-
-            </div>
+</div>
 
             <div class="part">
                 <h2>思路三: hidden</h2>
 
                 <p>可能有些人不太熟悉，HTML有个hidden全局属性，专门用于显示隐藏元素，与display:none的作用类似，元素隐藏时脱离文档流，无法接受javascript事件</p>
-
                 <p class="notice">[注意]IE7-不支持，IE10-不支持test.hidden='hidden'写法，只支持test.setAttribute('hidden','hidden')写法</p>
 
-                <pre class="brush: xml;">
-                    
-                    <button id="show">显示</button>
-                    <button id="hide">隐藏</button>
-                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;">测试文字</div>
+<pre><code class="language-markup">&lt;button id="show"&gt;显示&lt;/button&gt;
+ &lt;button id="hide"&gt;隐藏&lt;/button&gt;
+ &lt;div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;"&gt;测试文字&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">   
+    show.onclick = function(){
+        test.removeAttribute('hidden');
+        /*test.hidden = '';*/
+    }    
+    hide.onclick = function(){
+        test.setAttribute('hidden','hidden');
+        /*test.hidden = 'hidden';*/
+    }
+</code></pre>
 
-                </pre>
-
-
-                <pre class="brush: js;">
-
-                    show.onclick = function(){
-                        test.removeAttribute('hidden');
-                        /*test.hidden = '';*/
-                    }    
-                    hide.onclick = function(){
-                        test.setAttribute('hidden','hidden');
-                        /*test.hidden = 'hidden';*/
-                    }
-
-                </pre>
-
-                <iframe style="width: 100%; height: 120px;" src="http://sandbox.runjs.cn/show/ranpqyy8" frameborder="0" width="320" height="240"></iframe>
+<iframe style="width: 100%; height: 120px;" src="http://sandbox.runjs.cn/show/ranpqyy8" frameborder="0" width="320" height="240"></iframe>
 
 
             </div>
@@ -132,37 +106,31 @@
 
                 <p>对于元素显隐，opacity的使用频率也挺多。opacity的好处是，即使opacity为0的元素，仍然可以接受javascript事件，这是display:none和visiblity:hidden所不具备的。</p>
                 
-                 <pre class="brush: xml;">
-                    
-                    <button id="show">显示</button>
-                    <button id="hide">隐藏</button>
-                    <button id="reset">还原</button>
-                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;">测试文字</div>
+<pre><code class="language-markup">&lt;button id="show"&gt;显示&lt;/button&gt;
+&lt;button id="hide"&gt;隐藏&lt;/button&gt;
+&lt;button id="reset"&gt;还原&lt;/button&gt;
+&lt;div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;"&gt;测试文字&lt;/div&gt;
+</code></pre>
 
-                 </pre>
+<pre><code class="language-javascript">show.onclick = function(){
+    test.style.transition = 'none';
+    test.style.opacity = '1';
+}    
+hide.onclick = function(){
+    test.style.transition = 'opacity 0.2s';
+    test.style.opacity = '0';
+}
+test.onclick = function(){
+    this.style.width = '200px';
+}
+reset.onclick = function(){
+    history.go();
+}
+</code></pre>
 
-                  <pre class="brush: js;">
+<iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/4yldm4b7" frameborder="0" width="320" height="240"></iframe>
 
-                    show.onclick = function(){
-                        test.style.transition = 'none';
-                        test.style.opacity = '1';
-                    }    
-                    hide.onclick = function(){
-                        test.style.transition = 'opacity 0.2s';
-                        test.style.opacity = '0';
-                    }
-                    test.onclick = function(){
-                        this.style.width = '200px';
-                    }
-                    reset.onclick = function(){
-                        history.go();
-                    }
-
-                </pre>
-
-                <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/4yldm4b7" frameborder="0" width="320" height="240"></iframe>
-
-            </div>
+</div>
             
             <div class="part">
                 
@@ -173,39 +141,32 @@
                 <p class="notice">[注意]当设置overflow的元素在绝对定位元素和其包含块之间的时候，overflow属性会失效</p>
                 
 
-                <pre class="brush: css;">
-                    
-                    #testWrap{
-                        height: 70px;
-                        transition: height 1s;
-                        overflow: hidden;
-                    }
+<pre><code class="language-css">
+#testWrap{
+    height: 70px;
+    transition: height 1s;
+    overflow: hidden;
+}
+</code></pre>
 
-                 </pre>
+<pre><code class="language-markup">&lt;button id="show"&gt;显示&lt;/button&gt;
+&lt;button id="hide"&gt;隐藏&lt;/button&gt;
+&lt;div id="testWrap"&gt;
+    &lt;div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;"&gt;测试内容&lt;/div&gt;        
+&lt;/div&gt;             
 
-                 <pre class="brush: xml;">
-                    
-                    <button id="show">显示</button>
-                    <button id="hide">隐藏</button>
-                    <div id="testWrap">
-                        <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;">测试内容</div>        
-                    </div>
+</code></pre>
+<pre><code class="language-javascript">show.onclick = function(){
+    testWrap.style.height = '70px';
+}    
+hide.onclick = function(){
+    testWrap.style.height = '0';
+}
+</code></pre>
 
-                 </pre>
+   <iframe style="line-height: 1.5; width: 100%; height: 120px;" src="http://sandbox.runjs.cn/show/eytkfwyb" frameborder="0" width="320" height="240"></iframe>
 
-                <pre class="brush: xml;">
-                    
-                    show.onclick = function(){
-                        testWrap.style.height = '70px';
-                    }    
-                    hide.onclick = function(){
-                        testWrap.style.height = '0';
-                    }
-                </pre>
-
-                <iframe style="line-height: 1.5; width: 100%; height: 120px;" src="http://sandbox.runjs.cn/show/eytkfwyb" frameborder="0" width="320" height="240"></iframe>
-
-            </div>
+</div>
 
 
             <div class="part">
@@ -216,32 +177,25 @@
 
                 <p class="notice">[注意]clip属性只能应用在绝对定位元素上</p>
 
+<pre><code class="language-markup">&lt;button id="show"&gt;显示&lt;/button&gt;
+&lt;button id="hide"&gt;隐藏&lt;/button&gt;
+&lt;div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;"&gt;测试内容&lt;/div&gt;
+</code></pre>
 
-                <pre class="brush: xml;">
+<pre><code class="language-javascript">
+show.onclick = function(){
+    test.style.position ='static';
+    test.style.clip = 'auto';
+}    
+hide.onclick = function(){
+    test.style.position ='absolute';
+    test.style.clip = 'rect(0 0 0 0)';
+}
+</code> </pre>
 
-                    <button id="show">显示</button>
-                    <button id="hide">隐藏</button>
-                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;">测试内容</div>  
+<iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/z8lqwpzd" frameborder="0" width="320" height="240"></iframe>
 
-                 </pre>
-
-                 <pre class="brush: js;">
-
-                    show.onclick = function(){
-                        test.style.position ='static';
-                        test.style.clip = 'auto';
-                    }    
-                    hide.onclick = function(){
-                        test.style.position ='absolute';
-                        test.style.clip = 'rect(0 0 0 0)';
-                    }
-
-                 </pre>
-
-
-                 <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/z8lqwpzd" frameborder="0" width="320" height="240"></iframe>
-
-            </div>
+</div>
 
 
             <div class="part">
@@ -256,81 +210,58 @@
 
                 <p>transform:scale(0)时，元素被隐藏</p>
 
-                <pre class="brush: xml;">
+<pre><code class="language-markup">&lt;button id="show"&gt;显示&lt;/button&gt;
+&lt;button id="hide"&gt;隐藏&lt;/button&gt;
+&lt;div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;transition: 0.5s;"&gt;测试内容&lt;/div&gt;
+</code> </pre>
 
-                    <button id="show">显示</button>
-                    <button id="hide">隐藏</button>
-                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;transition: 0.5s;">测试内容</div>
+<pre><code class="language-javascript">
+    show.onclick = function(){
+        test.style.transform ='scale(1)';
+    }    
+    hide.onclick = function(){
+        test.style.transform ='scale(0)';
+    }
+</code></pre>
 
-                 </pre>
+<iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/yu695kms" frameborder="0" width="320" height="240"></iframe>
 
+<h3>【2】rotate</h3>
 
-                 <pre class="brush: js;">
+   <p>transform:rotateX(90deg)时，元素被隐藏</p>
 
-                    show.onclick = function(){
-                        test.style.transform ='scale(1)';
-                    }    
-                    hide.onclick = function(){
-                        test.style.transform ='scale(0)';
-                    }
+<pre><code class="language-markup">&lt;button id="show"&gt;显示&lt;/button&gt;
+&lt;button id="hide"&gt;隐藏&lt;/button&gt;
+&lt;div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;transition: 0.5s;"&gt;测试内容&lt;/div&gt;     
+</code></pre>
+<pre><code class="language-javascript">show.onclick = function(){
+    test.style.transform ='rotateX(0)';
+}    
+hide.onclick = function(){
+    test.style.transform ='rotateX(90deg)';
+}
+</code></pre>
 
-                 </pre>
+<iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/olletl6l" frameborder="0" width="320" height="240"></iframe>
 
-                 <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/yu695kms" frameborder="0" width="320" height="240"></iframe>
-
-                 <h3>【2】rotate</h3>
-
-                 <p>transform:rotateX(90deg)时，元素被隐藏</p>
-
-                 <pre class="brush: xml;">
-
-                    <button id="show">显示</button>
-                    <button id="hide">隐藏</button>
-                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;transition: 0.5s;">测试内容</div>
-
-                 </pre>
-
-                 <pre class="brush: js;">
-                    
-                    show.onclick = function(){
-                        test.style.transform ='rotateX(0)';
-                    }    
-                    hide.onclick = function(){
-                        test.style.transform ='rotateX(90deg)';
-                    }
-
-                 </pre>
-
-
-                 <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/olletl6l" frameborder="0" width="320" height="240"></iframe>
-
-                 <h3>【3】skew</h3>
+<h3>【3】skew</h3>
 
                  <p>transform:skew(90deg)时，元素被隐藏</p>
+<pre><code class="language-markup">&lt;button id="show"&gt;显示&lt;/button&gt;
+&lt;button id="hide"&gt;隐藏&lt;/button&gt;
+&lt;div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;transition: 0.5s;"&gt;测试内容&lt;/div&gt;  
+</code></pre>
+<pre><code class="language-javascript">show.onclick = function(){
+	test.style.transform ='skew(0)';
+}    
+hide.onclick = function(){
+	test.style.transform ='skew(90deg)';
+}
+</code></pre>
 
-                  <pre class="brush: xml;">
+<iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/e1hw0hpa" frameborder="0" width="320" height="240"></iframe>
 
-                    <button id="show">显示</button>
-                    <button id="hide">隐藏</button>
-                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;transition: 0.5s;">测试内容</div>
-
-                 </pre>
-
-                  <pre class="brush: js;">
-                    
-                        show.onclick = function(){
-                            test.style.transform ='skew(0)';
-                        }    
-                        hide.onclick = function(){
-                            test.style.transform ='skew(90deg)';
-                        }
-
-                  </pre>
-
-                  <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/e1hw0hpa" frameborder="0" width="320" height="240"></iframe>
-
-
-            </div>
+</div>
             
 
              <div class="part">
@@ -338,32 +269,26 @@
                 <h2>思路八: 覆盖</h2>
 
                 <p>利用定位元素可以覆盖普通流元素的特性。为元素的before伪元素设置相同的尺寸，通过控制伪元素的定位属性，实现显隐效果</p>
+<pre><code class="language-css">
+#test:hover:before{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 60px;
+    background-color: white;
+}    
+</code></pre>
 
+<pre><code class="language-markup">
+  &lt;div style="background:lightblue;width:100px;height:60px;margin-top: 10px;"&gt;测试内容&lt;/div&gt;
+</code></pre>
 
-                 <pre class="brush: css;">
+<p>//鼠标移入移出会出现元素的显隐效果</p>
 
-                   #test:hover:before{
-                        content: "";
-                        position: absolute;
-                        width: 100px;
-                        height: 60px;
-                        background-color: white;
-                    }    
+<iframe style="width: 100%; height: 90px;" src="http://sandbox.runjs.cn/show/cddm2l5b" frameborder="0" width="320" height="240"></iframe>
 
-                 </pre>
-
-
-                 <pre class="brush: xml;">
-                    <div style="background:lightblue;width:100px;height:60px;margin-top: 10px;">测试内容</div>
-                 </pre>
-
-                 <p>//鼠标移入移出会出现元素的显隐效果</p>
-
-                <iframe style="width: 100%; height: 90px;" src="http://sandbox.runjs.cn/show/cddm2l5b" frameborder="0" width="320" height="240"></iframe>
-
-            </div>
+</div>
             
-
             <div class="part">
                 
                 <h2>思路九: 偏移</h2>
@@ -374,24 +299,19 @@
 
                     <p>利用负margin将元素移出视窗外，要注意的是设置负margin的元素并没有脱离普通流，后续元素会跟着一起移动</p>
 
-                <pre class="brush: xml;">
+<pre><code class="language-markup">&lt;button id="show"&gt;显示&lt;/button&gt;
+&lt;button id="hide"&gt;隐藏&lt;/button&gt;
+&lt;div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;transition: 0.5s;"&gt;测试内容&lt;/div&gt;
+</code></pre>
 
-                    <button id="show">显示</button>
-                    <button id="hide">隐藏</button>
-                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;transition: 0.5s;">测试内容</div>
-
-                </pre>
-
-                <pre class="brush: js;">
-                    
-                    show.onclick = function(){
-                        test.style.marginTop ='10px';
-                    }    
-                    hide.onclick = function(){
-                        test.style.marginTop ='-9999px';
-                    }
-
-                </pre>
+<pre><code class="language-javascript">            
+show.onclick = function(){
+    test.style.marginTop ='10px';
+}    
+hide.onclick = function(){
+    test.style.marginTop ='-9999px';
+}
+</code></pre>
 
                 <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/dwaqql1f" frameborder="0" width="320" height="240"></iframe>
 
@@ -400,69 +320,47 @@
 
                 <p>通过设置相对定位或绝对定位元素的偏移属性，将元素移动到视窗外</p>
 
-                <pre class="brush: css;">
+<pre><code class="language-css">#test{
+    position: relative;
+/*  position: absolute; */
+}    
+</code></pre>
 
-                    #test{
-                        position: relative;
-                    /*  position: absolute; */
-                    }    
+<pre><code class="language-markup">&lt;button id="show"&gt;显示&lt;/button&gt;
+&lt;button id="hide"&gt;隐藏&lt;/button&gt;
+&lt;div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;transition: 0.5s;"&gt;测试内容&lt;/div&gt; 
+</code></pre>
 
-                </pre>
+<pre><code class="language-javascript">                 
+show.onclick = function(){
+    test.style.left ='0';
+}    
+hide.onclick = function(){
+    test.style.left ='-9999px';
+}
+</code></pre>
 
-                <pre class="brush: xml;">
+<iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/l5qylzd6" frameborder="0" width="320" height="240"></iframe>
 
-                    <button id="show">显示</button>
-                    <button id="hide">隐藏</button>
-                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;transition: 0.5s;">测试内容</div> 
+ <h3>【2】translate</h3>
 
-                </pre>
-
-                 <pre class="brush: js;">
+<pre><code class="language-markup">&lt;button id="show"&gt;显示&lt;/button&gt;
+&lt;button id="hide"&gt;隐藏&lt;/button&gt;
+&lt;div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;transition: 0.5s;"&gt;测试内容&lt;/div&gt; 
+</code></pre>
                     
-                    show.onclick = function(){
-                        test.style.left ='0';
-                    }    
-                    hide.onclick = function(){
-                        test.style.left ='-9999px';
-                    }
+<pre><code class="language-javascript">                  
+show.onclick = function(){
+        test.style.transform ='translate(0,0)';
+    }    
+hide.onclick = function(){
+    test.style.transform ='translate(-9999px,-9999px)';
+}
+</code></pre>
+</div>
+<iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/cqrthtib" frameborder="0" width="320" height="240"></iframe>
 
-                 </pre>
-
-                 <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/l5qylzd6" frameborder="0" width="320" height="240"></iframe>
-
-                 <h3>【2】translate</h3>
-
-                <pre class="brush: xml;">
-
-                    <button id="show">显示</button>
-                    <button id="hide">隐藏</button>
-                    <div id="test" style="background:lightblue;width:100px;height:60px;margin-top: 10px;transition: 0.5s;">测试内容</div> 
-
-                </pre>
-                    
-                <pre class="brush: js;">
-                    
-                    show.onclick = function(){
-
-                        test.style.transform ='translate(0,0)';
-
-                    }    
-                    hide.onclick = function(){
-
-                        test.style.transform ='translate(-9999px,-9999px)';
-
-                    }
-
-                 </pre>
-
-
-            </div>
-
-
-            <iframe style="width: 100%; height: 110px;" src="http://sandbox.runjs.cn/show/cqrthtib" frameborder="0" width="320" height="240"></iframe>
-
-
-        </div>
+ </div>
       
     
 </body>

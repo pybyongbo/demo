@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<title>去除左右空格!</title>
 	 <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
-
+	 <link rel="stylesheet" type="text/css" href="../../../lib/prism.css" media="screen">
+	 <script type="text/javascript" src="../../../lib/prism.js"></script>
 	 <style type="text/css" media="screen">
 	 .demo1{width:480px;margin:50px auto;}
 	 .demo1 input {width:220px;float:left;margin-right:20px;}
@@ -16,13 +17,25 @@
 
 	<div class="demo1 tc">
 		
-
 		<H2 class='tit'>JQUERY内部 unicode编码:\u00A0和\u00A0表示空格</H2>
 		<input type="text" name="" value="[     需要过滤的空格      ]" id="input" class="form-control">
 
 		<button type="button" class="btn  btn-primary" id="btn">过滤0</button>
 
 	</div>
+
+<pre><code class="language-javascript">
+(function(){
+var input = document.getElementById('input');
+var btn = document.getElementById('btn');
+btn.onclick = function(){
+
+	input.value = input.value.replace(/(\s|\u00A0)+|(\s|\u00A0)+/g,'');
+
+}
+}());
+
+</code></pre>
 	
 
 	<div class="demo1 tc">
@@ -34,7 +47,21 @@
 		<button type="button" class="btn  btn-primary" id="btn1" >过滤1</button>
 
 	</div>
+<pre><code class="language-javascript">
+//正则匹配空格:
+function trim(str) {
+	return str.replace(/\s+/g, "");
+}
 
+var btn1 = document.getElementById('btn1');
+var text_val = document.getElementById('input1').value;
+
+btn1.onclick = function() {
+	console.log(trim(text_val));
+	document.getElementById('input1').value = trim(text_val);
+}
+
+</code></pre>
 	
 </body>
 </html>
