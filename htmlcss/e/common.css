@@ -13,4 +13,9 @@ p.notice{color:red;}
 .demo_pic{margin-bottom: 10px;text-align: center;}
 .demo_pic img{max-width:980px;}
 
-
+.anchor{border-right: 3px solid #2175BC;
+    padding-right: 6px;
+    font-size: 120%;
+    line-height: 1.2;
+    display: inline-block;
+    margin-bottom: 10px;}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../common.css" media="screen">
+    <link type="text/css" rel="stylesheet" href="../syntaxhlighter/styles/shCoreDefault.css"/>
+    <script type="text/javascript" src="../../../lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../../lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../syntaxhlighter/shCore.js"></script>
+    <script type="text/javascript" src="../syntaxhlighter/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../syntaxhlighter/shBrushXml.js"></script>
+    <script type="text/javascript" src="../syntaxhlighter/shBrushCss.js"></script>
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>css默认可继承样式</h1>
+        <div class="part">
+            <h2 class="tit">前面的话</h2>
+            <p>在CSS中，有4个关键字理论上可以应用于任何的CSS属性，它们是initial(初始)、inherit(继承)、unset(未设置)、revert(还原)。而all的取值只能是以上这4个关键字。本文将介绍initial、inherit、unset、revert和all</p>
+            
+            <p class="notice">[注意]<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" target="_blank">关于样式的详细信息移步至此</a></p>
+        </div>
+
+
+        <h3 class="anchor">initial</h3>	
+
+
+       <p> 表示元素属性的初始默认值(该默认值由官方CSS规范定义)</p>
+
+　　   <p>兼容性: IE不支持</p>
+
+　　    <pre class="brush: html;">
+		//display在官方CSS规范中定义的默认值是inline
+		<style>
+		.test{display: initial;}
+		</style>
+		<div class="box">
+		    <div class="test">测试一</div><span>文字</span>
+		    <br>
+		    <div >测试二</div><span>文字</span>
+		</div>
+
+
+		</pre>
+
+
+		 <iframe style="line-height: 1.5; width: 100%; height: 70px;" src="http://sandbox.runjs.cn/show/hz1ribde" frameborder="0" width="320" height="240"></iframe>
+
+
+		<h3 class="anchor"> unset </h3>
+
+　　	<p>unset相对于initial和inherit而言，相对复杂一点。表示如果该属性默认可继承，则值为inherit；否则值为initial。实际上，设置unset相当于不设置</p>
+
+　　	<p>兼容性: IE不支持，safari9-不支持，ios9.2-不支持，android4.4.4-不支持</p>
+
+		<p>【常用默认可继承样式】</p>
+
+
+		<pre class="brush: css">
+			
+			color
+			cursor
+			direction
+			font
+			letter-spacing
+			line-height
+			list-style
+			text-align
+			text-indent
+			text-shadow
+			text-transform
+			white-space
+			word-break
+			word-spacing
+			word-wrap
+			writing-mode
+
+		</pre>
+
+		<pre class="brush: html">
+			
+			//内容为测试一的元素和内容为测试二的元素的样式是一样的
+			<style>
+			.box{
+			    border: 1px solid black;
+			    padding: 10px;
+			    width: 100px;
+			    color: red;
+			}
+			.test1{
+			    border: unset;
+			    color: unset;
+			}
+			</style>
+			<div class="box">
+			    <div class="test">测试一</div>
+			    <div>测试二</div>
+			</div>
+
+
+		</pre>
+
+		<iframe style="width: 100%; height: 80px;" src="http://sandbox.runjs.cn/show/letvak8l" frameborder="0" width="320" height="240"></iframe>
+
+
+		<h3 class="anchor">revert </h3>
+
+　　	<p>表示样式表中定义的元素属性的默认值。若用户定义样式表中显式设置，则按此设置；否则，按照浏览器定义样式表中的样式设置；否则，等价于unset </p>
+
+　　	<p>兼容性: 只有safari9.1+和ios9.3+支持</p>
+
+		
+		<h3 class="anchor">all</h3>
+　　	
+		<p>表示重设除unicode-bidi和direction之外的所有CSS属性的属性值，取值只能是initial、inherit、unset和revert</p>
+
+	　　<p>兼容性: IE不支持，safari9-不支持，ios9.2-不支持，android4.4-不支持</p>
+
+
+		<pre class="brush: css">
+			
+			<style>
+			.test{
+			    border: 1px solid black;
+			    padding: 20px;
+			    color: red;
+			}
+			.in{
+			/*  all: initial;
+			    all: inherit;
+			    all: unset;
+			    all: revert; */
+			}
+			</style>
+			<div class="test">
+			    <div class="in">测试文字</div>            
+			</div>
+
+		</pre>
+ 
+    </div>
+</body>
+
+</html>
+
