@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../../lib/prism.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../common.css" media="screen">
+    <script type="text/javascript" src="../../../lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../../lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../lib/prism.js"></script>
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    body {
+        padding: 50px;
+    }
+    h2.tit{margin-bottom:20px;text-align: center;}
+    .demo {
+        padding: 25px;
+        background-color: rgba(0, 0, 0, 0.5);
+        margin-bottom: 20px;
+    }
+    
+    .demo p {
+        color: #fff;
+    }
+    
+    @media \0screen\,
+    screen\9 {
+        /* 只支持IE6、7、8 */
+        .demo {
+            background-color: #000000;
+            filter: Alpha(opacity=50);
+            position: static;
+            /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
+            *zoom: 1;
+            /* 激活IE6、7的haslayout属性，让它读懂Alpha */
+        }
+        .demo p {
+            position: relative;
+            /* 设置子元素为相对定位，可让子元素不继承Alpha值 */
+        }
+    }
+    /**华丽的分割线**/
+    
+    .divider {
+        display: table;
+        white-space: nowrap;
+        height: auto;
+        overflow: hidden;
+        line-height: 1;
+        text-align: center;
+        padding: 10px 0;
+        color: #666;
+    }
+    
+    .divider:after,
+    .divider:before {
+        content: '';
+        display: table-cell;
+        position: relative;
+        top: 50%;
+        width: 50%;
+        background-repeat: no-repeat;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABaAAAAACCAYAAACuTHuKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1OThBRDY4OUNDMTYxMUU0OUE3NUVGOEJDMzMzMjE2NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1OThBRDY4QUNDMTYxMUU0OUE3NUVGOEJDMzMzMjE2NyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU5OEFENjg3Q0MxNjExRTQ5QTc1RUY4QkMzMzMyMTY3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU5OEFENjg4Q0MxNjExRTQ5QTc1RUY4QkMzMzMyMTY3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+VU513gAAADVJREFUeNrs0DENACAQBDBIWLGBJQby/mUcJn5sJXQmOQMAAAAAAJqt+2prAAAAAACg2xdgANk6BEVuJgyMAAAAAElFTkSuQmCC)
+    }
+    
+    .divider:before {
+        background-position: right 1em top 50%
+    }
+    
+    .divider:after {
+        background-position: left 1em top 50%
+    }
+
+    p.tip {
+        border-left-color: #3c763d;
+    }
+
+    p.tip, p.warning {
+    padding: 12px 24px 12px 20px;
+    margin: 2em 0;
+    border-left: 4px solid;
+    background-color: #f8f8f8;
+    position: relative;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+p.tip:before, p.warning:before {
+    content: "!";
+    position: absolute;
+    top: 14px;
+    left: -12px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 700;
+    font-family: Dosis,Source Sans Pro,Helvetica Neue,Arial,sans-serif;
+}
+
+p.tip:before {
+    background-color: #3c763d;
+}
+
+p.warning:before{
+  top: 14px!important;
+  right: -12px!important;
+}
+p.warning:before {
+    background-color: #f66;
+}
+
+.back_link{
+    height: 45px;
+    line-height: 45px;
+    position: relative;
+    padding: 10px 0;
+    box-sizing: border-box;
+    background-color: #35495e;
+}
+.left-arrow,.right-arrow {
+    position: absolute;
+    color: #fff;
+    line-height: 26px;
+    padding-left: 35px;
+
+}
+.left-arrow:hover,.right-arrow:hover{color:#fff;text-decoration: none;}
+.left-arrow:before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #ccc;
+    border-width: 1px 0 0 1px;
+    -webkit-transform: rotate(315deg);
+    /* transform: rotate(315deg); */
+    top: 7px;
+    left: 20px;
+}
+.right-arrow{right:35px;}
+.right-arrow:after{
+  right: -15px;
+  top: 7px;
+   content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #ccc;
+    border-width: 1px 0 0 1px;
+    -webkit-transform: rotate(-225deg);
+}
+
+ .pc_divider fieldset{
+      width: 100%;
+      margin: 30px auto;
+      border: 0;
+      border-top:1px dashed #ccc;
+ }
+
+ .pc_divider legend{color:#999;background-color:#fff;width:auto;border-bottom:none;padding:0 5px;}
+
+ .demo5{padding:15px 25px; }
+
+ .demo5 p{width:200px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;line-height: 30px;margin-bottom:0;}
+    </style>
+
+
+</head>
+
+<body>
+    
+    <h2 class="tit">移动端页面的一些小技巧:</h2>
+
+    <div class="demo">
+        <p>背景透明,文字不透明(css rgba)</p>
+    </div>
+    <div class="demo2">
+        <p class="divider">华丽的分割线---移动端</p>
+    </div>
+
+
+    <div class="demo3">
+       <p class="tip">一些小的修饰符</p>
+    </div>
+
+    <div class="demo4">
+       <p class="warning">一些小的修饰符</p>
+    </div>
+
+
+    <div class="back_link">
+        
+        <a class="left-arrow">返回按钮</a>
+
+        
+        <a class="right-arrow">链接箭头</a>
+
+    </div>
+
+  <div class="pc_divider">
+        
+        <fieldset>
+          <legend align="center">我是低调的分割线哦!</legend>
+        </fieldset>
+
+  </div>
+
+  <div class="demo demo5">
+        <p title="文字溢出影藏效果,用得也是比较多的哦@!">文字溢出影藏效果,用得也是比较多的哦@!</p>
+    </div>
+
+</body>
+
+</html>
