@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>webppt by pybyongbo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../demostyle/normalize.css" media="screen">
+    <link href='../lib/reset.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../lib/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../lib/index.css" media="screen">
+    <style type="text/css" media="screen">
+    .wrap {
+        width: 860px;
+    }
+    </style>
+</head>
+
+<body>
+    <section class="main-content wrap shadow">
+        <ol id="ol" class="list">
+        </ol>
+    </section>
+</body>
+
+</html>
+
+<script type="text/javascript">
+    var str = '',
+        data = [
+
+                {title : '第一章 css基础知识',url:''},
+                {title : '第一章 css基础知识',url:''},
+                {title : '第一章 css基础知识',url:''},
+                {title : '第一章 css基础知识',url:''},
+                {title : '第一章 css基础知识',url:''},
+                {title : '第一章 css基础知识',url:''},
+                {title : '深入理解css中的长度单位',url : 'e/6/index.html'},
+                {title : '理解css中的数学表达式calc()',url : 'e/7/index.html'}
+               
+
+
+        ];
+    for(var i = 0; i < data.length; i++){
+        
+        var items = data[i];
+
+        str += '<li><h1><a href="'+items.url+'" title="' + items.title + '">' + items.title + '</a></h1></li>';
+      
+       
+    }
+    var ol = document.getElementById('ol');
+    ol.innerHTML = str;
+
+    function formatNum(num){
+
+        return num<10?'0'+num:''+num;
+
+
+    }
+</script>
