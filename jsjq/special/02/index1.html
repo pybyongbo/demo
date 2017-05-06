@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>定时器在浏览器中的问题--1</title>
+
+	<style type="text/css" media="screen">
+		#div1{width:100px;height:100px;background: red;position: absolute;left:0;top:40px;}
+
+		.endline{position: absolute;left:600px;width:1px;background: red;height:600px;}
+		
+	</style>
+	<script>
+	window.onload = function(){
+
+		var oInput = document.getElementById('input1');
+
+		var oDiv = document.getElementById('div1');
+
+		var timer = null;
+		oInput.onclick = function(){
+
+			timer = setInterval(function(){
+
+				if(oDiv.offsetLeft == 500) {
+					clearInterval(timer);
+				} else {
+					oDiv.style.left = oDiv.offsetLeft + 10 +'px';
+				}
+				
+			},30)
+		};
+
+
+	}
+
+	</script>
+</head>
+<body>
+		
+		<input type="button" name="" value="开始运动" id="input1">
+
+
+		<div id="div1"></div>
+
+		<div class="endline">
+</div>
+
+
+</body>
+</html>
