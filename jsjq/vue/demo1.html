@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body class="checkout">
+    <div class="app">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox" v-model="allChecked" />全选{{allChecked}}</td>
+                </tr>
+                <tr v-for="item in list">
+                    <td>
+                        <input type="checkbox" v-model="item.checked" />
+                    </td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.age}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
+    <script src="js/demo1.js"></script>
+</body>
+
+</html>

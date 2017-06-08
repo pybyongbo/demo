@@ -1,0 +1,59 @@
+{
+  "message": "",
+  "status": "1",
+  "result": {
+    "totalMoney": 0,
+    "productList": [
+      {
+        "productId": "10001",
+        "orderId":"20170605123450",
+        "productName": "黄鹤楼香烟",
+        "productPrice": 19,
+        "productQuantity": 1,
+        "productImage": "img/goods-1.jpg",
+        "parts": [
+          {
+            "partsId": "a001",
+            "partsName": "打火机"
+          },
+          {
+            "partsId": "a002",
+            "partsName": "XXX"
+          }
+        ]
+      },
+      {
+        "productId": "10002",
+        "orderId":"20170605123451",
+        "productName": "加多宝",
+        "productPrice": 8,
+        "productQuantity": 1,
+        "productImage": "img/goods-2.jpg",
+        "parts": [
+          {
+            "partsId": "a001",
+            "partsName": "吸管"
+          }
+        ]
+      },
+      {
+        "productId": "10003",
+        "orderId":"20170605123452",
+        "productName": "小米耳机",
+        "productPrice": 39,
+        "productQuantity": 1,
+        "productImage": "img/ear.jpeg",
+        "parts": [
+            {
+            "partsId": "a001",
+            "partsName": "耳机膜"
+          },
+          {
+            "partsId": "a002",
+            "partsName": "扩音器"
+          }
+        ]
+      }
+    ]
+  }
+}
