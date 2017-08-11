@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .wrap {
+            width: 600px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            background-color: #f8e2e2;
+            margin: 50px auto;
+        }
+        
+        #wrap p {
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        .list,
+        .result {
+            width: 440px;
+            margin: 0 auto;
+        }
+        
+        .result {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .list li,
+        .result li {
+            list-style: none;
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            border: 1px solid #fff;
+            border-radius: 30px;
+            line-height: 30px;
+            text-align: center;
+            margin: 15px auto 15px;
+        }
+        
+        .list li:last-child {
+            /* margin-left: 204px; */
+        }
+        
+        .wrap p {
+            text-align: center;
+        }
+        
+        .wrap p button {
+            text-align: center;
+            width: 100px;
+        }
+        
+        .btn {
+            padding: 5px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+        
+        #setBtn {
+            background: red;
+            color: #fff;
+        }
+        
+        #clearBtn {
+            background: #dedede;
+            color: #fff;
+        }
+        
+        .active {
+            background-color: red;
+            color: #fff;
+        }
+    </style>
+    <script src="../../../lib/jquery-1.10.2.min.js"></script>
+    <script>
+        $(function() {
+
+            function _createHtml() {
+
+                var html_str = "<ul class='list'>";
+                for (var i = 1; i < 34; i++) {
+                    html_str += '<li>' + formactNum(i) + '</li> ';
+                }
+                html_str += '</ul>';
+
+                //http://zaole.net/demo/201601121035.html
+                $("#wrap").prepend(html_str);
+
+            }
+
+            _createHtml();
+
+            function formactNum(num) {
+
+                return num >= 10 ? num : '0' + num;
+
+            }
+
+            // 获取元素
+            //var ballList = $("#wrap ul>li");
+            var ballList = document.getElementById("wrap").getElementsByTagName("li");
+            var setBtn = $("#setBtn");
+            var clearBtn = $("#clearBtn");
+
+            //定义随机数组
+
+            function rnd(min, max) {
+                return parseInt(Math.random() * (max - min + 1) + min);
+            }
+
+            function rndArray(min, max, length) {
+                //先定义一个空数组
+                var arr = [];
+                //生成一个长度为7的数组
+                while (arr.length < length) {
+                    //生成一个随机数
+                    var rand = rnd(min, max);
+                    if (arr.indexOf(rand) == -1) {
+                        arr.push(rand);
+                    }
+                }
+
+                arr.sort(function(a, b) {
+                    return a - b;
+                })
+
+                return arr;
+
+            }
+
+            function selectBall() {
+                for (var j = 0; j < ballList.length; j++) {
+                    ballList[j].className = "";
+                }
+                var arr = rndArray(0, 32, 7);
+                //console.log(arr);
+                for (var i = 0; i < arr.length; i++) {
+                    //ballList[arr[i] - 1].className = "active";
+                    //防止索引为负数报错.
+                    if (arr[i] - 1 >= 0) {
+
+                        ballList[arr[i] - 1].className = "active";
+                        //ballList[arr[i] - 1].setAttribute("class", "active");
+
+                    }
+
+                    //$(ballList.eq(arr[i] - 1)).addClass("active");
+
+                }
+            }
+
+
+
+            var timer = 0;
+            setBtn.on("click", function() {
+
+                $(".result").html("");
+                clearTimeout(timer);
+                timer = setInterval(selectBall, 100);
+                setTimeout(function() {
+                    clearTimeout(timer);
+                    var liactive = $("li.active"),
+                        active_str = "";
+                    for (var i = 0; i < liactive.length; i++) {
+                        active_str += '<li class="active">' + liactive.eq(i).text() + '</li>';
+                    }
+
+                    $(".result").append("<span>本次抽奖结果:</span>" + active_str);
+
+                }, 3000);
+
+
+            })
+
+            clearBtn.on("click", function() {
+
+                clearTimeout(timer);
+                for (var j = 0; j < ballList.length; j++) {
+                    ballList[j].className = "";
+                }
+                $(".result").html("");
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+
+    <div class="wrap" id="wrap">
+
+        <!-- <ul class="list">
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+            <li>04</li>
+            <li>05</li>
+            <li>06</li>
+            <li>07</li>
+            <li>08</li>
+            <li>09</li>
+            <li>10</li>
+            <li>11</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+            <li>26</li>
+            <li>27</li>
+            <li>28</li>
+            <li>29</li>
+            <li>30</li>
+            <li>31</li>
+            <li>32</li>
+            <li>33</li>
+        </ul> 
+    -->
+
+        <p>
+            <button class="btn" id="setBtn">随机红球</button>
+            <button class="btn" id="clearBtn">清空</button>
+        </p>
+
+
+        <div class="result">
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
