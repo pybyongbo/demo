@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="SVGSecret,SVG解密,SVG奇淫巧计,SVG妙用,SVG图形" name="Keywords">
+    <meta content="使用SVG实现各类图形" name="description">
+    <title>SVG奇思妙想</title>
+    <link rel="stylesheet" type="text/css" href="style/basc.css">
+    <link rel="stylesheet" type="text/css" href="style/demo.css">
+</head>
+<style>
+#cnzz_stat_icon_1259441963 {
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+</style>
+
+<body>
+
+    <div class="container">
+        <!-- circle-->
+        <section id="circle" class="code-wrap cf">
+            <div class="css-live-wrap">
+                <summary>圆形</summary>
+                <hgroup class="circle">
+
+                    <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="200" cy="80" r="60" fill="red" />
+
+                        <circle cx="350" cy="85" r="55" stroke="red" fill="transparent" stroke-width="5"/>
+                    </svg>
+
+                </hgroup>
+            </div>
+        </section>
+        <!-- polygon-->
+        <section id="polygon" class=" code-wrap cf">
+            <div class="css-live-wrap">
+              <summary>SVG多边形</summary>
+               <hgroup class="circle">
+
+                    <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" style="margin-top:10px;margin-left:55px;">
+                      <polygon points="120,10 200,10 230,50 200,90 120,90 90,50" style="fill:yellow;stroke:#000000;stroke-width:1"/>
+                    </svg>
+
+                </hgroup>
+            </div>
+        </section>
+        <!-- polygon-animate -->
+        <section id="polygon-animate" class="code-wrap cf">
+            <div class="css-live-wrap">
+                <summary>SVG路径和线条</summary>
+              
+                <hgroup class="polygon-animate">
+                    <svg class="polygon-animate-svg" style="margin-top:60px;margin-left:125px;">
+                       <g fill="none">
+					    <path stroke="red" d="M5 20 l215 0"/>
+					    <path stroke="black" d="M5 40 l215 0" />
+					    <path stroke="blue" d="M5 60 l215 0" />
+
+					    <line x1="5" y1="120" x2="300" y2="120"style="stroke:rgb(99,99,99);stroke-width:10"/>
+					  </g>
+                    </svg>
+                </hgroup>
+            </div>
+        </section>
+        <!-- arrow -->
+        <section id="arrow" class="code-wrap cf">
+            <div class="css-live-wrap">
+                <summary>气泡对话框</summary>
+                <hgroup class="arrow">
+                    <svg class="arrow-svg"></svg>
+                </hgroup>
+            </div>
+        </section>
+        <!-- star -->
+        <section id="close" class="code-wrap cf">
+            <div class="css-live-wrap">
+                <summary>Close icon</summary>
+                <hgroup class="close">
+                    <svg class="close-svg"></svg>
+                </hgroup>
+            </div>
+        </section>
+        <!-- star -->
+        <section id="star" class="code-wrap cf">
+            <div class="css-live-wrap">
+                <summary>star</summary>
+                <hgroup class="star">
+                    <svg class="star-svg"></svg>
+                </hgroup>
+            </div>
+        </section>
+        <!-- star -->
+        <section id="triangle2rect" class="code-wrap cf">
+            <div class="css-live-wrap">
+                <summary>triangle2rect</summary>
+                <summary>clip-path 图形</summary>
+                <hgroup class="triangle2rect">
+                    <div class="a"></div>
+                    <div class="b"></div>
+                    <div class="c"></div>
+                    <div class="d"></div>
+                </hgroup>
+            </div>
+        </section>
+        <!-- 使用 SVG 绘制百分比图 -->
+        <section id="percentage-pie" class="code-wrap cf">
+            <div class="css-live-wrap">
+                <summary>使用 SVG 绘制百分比图</summary>
+                <summary>使用审查元素看看 html 结构，绘画内容在 svg 标签内</summary>
+                <summary>使用了 SVG 动画 animate</summary>
+                <hgroup class="percentage-pie">
+                    <svg width="200px" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <text class="liquidFillGaugeText" text-anchor="middle" font-size="42px" transform="translate(100,120)" style="fill: #000">50.0%</text>
+                        <!-- Wave -->
+                        <g id="wave">
+                            <path id="wave-2" fill="rgba(255, 20, 147, .5)" d="M0 100 C90 28, 92 179, 200 100 A95 95 0 0 1 0 100 Z">
+                                <animate dur="5s" repeatCount="indefinite" attributeName="d" attributeType="XML" values="M0 100 C90 28, 92 179, 200 100 A95 95 0 0 1 0 100 Z;
+                                                        M0 100 C145 100, 41 100, 200 100 A95 95 0 0 1 0 100 Z;
+                                                        M0 100 C90 28, 92 179, 200 100 A95 95 0 0 1 0 100 Z" />
+                            </path>
+                        </g>
+                        <circle cx="100" cy="100" r="80" stroke-width="10" stroke="white" fill="transparent"></circle>
+                        <circle cx="100" cy="100" r="90" stroke-width="20" stroke="deeppink" fill="none" class='percentage-pie-svg'></circle>
+                    </svg>
+                </hgroup>
+            </div>
+        </section>
+   
+      
+    </div>
+    <div id="tips">
+        因部分图案使用 clip-path，兼容性不佳，建议使用高版本 Chrome 内核浏览器观看。
+    </div>
+</body>
+
+</html>

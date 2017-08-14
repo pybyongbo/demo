@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../../lib/prism.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../common.css" media="screen">
+    <script type="text/javascript" src="../../../lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../../lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../lib/prism.js"></script>
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    	/* REF：http://51bits.com/writing/half-point-css-borders-in-ios/ */
+		/* transform-origin的属性值的理解参考：http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/transform-15.jpg */
+		ul,
+        ol {
+            margin: 0;
+            padding: 0;
+            width: 220px;
+            margin: 0 atuo;
+        }
+        
+        ul.demo1 li {
+            list-style-type: none;
+            height: 24px;
+            font-size: 14px;
+            line-height: 24px;
+            position: relative;
+        }
+        
+        ul.demo1 li:after {
+            position: absolute;
+            content: "";
+            height: 1px;
+            background: red;
+            left: 0;
+            right: 0;
+            top: 24px;
+            -webkit-transform: scaleY(0.5);
+            -webkit-transform-origin: 0 0;
+            overflow: hidden;
+        }
+        
+        ol.demo2 {
+            margin-top: 50px;
+            width: auto;
+        }
+        
+        ol.demo2 li {
+            list-style-type: none;
+            height: 24px;
+            font-size: 14px;
+            line-height: 24px;
+            border-bottom: 1px solid #f00;
+        }
+		.box{
+			position:relative;
+
+			width:200px;
+			height:200px;
+			overflow:hidden;
+			line-height:200px;
+			text-align:center;
+			float:left;
+			margin:30px;
+			background-color:#eee;
+		}
+		.rawBor{
+			border:1px solid blue;
+		}
+
+		/*上，下边框*/
+		.tBor:before,
+		.bBor:after{
+			position:absolute;
+			content: "";
+			height:1px;
+			background:red;
+			left:0;
+			right:0;
+		}
+		.tBor:before{
+			top:0;
+		}
+		.bBor:after{
+			bottom:0;
+		}
+
+		/*左，右边框*/
+		.lBor:before,
+		.rBor:after{
+			position:absolute;
+			content: "";
+			width:1px;
+			background:red;
+			top:0;
+			bottom:0;
+		}
+		.lBor:before{
+			left:0;
+		}
+		.rBor:after{
+			right:0;
+		}
+		
+		.trblBor:after{
+			position:absolute;
+			content:"";
+			top:0;
+			left:0;
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing:border-box;
+			box-sizing:border-box;
+			width:100%;
+			height:100%;
+			border:1px solid blue;
+			point-events:none;
+		}
+		
+		/* 最后两个是为了检测Mobile ie9, 是因为Mobile IE9检测出的dpi为96dpi，与实际不符合 */
+		@media (min--moz-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx), (-ms-high-contrast:active), (-ms-high-contrast:none) {
+
+			/*上，下边框*/
+			.tBor:before,
+			.bBor:after{
+				-webkit-transform:scaleY(.5);
+				-ms-transform:scaleY(.5);
+				-o-transform:scaleY(.5);
+				transform:scaleY(.5);
+			}
+
+			/*左，右边框*/
+			.lBor:before,
+			.rBor:after{
+				-webkit-transform:scaleX(.5);
+				-ms-transform:scaleX(.5);
+				-o-transform:scaleX(.5);
+				transform:scaleX(.5);
+			}
+
+			/*四边边框*/
+			.trblBor:after{
+				width:200%;
+				height:200%;
+				-webkit-transform:scale(.5);
+				-ms-transform:scale(.5);
+				-o-transform:scale(.5);
+				transform:scale(.5);
+			}
+
+			/*上，左边框, 四边边框*/
+			.tBor:before,
+			.lBor:before,
+			.trblBor:after{
+				-webkit-transform-origin:0 0;
+				-moz-transform-origin:0 0;
+				-ms-transform-origin:0 0;
+				-o-transform-origin:0 0;
+				transform-origin:0 0;
+			}
+
+			/*下，右边框*/
+			.bBor:after,
+			.rBor:after{
+				-webkit-transform-origin:100% 100%;
+				-moz-transform-origin:100% 100%;
+				-ms-transform-origin:100% 100%;
+				-o-transform-origin:100% 100%;
+				transform-origin:100% 100%;
+			}
+		}
+
+		/* 解决1.5屏幕下某些边框不显式问题 */
+		@media (-webkit-device-pixel-ratio: 1.5){
+			/*上，下边框*/
+			.tBor:before,
+			.bBor:after{
+				-webkit-transform:scaleY(.6666);
+				-ms-transform:scaleY(.6666);
+				-o-transform:scaleY(.6666);
+				transform:scaleY(.6666);
+			}
+
+			/*左，右边框*/
+			.lBor:before,
+			.rBor:after{
+				-webkit-transform:scaleX(.6666);
+				-ms-transform:scaleX(.6666);
+				-o-transform:scaleX(.6666);
+				transform:scaleX(.6666);
+			}
+
+			/*四边框*/
+			.trblBor:after{
+		        width:150%;
+		        height:150%;
+				-webkit-transform:scale(.6666);
+				-ms-transform:scale(.6666);
+				-o-transform:scale(.6666);
+				transform:scale(.6666);
+			}
+		}
+
+		@media (-webkit-device-pixel-ratio: 3){
+			/*上，下边框*/
+			.tBor:before,
+			.bBor:after{
+				-webkit-transform:scaleY(.3333);
+				-ms-transform:scaleY(.3333);
+				-o-transform:scaleY(.3333);
+				transform:scaleY(.3333);
+			}
+
+			/*左，右边框*/
+			.lBor:before,
+			.rBor:after{
+				-webkit-transform:scaleX(.3333);
+				-ms-transform:scaleX(.3333);
+				-o-transform:scaleX(.3333);
+				transform:scaleX(.3333);
+			}
+			/*四边框*/
+			.trblBor:after{
+		        width:300%;
+		        height:300%;
+				-webkit-transform:scale(.3333);
+				-ms-transform:scale(.3333);
+				-o-transform:scale(.3333);
+				transform:scale(.3333);
+			}
+		}
+    </style>
+</head>
+
+<body>
+<!--
+
+http://www.ghugo.com/css-retina-hairline/
+
+本文实际上想说的是ios8下 1px解决方案。 1px的边框在devicePixelRatio = 2的retina屏下会显示成2px，在iphone 6 plug 下，更显示成3px。由其影响美感。
+
+还好，时代总是进步的。也许很多人都不知道，现在IOS8下，已经支持0.5px了。。 那么意味着，在devicePixelRatio = 2下，我们可以使用如下的css代码：
+
+-->
+
+
+ <ul class="demo1">
+        <li>移动端1px边框测试效果</li>
+        <li>移动端1px边框测试效果</li>
+        <li>移动端1px边框测试效果</li>
+        <li>移动端1px边框测试效果</li>
+    </ul>
+
+
+    <ol class="demo2">
+        <li>移动端1px边框测试效果(border样式)</li>
+        <li>移动端1px边框测试效果(border样式)</li>
+        <li>移动端1px边框测试效果(border样式)</li>
+        <li>移动端1px边框测试效果(border样式)</li>
+    </ol>
+
+	<div class="box tBor bBor">
+		上， 下border
+	</div>
+	<div class="box lBor rBor">
+		左，右border
+	</div>
+
+	<div class="box tBor rBor">
+		上，右border 
+	</div>
+
+	<div class="box lBor bBor">
+		左，下border
+	</div>
+
+	<div class="box trblBor">
+		四角border,
+		支持圆角
+	</div>
+
+	<div class="box rawBor">
+		border:1px solid blue;
+	</div>
+   
+</body>
+
+</html>
