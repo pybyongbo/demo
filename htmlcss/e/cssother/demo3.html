@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>移动端输入密码测试</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <style>
         .num {
@@ -81,7 +81,6 @@
         li.key.delete {
             background-color: #E2E7ED;
             font-size: 20px;
-            /* font-weight: normal; */
         }
         
         .showPwd {
@@ -106,8 +105,14 @@
             border: 1px solid #d9d9d9;
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
+        .code_pic{
+            width:195px;
+            height: 202px;
+            margin:30px auto 0;
+        }
+        
     </style>
-    <script src="../lib/jquery-1.10.2.min.js"></script>
+    <script src="../../../lib/jquery-1.10.2.min.js"></script>
 </head>
 
 <body>
@@ -126,6 +131,10 @@
     </div>
     <div class="showPwd">
         <input type="text" id="tex">
+    </div>
+
+    <div class="code_pic">
+        <img src="../../img/ewm_1.png" alt="">
     </div>
     <div class="keybord">
         <ul class="key">
