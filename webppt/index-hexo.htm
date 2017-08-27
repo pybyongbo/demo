@@ -1,0 +1,235 @@
+<!--
+    Powered By nodePPT - This is probably the best web presentation tool so far!
+    version: 1.4.1
+    site: https://github.com/ksky521/nodePPT
+    date: 
+-->
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用Hexo3 搭建github blog - By pybyongbo</title>
+    <link rel="stylesheet" media="all" href="./css/nodeppt.css">
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="./css/phone.css">
+    
+    <link rel="stylesheet" href="./js/highlight/styles/monokai_sublime.css">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    
+<link rel="stylesheet" href="./css/theme.moon.css">
+</head>
+<body>
+<div class="slides">
+    <slides id="container">
+        <slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>基于nodejs -- hexo 博客框架搭建静态博客</h1>
+<h2>演讲者：pybyongbo</h2>
+<p><span class="yellow" style="float:right;margin-top:60px">Date:2016-03-11</span></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vleft">
+<h1>什么是hexo?</h1>
+<p><small style="vertical-align:middle;display:inline-block,;float: left;">
+    <span class="yellow">Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</span>
+</small></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1><span class="red">安装前提(您的电脑中必须安装如下环境.)</span></h1>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li><strong>Node.js</strong></li>
+<li><strong>git</strong></li>
+</ul>
+
+</article></section></slide>
+<slide class="slide fill" style="background-image:url('./img/bg1.png')"><section class="slide-wrapper"><article>
+<h2>使用以下命令进行安装</h2>
+<p>$ npm install -g hexo-cli</p>
+
+</article></section></slide>
+<slide class="slide fill" style="background-image:url('./img/bg.jpg')"><section class="slide-wrapper"><article class="flexbox vleft">
+<h2>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</h2>
+
+<h2><br></h2>
+<ul class="rollIn">
+<li>$ hexo init myblog(初始化)</li>
+<li>cd myblog</li>
+<li>npm install</li>
+<li>npm install -g hexo</li>
+<li>npm install hexo --save</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<h2>新建完成后，指定文件夹的目录如下</h2>
+<p><br>
+<img src="./img/mulu.png" alt="生成目录图" title="目录图"></p>
+<p><span class="yellow" style="margin-top:30px;float:left;margin-left:80px;">下面将对文件目录结构进行说明</span></p>
+
+</article></section></slide>
+<slide class="slide" data-transition="glue"><section class="slide-wrapper"><hgroup>
+<h1>文件目录说明</h1>
+
+</hgroup><article>
+
+<ul class="bounceIn">
+<li><span class="red">_config.yml (网站的配置信息,您可以在此配置大部分的参数.)</span></li>
+<li><span class="red">package.json (应用程序的信息)</span></li>
+<li><span class="red">scaffolds (模版文件夹.建文章时,Hexo会根据scaffold来建立文件)</span></li>
+<li><span class="red">source(资源文件夹是存放用户资源的地方)</span></li>
+<li><span class="red">theme (主题 文件夹.Hexo会根据主题来生成静态页面.)</span></li>
+</ul>
+
+</article></section></slide>
+<slide class="slide" data-transition="vertical3d"><section class="slide-wrapper"><hgroup>
+<h2>生成静态文档,调试--部署命令</h2>
+
+</hgroup><article>
+
+<ul class="bounceIn">
+<li><span class="yellow">$ hexo generate(生成静态文件)</span></li>
+<li><span class="yellow">$ hexo clean(清理缓存文件)</span></li>
+<li><span class="yellow">$ hexo server (打开本地服务器)</span></li>
+<li><span class="yellow">$ hexo deploy (部署命令)</span></li>
+</ul>
+
+</article></section></slide>
+<slide class="slide fill" style="background-image:url('./img/bg1.png')"><section class="slide-wrapper"><hgroup>
+<h1>github地址和博客地址</h1>
+
+</hgroup><article>
+
+<p>hexo是基于nodejs写的支持 <strong>Markdown!</strong> 语法的静态网页博客框架，当前版本：3.1.1</p>
+<p><br>
+Github地址:<a href="http://github.com/pybyongbo" target="_blank">http://github.com/pybyongbo</a>
+<br>
+<br>
+<span style="margin-left:-50px;">博客地址:<a href="http://blog.901web.com" target="_blank">http://blog.901web.com</a></span></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<h2>模版命令</h2>
+<h3><span class="yellow" style="font-size:24px">首先进入网站根目录下面的source/_post文件夹下面,新建md的文件</span></h3>
+<p><br></p>
+<ul class="fadeIn">
+<li>$ hexo new &quot;postName&quot; (新建文章)</li>
+<li>$ hexo new page &quot;pageName&quot; (新建页面)
+<br><br></li>
+</ul>
+
+</article></section></slide>
+<slide class="slide" data-transition="glue"><section class="slide-wrapper"><article>
+<p><span class="red">其中文章指的是列表页面的文章,页面指的就是单页,例如关于我.</span>
+<br></p>
+
+</article></section></slide>
+<slide class="slide fill" style="background-image:url('./img/bg1.png')"><section class="slide-wrapper"><article class="flexbox vleft">
+<h1>绑定二级域名和提交文件到github</h1>
+<p>使用方法:注册DNSpod，添加域名，添加记录，如下图设置。
+并在github网站上面的项目文件中添加CNAME文件,解析域名跳转,在浏览器中打开你设置的二级域名即可访问你的网站.
+<br><br>
+<span class="red">注意事项:github网站上面的分支应该为gh-pages分支,并且已经自动生成了你的项目主页.</span></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<p><img src="./img/dnspod.png" alt="绑定二级域名" title="二级域名">
+<br><br>
+<span class="yellow" style="float:left">然后就hexo d -g试试吧。</span></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vleft">
+<h1>还有很多的其他配置和高级功能</h1>
+<p>有兴趣的同学可以自行尝试下,在这里就不展开说明了,下面附上hexo的中文官网和搭建方法地址链接;</p>
+<p>hexo中文官网:
+<br>
+<a href="https://hexo.io/zh-cn/" target="_blank">https://hexo.io/zh-cn/</a></p>
+<p>静态博客搭建方法: 
+<br>
+<a href="http://forsweet.github.io/hexo/%E7%94%A8Hexo%E6%90%AD%E5%BB%BAGithub%E5%8D%9A%E5%AE%A2/" target="_blank">http://forsweet.github.io/hexo/%E7%94%A8Hexo%E6%90%AD%E5%BB%BAGithub%E5%8D%9A%E5%AE%A2/</a>
+<br><br>
+<span class="yellow">
+    如果在搭建的过程中遇到相关问题,欢迎相互讨论!
+</span></p>
+
+</article></section></slide>
+<slide class="slide" data-transition="glue"><section class="slide-wrapper"><article>
+<p>扫描二维码访问在线地址:
+<br><br></p>
+<img src="./img/ewm.png" alt="二维码" title="二维码">
+<p><br></p>
+<h2><span class="yellow">THANK YOU!</span></h2>
+<p>谢谢观看 ~~ END</p>
+
+</article></section></slide>
+        
+
+        <!-- <slide class="slide logoslide dark nobackground">
+            <article class="flexbox vcenter">
+                <h2 style="color: white;">Powered By nodePPT v1.4.1</h2>
+            </article>
+        </slide> -->
+        <div class="slideTip" id="tip"></div>
+    </slides>
+</div>
+<canvas id="drawBoard" class="draw-board" width="900" height="700"></canvas>
+<div class="progress"><span id="progress"></span></div>
+<div id="_buttons">
+    <div class="_btn-box" id="_btn-box" style="display:none;">
+        <button class="fa fa-arrow-circle-left" id="_btn-prev"></button>
+        <button class="fa fa-arrow-circle-right" id="_btn-next"></button>
+        <button class="fa fa-paint-brush" id="_btn-brush"></button>
+        <button class="fa fa-compress" id="_btn-overview" data-toggle="fa fa-expand"></button>
+    </div>
+    <button class="fa fa-bars" id="_btn-bar"  data-toggle="fa fa-close"></button>
+</div>
+<script src="./js/mixjs/lib/mix.0.3.0.min.js"></script>
+<script>
+var base = location.protocol + '//' + location.host;
+
+var path = (location.pathname + '#').split('/').filter(function(v){
+    return !!v;
+});
+path.pop();
+path = path.join('/');
+MixJS.config({
+    baseURL: [ base, path, 'js'].join('/')+'/'
+});
+
+</script>
+<script src="./js/mixjs/lib/event/broadcast.js"></script>
+<script src="./js/nodeppt.js"></script>
+<script>
+Slide.init({
+    containerID: 'container',
+    drawBoardID: 'drawBoard',
+    slideClass: '.slide',
+    buildClass: '.build',
+    progressID: 'progress',
+    transition: 'cards',
+    width: 1100,
+    dir: './',
+    
+    //打开下面的注释就开启postMessage方式
+    //访问网址127.0.0.1:8080/ppt/demo#client
+    control:{
+        type: 'postMessage',
+        args:{
+            isControl:  false
+        }
+    },
+    
+    tipID: 'tip'
+});
+MixJS.loadJS('highlight/highlight.pack.js',function(){
+    hljs.tabReplace = '  ';
+    hljs.initHighlightingOnLoad();
+});
+</script>
+<script src="./js/demo.js"></script>
+<link rel="stylesheet" href="./css/demo.css">
+
+<!--placeholder-->
+</body>
+</html>
