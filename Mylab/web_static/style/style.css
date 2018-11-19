@@ -1,0 +1,864 @@
+body {
+    background: #fff;
+}
+
+.top {
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.center {
+    width: 1278px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.top .center {
+    padding-bottom: 10px;
+}
+
+.logo {
+    padding-left: 50px;
+    overflow: hidden;
+}
+
+.logo img {
+    float: left;
+}
+
+.logo h2 {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 42px;
+    float: left;
+    margin-left: 5px;
+    font-family: 'Microsoft Yahei'
+}
+
+.menulist img {
+    cursor: pointer;
+    margin-right: 50px;
+}
+
+.sub_menu {
+    display: none;
+    background: #dddddd;
+    text-align: left;
+    width: 85px;
+}
+
+.sub_menu li a {
+    background: #dddddd;
+    display: block;
+    height: 24px;
+    color: #000;
+    line-height: 24px;
+    padding: 3px 10px;
+}
+
+.sub_menu li a:hover {
+    background: #727171;
+    color: #fff;
+}
+
+.banner {
+    clear: both;
+    margin-top: 5px;
+    position: relative;
+    width: 1278px;
+    margin: 0 auto;
+}
+
+.banner img {
+    display: block;
+    margin: 0 auto;
+}
+
+.banner input.search {
+    position: absolute;
+    top: 225px;
+    left: 174px;
+    padding: 5px 8px;
+    width: 280px;
+    height: 22px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    line-height: 22px;
+}
+
+.banner button.btn {
+    position: absolute;
+    top: 225px;
+    left: 428px;
+    height: 32px;
+    width: 40px;
+    border: none;
+    text-indent: -9999px;
+    background: url(../images/search.png) no-repeat center;
+}
+
+.item-list {
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+.item-list ul {}
+
+.item-list ul li {
+    float: left;
+    width: 318px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.item-list ul li img {
+    margin: 0 auto;
+    display: block;
+}
+
+.item-list ul li span {
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    line-height: 32px;
+}
+
+.footer {
+
+    color: #fff;
+    font-size: 13px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.footer .center {
+    width: 1238px;
+    padding: 10px 20px;
+    overflow: hidden;
+    background: #0cc169;
+}
+
+.footer .center .fl p {
+    margin-left: 180px;
+}
+
+.footer .center .fr p {
+    margin-right: 180px;
+}
+
+
+/**登录页面**/
+
+.login_bgline {
+    height: 398px;
+    background: url(../images/login_bg.png) repeat-x;
+    margin-bottom: 50px;
+}
+
+.login_bgline form {
+    padding-top: 5px;
+    width: 420px;
+    height: 278px;
+    margin: 50px auto;
+    background: #5dbd8f;
+}
+
+.login_bgline form h2 {
+    margin: 10px auto;
+    color: #fff;
+    text-align: center;
+    height: 36px;
+    line-height: 36px;
+    font-family: 'Microsoft Yahei'
+}
+
+.login_bgline div {
+    margin-bottom: 8px;
+    padding-left: 50px;
+    overflow: hidden;
+}
+
+.login_bgline div label {
+    display: block;
+    float: left;
+    width: 50px;
+    height: 38px;
+    margin-right: 2px;
+}
+
+.login_bgline div label.username {
+
+    background: #ceeadd url(../images/user.png) no-repeat center;
+}
+
+.login_bgline div label.password {
+
+    background: #ceeadd url(../images/pass.png) no-repeat center;
+}
+
+.login_bgline input {
+    float: left;
+    width: 220px;
+    height: 26px;
+    padding: 5px 12px;
+    line-height: 18px;
+    border: 1px solid #fff;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.login_bgline input.yzm {
+    border-radius: 5px;
+    width: 120px;
+    margin-right: 5px;
+}
+
+.login_bgline img.code {
+    height: 38px;
+    cursor: pointer;
+}
+
+.login_bgline a.change {
+    color: #fff;
+}
+
+.login_bgline button.btn {
+    letter-spacing: 2px;
+    border: none;
+    width: 280px;
+    height: 36px;
+    color: #fff;
+    background: #298c63;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.login_bgline div a.forget {
+    display: block;
+    color: #fff;
+    margin-top: 10px;
+    float: left;
+    margin-right: 10px;
+}
+
+.page_footer {}
+
+.page_footer p {
+    text-align: center;
+    font-size: 13px;
+    line-height: 28px;
+}
+
+
+/**企业注册**/
+
+.register {}
+
+.register .w100 {
+    border-bottom: 1px solid #95d2c3;
+}
+
+.register .w100 .centerm,
+.register .center {
+    width: 860px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.register .w100 .center .hd_tab {
+    overflow: hidden;
+}
+
+.register .w100 .center .hd_tab h2 {
+    padding: 5px 15px;
+    float: left;
+    color: #000;
+    background: #95d2c3;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.register .center .bd a {
+    color: #000;
+    display: block;
+    padding-left: 35px;
+    height: 32px;
+    line-height: 32px;
+    background: url(../images/reg_qa.png) no-repeat 10px 65%;
+    margin: 10px auto;
+}
+
+.register .form {
+    padding-left: 30px;
+}
+
+.register .form .item {
+    position: relative;
+    margin-bottom: 20px;
+    clear: both;
+}
+
+.register .form .item label {
+
+    float: left;
+    width: 120px;
+    text-align: right;
+    margin-right: 5px;
+    line-height: 32px;
+}
+
+.register .form .item label em {
+    position: absolute;
+    top: 5px;
+    left: 60px;
+    color: red;
+}
+
+.register .form .item input.input_text {
+    width: 520px;
+    border: 1px solid #909090;
+    height: 20px;
+    padding: 5px 10px;
+}
+
+.register .form .itemborder {
+    padding: 6px 10px;
+    float: left!important;
+    border: 1px solid #909090;
+    width: 520px;
+    margin-bottom: 10px;
+}
+
+.register .form .itemborder select {
+    width: 135px;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+
+.register .form .itemborder input {
+    margin-top: 10px;
+    border: none;
+    display: block;
+    border-bottom: 1px solid #909090;
+    width: 514px;
+}
+
+.file {
+    position: relative;
+    display: inline-block;
+    background: #cae1db;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #929d9a;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 21px;
+    width: 527px;
+    margin-left: 32px;
+    padding-left: 98px;
+}
+
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.reg-btn {
+    letter-spacing: 2px;
+    border: none;
+    width: 220px;
+    height: 50px;
+    color: #fff;
+    background: #00ca8a;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.notice {
+    overflow: hidden;
+    padding-left: 50px;
+    width: 1060px;
+    margin: 30px auto 20px;
+}
+
+.notice .notice-hd {
+    position: relative;
+    height: 27px;
+}
+
+.notice .notice-hd ul {
+    position: absolute;
+    top: 0;
+    left: -1px;
+}
+
+.notice .notice-hd ul li {
+    float: left;
+    display: block;
+    overflow: hidden;
+    background: #dfdfe0;
+    width: 170px;
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    *zoom: 1;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.notice .notice-hd ul li a {
+    color: #000;
+}
+
+.notice .notice-hd ul li.selected a {
+
+    color: #fff;
+    text-decoration: none
+}
+
+.notice .notice-hd ul .selected {
+    color: #fff;
+    padding: 0;
+    height: 50px;
+    font-weight: 700;
+    background: url(../images/li_active.png);
+}
+
+.notice .notice-bd .mod {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.notice .notice-bd .mod li {
+    float: left;
+    display: block;
+    overflow: hidden;
+    width: 48%;
+    height: 42px;
+    line-height: 42px;
+    *zoom: 1;
+    margin-right: 5px;
+    padding-left: 10px;
+    background: url(../images/arrow_bg.png) no-repeat left center;
+}
+
+.notice .notice-bd .mod li a {
+    color: #000;
+
+    padding-left: 12px;
+}
+
+.notice .notice-bd .mod li a.h {
+    color: #f40;
+    background: url(../images/cir_hover.png) no-repeat left center;
+}
+
+.notice .notice-bd .mod li a:hover {
+    color: #f60;
+    background: url(../images/cir_hover.png) no-repeat left center;
+}
+
+.contact .login_bgline {
+    background: #b2e0d1;
+    height: 90px;
+}
+
+.contact .login_bgline h2 {
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 90px;
+    padding-left: 40px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-family: 'Microsoft Yahei'
+}
+
+.gsjj p {
+    font-size: 14px;
+    line-height: 32px;
+    text-indent: 26px;
+}
+
+.cxqy {
+    background: #8edbbb;
+    height: 50px;
+}
+
+.cxqy h2 {
+    padding-left: 0px!important;
+    text-align: center;
+}
+
+.searchbox {
+    width: 378px;
+    padding: 10px 20px;
+    background: #cde2d9;
+    overflow: hidden;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.searchpro {
+    cursor: pointer;
+    width: 756px;
+    padding-left: 10px!important;
+    background: #dcebe5 url(../images/more_arr.png) no-repeat right center;
+}
+
+
+
+.searchbox span {
+    float: left;
+    line-height: 34px;
+    margin-right: 20px;
+    color: #000;
+    margin-left: 10px;
+}
+
+.searchbox input {
+
+    width: 280px;
+    height: 22px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    line-height: 22px;
+}
+
+.searchbox .btn {
+    width: 33px!important;
+    position: absolute;
+    top: 3px;
+    left: 360px;
+    height: 32px;
+    width: 40px;
+    border: none;
+    text-indent: -9999px;
+    background: url(../images/search.png) no-repeat center!important;
+}
+
+.searchpro input {
+    width: 250px!important;
+}
+
+.searchpro .btn {
+    left: 302px;
+}
+
+.searchpro .btn2 {
+    left: 630px;
+}
+
+.searchpro span.more {
+    float: right;
+    margin-right: 48px;
+}
+
+.dt_list {
+    overflow: hidden;
+    margin-top: 50px;
+    padding-left: 180px;
+    margin-bottom: 30px;
+}
+
+.dt_list dl {
+    float: left;
+    width: 32%;
+    margin-right: 5px
+}
+
+.dt_list dl dt {
+    float: left;
+    margin-right: 20px;
+}
+
+.dt_list dl dd {
+    float: left;
+    padding-top: 10px;
+}
+
+.dt_list dl dd span {
+    font-weight: bold;
+    display: block;
+}
+
+.dt_list dl dd p {
+    margin-top: 8px;
+    line-height: 26px;
+    text-indent: 0;
+}
+
+.cate_list {
+    width: 840px;
+    padding: 30px 50px 15px;
+    background: #f6f6f6;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.cate_list h2 {
+    float: left;
+    width: 64px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.cate_list ul {
+    float: left;
+    width: 868px;
+    margin-right: -220px;
+}
+
+.cate_list ul li {
+    margin-right: 20px;
+    float: left;
+    width: 170px;
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: 20px;
+    padding-left: 28px;
+}
+
+.cate_list ul li.li_01 {
+    background: url(../images/li_01.png) no-repeat left center;
+}
+
+.cate_list ul li.li_02 {
+    background: url(../images/li_02.png) no-repeat left center;
+}
+
+.cate_list ul li.li_03 {
+    background: url(../images/li_03.png) no-repeat left center;
+}
+
+.cate_list ul li.li_04 {
+    background: url(../images/li_04.jpg) no-repeat left center;
+    margin-right: 0px;
+    float: right;
+}
+
+.cate_list ul li.li_05 {
+    background: url(../images/li_05.png) no-repeat left center;
+}
+
+.cate_list ul li.li_06 {
+    background: url(../images/li_06.png) no-repeat left center;
+}
+
+.cate_list ul li.li_07 {
+    background: url(../images/li_06.png) no-repeat left center;
+}
+
+.cate_list ul li.li_08 {
+    background: url(../images/li_08.png) no-repeat left center;
+    margin-right: 0px;
+    float: right;
+}
+
+.cate_list ul li.li_09 {
+    background: url(../images/li_09.png) no-repeat left center;
+}
+
+.cate_list ul li.li_10 {
+    background: url(../images/li_10.png) no-repeat left center;
+}
+
+.pages {
+
+    padding: 10px 20px;
+    margin-right: 150px;
+    float: right;
+}
+
+.pages a {
+    padding: 3px 5px;
+}
+
+.pages a:hover {
+    background: #99e3c4;
+    color: #000;
+}
+
+.logo_list {
+    width: 946px;
+    margin: 0 auto;
+    clear: both;
+}
+
+.logo_list li {
+    overflow: hidden;
+    border: 1px solid #c3c3c3;
+    margin-bottom: 10px;
+}
+
+.logo_list li img {
+    margin-left: 30px;
+    float: left;
+    margin-right: 160px;
+}
+
+.logo_list li h3 {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 90px;
+    font-family: 'Microsoft Yahei';
+    margin-left: 120px;
+    color: #599996;
+}
+
+.product_list {
+    width: 860px;
+    margin: 50px auto;
+}
+
+.product_list ul {
+    padding-left: 42px;
+}
+
+.product_list ul li {
+    width: 180px;
+    float: left;
+    margin-right: 18px;
+    margin-bottom: 20px;
+}
+
+.product_list ul li img {
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.product_list ul li h3 {
+    line-height: 24px;
+    color: #2c2c2c;
+    font-weight: bold;
+}
+
+.product_list ul li p {
+    text-indent: 0px;
+}
+
+.footer_lxfs {
+    width: 94%;
+    margin: 30px auto;
+}
+
+.footer_lxfs div.borderbottom {
+    height: 30px;
+    padding: 10px 0px;
+    border-bottom: 1px solid #a0a0a0;
+}
+
+.footer_lxfs div.borderbottom p {
+    text-indent: 0;
+}
+
+.footer_lxfs div.borderbottom span {
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+.footer_lxfs div.borderbottom span img {
+    margin-right: 10px;
+}
+
+.html_editor {
+    width: 1047px;
+    margin: 0 auto 50px;
+}
+
+.html_editor .dl_list {
+    overflow: hidden;
+    padding-left: 140px;
+}
+
+.html_editor .dl_list dl {
+    width: 420px;
+    float: left;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.html_editor .dl_list dl dt {
+    margin-right: 10px;
+    float: left;
+}
+
+.html_editor .dl_list dl dd {
+    padding-top: 10px;
+    float: left;
+    width: 320px;
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.html_editor .dl_list dl dd h2 {
+    background: #61bda6;
+    border-radius: 50px;
+    padding: 5px 10px;
+    width: 130px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.qkl_info {
+    width: 1072px;
+    margin: 0 auto;
+}
+
+.qkl_info .hd_tit {
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    background: #e7f4ee;
+}
+
+
+.qkl_info .hd_tit h2 {
+    font-weight: bold;
+    font-family: 'Microsoft Yahei'
+}
+
+.qkl_info div.singular {
+
+    background: #a3d8ca;
+    overflow: hidden;
+    padding: 20px 30px;
+}
+
+.qkl_info div.singular div,
+.qkl_info div.even div {
+    width: 41%;
+    height: 38px;
+    padding-left: 60px;
+    background: url(../images/ft_arr.png) no-repeat left center;
+}
+
+
+.qkl_info div.even {
+    background: #e7f4ee;
+
+    overflow: hidden;
+    padding: 20px 30px;
+}
+
+.qkl_info div.singular div p {
+    color: #fff;
+}
+
+.qkl_info div.even div p {
+    color: #8a8a8a;
+}

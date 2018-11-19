@@ -1,0 +1,107 @@
+﻿body {
+    width: 680px;
+    margin: 50px auto;
+}
+
+div {
+    margin: 15px auto;
+}
+div h2{font-size:14px;font-weight: lighter;color:red;}
+input[type=checkbox] {
+    position: relative;
+    width: 15px;
+    height: 1px;
+    right:-208px;
+}
+
+input[type=checkbox]::before,
+input[type=checkbox]::after {
+    position: absolute;
+    display: block;
+    content: '';
+    border-radius: 3px;
+    transition: .3s all ease;
+}
+
+input[type=checkbox]::after {
+    /*content:'\2714';*/
+}
+
+input[type=checkbox]::before {
+    top: -13px;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #e72d28;
+}
+
+input[type=checkbox]::after {
+    top: 5px;
+    left: 5px;
+    width: 11px;
+    height: 11px;
+    background-color: #fff;
+}
+
+input[type=checkbox]:checked::before {
+    border-color: #e72d28;
+    content: '\2714';
+    font-family: "STSong";
+    background: #e72d28;
+    color: #fff;
+}
+
+input[type=checkbox]:checked::after {
+    /*border-color:#27ae60;*/
+    border-color: #e72d28;
+    /*content:'\2714';
+        font-family: "STSong";
+        background: #e72d28;
+        color:#fff;*/
+}
+
+/**单选框按钮部分**/
+input[type=radio] {
+  position: relative;
+  width: 15px;
+  height: 1px;
+  top:-15px;
+  margin-right:10px;
+}
+input[type=radio]::before,
+input[type=radio]::after {
+  position: absolute;
+  display: block;
+  content: '';
+  border-radius: 50%;
+  transition: .3s all esae;
+}
+input[type=radio]::before {
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 3px solid #ccc;
+}
+input[type=radio]::after {
+  top: 5px;
+  left: 5px;
+  width: 11px;
+  height: 11px;
+  background-color: #fff;
+}
+input[type=radio]:checked::before {
+  border-color: #27AE60;
+}
+input[type=radio]:checked::after {
+  background-color: #27AE60;
+}
+
+
+.auto_login{font-size:12px;line-height: 23px;}
+#login_form_pop .auto_login_tip i, #login_form_pop .cwarnflag label, .login_name i, .login_password i, .ident_code i, .get_phonepsd i, .auto_login>span, #auTipBox .auhover{
+background: url(../img/login1.png) no-repeat;
+}
+
+.auto_login .auhover {width: 116px;height: 20px;display: inline-block;padding-left: 20px;background-position: -135px -410px;}
+.auto_login>span {background-position: -135px -375px;width: 116px;height: 20px;display: inline-block;padding-left: 20px;}

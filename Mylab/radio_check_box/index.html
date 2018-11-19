@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Checkbox测试!</title>
+    <link rel="stylesheet" href="style/normalize.css" />
+    <link rel="stylesheet" href="style/checkbox.css" />
+    <script src="js/jquery-1.10.2.min.js"></script>
+</head>
+
+<body>
+        
+	<div class="checkbox">
+		
+		<h2>复选框效果--css伪类实现</h2>
+	
+	 	<div>钥匙托管<input type="checkbox" name="server"/></div>
+
+	 	<div>快租带看<input type="checkbox" name="server"/></div>
+
+	 	<div>委托签约<input type="checkbox" name="server"/></div>
+
+	</div>
+	
+
+	<div class="radiobox">
+		
+		<h2>单选框效果--css伪类实现</h2>
+	
+	 	<div>
+		 	<label for="men">男</label>
+		 	<input type="radio" name="sex" id="men" checked>
+		 	<label for="women">女</label>
+	  		<input type="radio" name="sex" id="women">
+  		</div>
+
+	</div>
+
+
+	
+	<div>
+		<h2>其他方法:还可以使用背景图片,选中与补选中,然后用坐标进行定位即可.</h2>
+
+		<div class="auto_login clearfix">
+                                <span id="auTipBox" title="为了账号安全，公共场合不建议自动登录" class="">
+                                    <label>七天内自动登录</label>
+                                </span> 
+                                <a rel="nofollow" href="" target="_blank">忘记密码？</a>
+                          </div>
+
+                          <h2>在表单中写一个隐藏域,把值传递过去即可..</h2>
+	</div>
+
+
+</body>
+</html>
+
+<script>
+
+
+	$("#auTipBox").click(function(){
+
+		var cname= $(this).attr('class');
+		if(cname=='') {
+
+			$(this).addClass('auhover');
+		} else {
+
+			$(this).removeClass('auhover');
+
+		}
+	})
+
+</script>
+

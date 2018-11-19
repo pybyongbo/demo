@@ -1,0 +1,87 @@
+@import url('reset.css');
+body {
+    background-color: #DCE1E5;
+    color: #666666;
+    font-family: Tahoma,Arial,"Microsoft Yahei",Simsun,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+}
+
+.g-hidden {
+    display: none !important;
+}
+.g-noverflow {
+    overflow: hidden;
+}
+.grid-page, .grid-header, .grid-body, .grid-footer, .grid-row {
+    box-sizing: border-box;
+    width: 100%;
+}
+.grid-page:after, .grid-header:after, .grid-body:after, .grid-footer:after, .grid-row:after {
+    clear: both;
+    content: " ";
+    display: table;
+}
+.app-header .logo {
+float: left;
+}
+
+.app-header .logo a {
+color: white;
+}
+.app-header .region {
+float: left;
+overflow: hidden;
+padding: 38px 0 0 24px;
+width: 160px;
+}
+
+.grid-page {
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+.grid-row {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px;
+}
+.g-chagneRegion {
+    background-color: #FFFFFF;
+    border: 1px solid #999999;
+    position: absolute;
+    width: 256px;
+    z-index: 1000;
+}
+.g-chagneRegion h3 {
+    color: #999999;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 6px 10px 12px;
+}
+.g-chagneRegion ul {
+    padding-left: 15px;
+}
+.g-chagneRegion ul:after {
+    clear: both;
+    content: " ";
+    display: table;
+}
+.g-chagneRegion li {
+    float: left;
+    font-size: 12px;
+    line-height: 21px;
+    padding-bottom: 9px;
+    width: 56px;
+}
+.g-chagneRegion li a {
+    color: #333333;
+    float: left;
+    padding: 0 7px;
+    cursor:pointer;
+}
+.g-chagneRegion li a:hover, .g-chagneRegion li.active a {
+    background-color: #35BA37;
+    color: #FFFFFF;
+    text-decoration: none;
+}

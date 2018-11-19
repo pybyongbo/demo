@@ -1,0 +1,66 @@
+body{padding-top:40px;}
+h1,h2,h3{font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
+font-weight: normal;}
+ul,ol{list-style-type:none;}
+a{
+blr:expression(this.onFocus=this.blur());
+ outline:none;   
+}
+h1, h2, h3 {
+	font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
+	font-weight: normal;
+}
+#scrollUp{
+    bottom:20px;
+    right:20px;
+    height:38px;
+    width:38px;
+    background:url(../img/top.png) no-repeat;
+}
+.info{margin-top:30px;font-size:18px;}
+.navbar{}
+.navbar-over{height:43px;width:100%;background:#000;opacity:0.3;filter:alpha(opacity=30);position:absolute;top:0;z-index:9999;display:none;}
+.line{background:url(../img/line.png) no-repeat right center;}
+.brand{width:225px;height:17px;background:url(../img/logo.png) no-repeat center 60%;}
+.title{padding:40px 0;background:url(../img/bg.png);text-align:center;color:#333;border-bottom:1px solid #eee;}
+.title h1{font-size:75px;line-height:1.2;color:#c90;text-shadow:2px 2px 1px #ccc;}
+
+
+.title h2{font-size:30px;line-height:1.25;margin-bottom:20px;color:#c90;text-shadow:1px 1px 0px #ccc;font-weight:300;font-family:'微软雅黑'}
+.title p.h4{margin-bottom:20px;}
+.title p.h5{letter-spacing:1px;color:#666;}
+.title p.h5 a, .title p.h5 span{padding:5px;}
+.title .btn{font-size:24px;padding:10px 20px;letter-spacing:1px;margin:0 5px;}
+/*
+按钮样式可以做自己来重新定义,重新写成自己想要的样式
+.title .btn-success{background:red;}
+.title .btn-success:hover{background:black;}
+.resource h1{margin:40px 0 10px;font-size:50px;font-weight:200;line-height:1;letter-spacing:-1px;text-align:center;font-family:"Microsoft YaHei";color:#666;text-shadow: 2px 2px 1px #ccc;}
+*/
+.content{text-align:center;color:#666;}
+.content h3, .content h5, .content p {
+text-align: left;
+}
+table#tb{border-collapse: collapse;}
+	table#tb th{border:1px solid #d5d6e6;padding-left:30px;}
+	table#tb td{
+		border: 1px solid #d5d6e6;
+		padding-left:30px;
+		}
+
+.content h1 {
+margin: 40px 0 10px;
+font-size: 60px;
+font-weight: 200;
+line-height: 1;
+letter-spacing: -1px;
+font-family:"Microsoft YaHei";
+}
+.progress{margin-bottom:0px;}
+
+.footer {
+text-align: center;
+padding: 30px 0;
+border-top: 1px solid #e5e5e5;
+background-color: #f5f5f5;
+}

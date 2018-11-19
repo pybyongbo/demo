@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>css中margin负值的相关应用举例!</title>
+	<link rel="stylesheet" href="../reset.css" />
+	<link rel="stylesheet" href="style/style.css" />
+	<script src="../jquery-1.10.1.js"></script>
+</head>
+<body>
+	
+	<div class="header">
+		<h1 class="title">margin负值 – 一个秘密武器</h1>
+	</div>
+
+	<div class="warp">
+		<dl class="ui-tab">
+			<dt class="ui-tab-trigger clearfix">
+
+				<a href="#tab-content1" class="ui-tab-trigger-item">横向列表</a>
+				<a href="#tab-content2" class="ui-tab-trigger-item">纵向列表</a>
+				<a href="#tab-content3" class="ui-tab-trigger-item">两栏自适应布局</a>
+				<a href="#tab-content4" class="ui-tab-trigger-item">三栏自适应布局</a>
+				<a href="#tab-content5" class="ui-tab-trigger-item">多栏等高</a>
+				<a href="#tab-content6" class="ui-tab-trigger-item">产品列表</a>
+				<a href="#tab-content7" class="ui-tab-trigger-item">水平垂直居中</a>
+				<a href="#tab-content8" class="ui-tab-trigger-item">模拟表格线</a>
+
+			</dt>
+
+			<dd id="tab-content1" class="ui-tab-cnt-item ui-tab-cnt-item-current" style="display: block;">
+		      <ul class="nav-list clearfix">
+		        <li class="nav-list-item"><a href="##">关于我们</a></li>
+		        <li class="nav-list-item"><a href="##">关于我们</a></li>
+		        <li class="nav-list-item"><a href="##">关于我们</a></li>
+		        <li class="nav-list-item"><a href="##">关于我们</a></li>
+		      </ul>
+    		</dd>
+
+    		<dd id="tab-content2" class="ui-tab-cnt-item" style="display: none;">
+		      <ul class="news-list clearfix">
+		        <li class="news-list-item"><a href="##">margin负值之美</a></li>
+		        <li class="news-list-item"><a href="##">margin负值之美</a></li>
+		        <li class="news-list-item"><a href="##">margin负值之美</a></li>
+		        <li class="news-list-item"><a href="##">margin负值之美</a></li>
+		        <li class="news-list-item"><a href="##">margin负值之美</a></li>
+		      </ul>
+		    </dd>
+
+		    <dd id="tab-content3" class="ui-tab-cnt-item" style="display: none;">
+			    <div class="grid-c2 clearfix">
+			        <h2>两栏：.grid-c2</h2>
+			        <div class="col-main">
+			          <div class="col-main-warp">
+			            <div class="test-box">main<span class="width">750px</span></div>
+			          </div>
+			        </div>
+			        <div class="col-side">
+			          <div class="test-box-big">side<span class="width">200px</span></div>
+			        </div>
+			      </div>
+			      <div class="grid-c2f clearfix">
+			        <h2>两栏：.grid-c2f</h2>
+			        <div class="col-main">
+			          <div class="col-main-warp">
+			            <div class="test-box">main<span class="width">750px</span></div>
+			          </div>
+			        </div>
+			        <div class="col-side">
+			          <div class="test-box-big">side<span class="width">200px</span></div>
+			        </div>
+			      </div>
+			   </dd>
+
+			   <dd id="tab-content4" class="ui-tab-cnt-item" style="display: none;">
+			      <div class="w960" id="width">
+			        <div class="grid-c3 clearfix" id="bar">
+			          <h2>三栏：.grid-c3<a href="##" id="togglePageId">宽度切换</a></h2>
+			          <div class="col-main">
+			            <div class="col-main-warp">
+			              <div class="test-box">main<span class="width">510px</span></div>
+			            </div>
+			          </div>
+			          <div class="col-side">
+			            <div class="test-box-big">side<span class="width">200px</span></div>
+			          </div>
+			          <div class="col-extra">
+			            <div class="test-box-small">extra<span class="width">230px</span></div>
+			          </div>
+			        </div>
+			      </div>
+			    </dd>
+
+			   <dd id="tab-content5" class="ui-tab-cnt-item" style="display: none;">
+			      <div class="grid-c3d clearfix  equalheight">
+			        <h2>三栏等高：.grid-c3d</h2>
+			        <div class="col-main equalheight-item">
+			          <div class="col-main-warp">
+			            <div class="test-box">main<span class="width">510px</span></div>
+			          </div>
+			        </div>
+			        <div class="col-side equalheight-item">
+			          <div class="test-box-big">side<span class="width">200px</span></div>
+			        </div>
+			        <div class="col-extra equalheight-item">
+			          <div class="test-box-small">extra<span class="width">230px</span></div>
+			        </div>
+			      </div>
+		     </dd>
+
+		     <dd id="tab-content6" class="ui-tab-cnt-item" style="display: none;">
+		      <div class="goods">
+		        <ul class="goods-list">
+		          <li class="goods-list-item"><a href="##">margin负值之美</a></li>
+		          <li class="goods-list-item"><a href="##">margin负值之美</a></li>
+		          <li class="goods-list-item"><a href="##">margin负值之美</a></li>
+		          <li class="goods-list-item"><a href="##">margin负值之美</a></li>
+		          <li class="goods-list-item"><a href="##">margin负值之美</a></li>
+		          <li class="goods-list-item"><a href="##">margin负值之美</a></li>
+		          <li class="goods-list-item"><a href="##">margin负值之美</a></li>
+		        </ul>
+		      </div>
+		    </dd>
+
+		    <dd id="tab-content7" class="ui-tab-cnt-item" style="display:none;">
+		      <div class="vertical-center"></div>
+		    </dd>
+				
+			<dd id="tab-content8" class="ui-tab-cnt-item" style="display: none;">
+		      <ul class="feed-list">
+		        <li class="feed-list-item"><span class="num-tex">138</span><a href="##" title="关注">关注</a></li>
+		        <li class="feed-list-item"><span class="num-tex">106</span><a href="##" title="关注">关注</a></li>
+		        <li class="feed-list-item"><span class="num-tex">23</span><a href="##" title="关注">关注</a></li>
+		        <li class="feed-list-item"><span class="num-tex">59</span><a href="##" title="关注">关注</a></li>
+		        <li class="feed-list-item"><span class="num-tex">59</span><a href="##" title="关注">关注</a></li>
+		      </ul>
+		    </dd>
+
+		</dl>
+
+
+
+	</div>
+	
+
+	<div class="other_info">
+		
+		<h2 class="title">margin负值的相关推荐阅读</h2>
+	
+		<p><a href="http://www.hicss.net/do-not-tell-me-you-understand-margin/" target="_blank">不要告诉我你懂margin</a></p>
+
+		<p><a href="http://www.hicss.net/i-know-you-do-not-know-the-negative-margin/" target="_blank">我知道你不知道的负Margin</a>
+
+		<p><a href="http://www.zhangxinxu.com/wordpress/2009/08/css-margin的相关属性，问题及应用/" target="_blank">css margin的相关属性，问题及应用</a></p>
+
+		<p><a href="http://www.csswang.com/exp/cssexp/3863.html" target="_blank">margin负值-权威指南</a></p>
+
+		<p><a href="http://www.cnblogs.com/jscode/archive/2012/08/28/2660078.html" target="_blank">负值之美：负margin在页面布局中的应用</a></p>
+
+		<p><a href="http://dna.yiihuu.com/26101.html" target="_blank">详解css样式表中五种margin负值应用</a></p>
+
+		<p><a href="http://blog.doyoe.com/">css中margin属性的相关介绍</a></p>
+
+	</div>
+
+
+
+
+</body>
+</html>
+
+<script>
+
+	var artTabs = function(bar,config){
+
+			var gid = function (id) {
+
+				return document.getElementById(id);
+
+			};
+
+			config = config || {};
+			var bar = typeof bar === 'string'?gid(bar):bar,
+
+			className = config.className || 'ui-tab-trigger-item ui-tab-trigger-item-current',
+			callback = config.callback || function() {},
+			isMouseover = config.isMouseover,
+			buttons = bar.getElementsByTagName('a'),
+			selectButton = buttons[
+			config.index||
+			function(){
+				var ret = 0;
+				for(i=0;i<buttons.length;i++) {
+
+					if(buttons[i].className === className) ret=i;
+				};
+
+				return ret;
+				
+			}()
+		],
+
+		showContent = gid(selectButton.href.split("#")[1]),
+		target,
+		fn = function (event) {
+
+			event = event || window.event;
+			target = event.target || event.srcElement;
+			if(target.nodeName.toLowerCase() === 'a') {
+
+				showContent.style.display = 'none';
+				showContent = gid(target.href.split("#")[1]);
+				showContent.style.display = 'block';
+				selectButton.className = 'ui-tab-trigger-item';//默认的class
+				selectButton = target;
+				target.className = className;
+				target.focus();
+				callback(selectButton,showContent);
+				return false;
+			};
+
+		};
+
+		if(isMouseover) bar.onmouseover = fn;
+		bar.onclick = fn;//click事件至少能保证手持设备可用.
+
+};
+
+
+//给jquery添加插件
+
+jQuery.fn.artTabs = function(config) {
+
+	return this.each(function() {
+
+		artTabs(this,config);
+
+	})
+
+}
+
+//演示代码
+jQuery('.ui-tab>dt').artTabs();
+//宽度切换
+	window.onload = function() {
+		var trigger = document.getElementById('togglePageId');
+		trigger.onclick = function() {
+			var page = document.getElementById('bar').parentNode;
+			page.id = (page.id == 'width') ? 'widthAuto' : 'width';
+			return false;
+		}
+	};
+
+
+
+
+
+</script>
+
+

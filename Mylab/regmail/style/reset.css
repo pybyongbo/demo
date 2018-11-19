@@ -1,0 +1,20 @@
+﻿/*****************************************************************-/
+初始化及公用CSS
+/-*****************************************************************/
+body, dl, dd, h1, h2, h3, h4, h5, h6, p, form{margin:0;}   ol,li,ul{margin:0; padding:0;}
+img {border:0px;}
+ul li{list-style:none;}
+a{text-decoration:none;color:#000;}
+a:hover{text-decoration:none;}
+div:after {content: '.'; display: block; height: 0; clear: both; visibility: hidden;}
+body{font-family:"微软雅黑", "ARial Unicode MS"!important;font-size:12px;}
+p{font-size:12px;line-height:20px;font-family:'宋体';}
+.clear{clear:both;width:0;height:0;font-size:0;overflow: hidden;}
+h1,h2,h3,h4,h5,h6{ font-family!important:"微软雅黑"}
+input,button,select,textarea{outline:none;}
+.fl{float:left;}
+.fr{float:right;}
+
+/* 通用样式 */
+.f14{font-size:14px;}
+.fbd{font-weight:bold;}

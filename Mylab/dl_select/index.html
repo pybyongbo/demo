@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>dl模拟select下拉框测试练习!</title>
+<style>
+*{ margin:0; padding:0}
+.clear{clear:both;}
+body{ font-family:Verdana; font-size:12px; line-height:1.8; padding:50px;}
+form dt{ background:url(images/select.gif) no-repeat left center; 
+width:193px;cursor:default; padding-left:5px;}
+form .out{ background:#FFFFFF; color:#000000;}
+form .move{ background:#000066; color:#FFFFFF}
+form dl{text-align:left;float:left;margin-right:35px;}
+form dd{ border:1px solid #000;position:absolute; width:195px; overflow:hidden;background:#fff; margin-top:-3px;}
+form dd li{cursor:default; width:100%; padding-left:5px;}
+
+/**********jquery插件模拟select表单部分*********/
+.book_box1 {padding:15px 0;}
+.book_box2 {padding:15px 0;}
+.booking input,.booking li,.booking span,.booking select,.booking option{font-size:16px;}
+.booking h2 {font-size:16px;color:#e60012;}
+.booking ul li {height:40px;line-height:40px;}
+.booking ul li a {color:#6b6b6b;}
+.booking ul li a:hover {text-decoration:underline;}
+
+.book_box1 ul li {float:left;width:350px;}
+.book_box1 span{float:left;margin-right:15px;}
+.book_box1 span.name{line-height: 42px;}
+
+.in_m {width:179px;height:38px;border:none;border-top:1px solid #e3e4e8;border-bottom:1px solid #e3e4e8;float:left;}
+.book_box2 span {float:left;margin-right:15px;}
+.book_box2 ul li {padding:15px 0;}
+.d_5 {float:left;width:5px;height:40px;}
+.book_box3 {width:70px;margin:0 auto;}
+.book_box3 input {color:#fff;cursor:pointer;border:none;background:#e60012;width:70px;height:24px;text-align:center;line-height:24px;}
+.selectContainer {position:relative;}
+.ks {padding:10px;float:left;width:224px;height:18px;background:#FFF; border:1px solid #e3e4e8;}
+.sj {padding:10px;float:left;width:100px;height:18px;background:#FFF; border:1px solid #e3e4e8;}
+.selectContainer dl {z-index:999;top:39px;left:-1px;background:#fff;position:absolute;display:none;border:1px solid #e3e4e8;width:100%;border-top:none;}
+.selectContainer dl dd {text-indent:5%;list-style:none;line-height:38px;background:#FFF; cursor:pointer}
+.selectContainer dl dd:hover {background:#e3e4e8;}
+.selectContainer dl.dis {display:block}
+.selectContainer dl.undis {display:none;}
+.selectOption {width:100%;height:20px;line-height:20px;cursor:pointer;background:url(images/icons_1.jpg) no-repeat right;}
+</style>
+<script type="text/javascript" src="../lib/jquery-1.10.2.min.js"></script>
+
+</head>
+<body>
+<script language="javascript">
+function AjaxSelectBox(v){
+	var dl = v.parentNode;
+	var dd = dl.getElementsByTagName("dd")[0];
+	var dt = dl.getElementsByTagName("dt")[0];
+	var lis = dl.getElementsByTagName("li");
+	var html = '';
+	for(var y=0; y<lis.length; y++){			
+		html += '<li onclick="SetSelectInput(this,1);" onmouseout="SetSelectInput(this,2);" onmousemove="SetSelectInput(this,3);" value="'+lis[y].value+'">' + lis[y].innerHTML + '</li>';
+	}
+	dl.getElementsByTagName("ul")[0].innerHTML = html;
+	dd.style.display = "block";
+	dl.onmouseout = function() {dd.style.display = "none";}
+	dd.onmouseover = function() {dd.style.display = "block";}
+}
+
+function SetSelectInput(v,flag){
+	var dl = v.parentNode;
+	while(dl.nodeName != 'DL'){
+		dl = dl.parentNode;
+	}
+	var input = dl.getElementsByTagName("input")[0];
+	var dd = dl.getElementsByTagName("dd")[0];	
+	var dt = dl.getElementsByTagName("dt")[0];	
+	dd.onmouseover = function() {dd.style.display = "block";}
+	v.onmouseover = function() {dd.style.display = "block";}	
+	dd.onmouseout = function() {dd.style.display = "none"}	
+	if(flag == 1){
+		input.value = v.attributes.getNamedItem("value").value;
+		dt.innerHTML = v.innerHTML;
+		dd.style.display = "none";
+	} else if(flag == 2){
+		v.className = 'out'; return; 
+	} else{
+		v.className = 'move'; return; 
+	}		
+}
+</script>
+<form style="margin:20px 0;overflow:hidden;height:260px;">
+  <h2>使用原生js模拟select下拉框选项:(使用背景图片:)</h2>
+  <dl>
+    <dt onclick="AjaxSelectBox(this)">------------请选择------------
+    </dt>
+    <dd style="display:none">
+      <ul>
+        <li value="1">this is 001.</li>
+        <li value="2">this is 002.</li>
+        <li value="3">this is 003.</li>
+        <li value="4">this is 004.</li>
+        <li value="5">this is 005.</li>
+        <li value="6">this is 006.</li>
+        <li value="7">this is 007.</li>
+        <li value="8">this is 008.</li>
+        <li value="9">this is 009.</li>
+        <li value="10">this is 010.</li>
+      </ul>     
+
+      <input type="hidden" value="" />
+    </dd>
+  </dl>
+
+  <dl>
+    <dt onclick="AjaxSelectBox(this)">------------请选择------------
+    </dt>
+    <dd style="display:none">
+      <ul>
+        <li value="1">this is 001.</li>
+        <li value="2">this is 002.</li>
+        <li value="3">this is 003.</li>
+        <li value="4">this is 004.</li>
+        <li value="5">this is 005.</li>
+        <li value="6">this is 006.</li>
+        <li value="7">this is 007.</li>
+        <li value="8">this is 008.</li>
+        <li value="9">this is 009.</li>
+        <li value="10">this is 010.</li>
+      </ul>     
+
+      <input type="hidden" value="" />
+    </dd>
+  </dl>
+</form>
+
+<div class="clear" style="margin-bottom:30px;"></div>
+
+<hr/>
+
+<h2>使用jquery插件模拟select下拉框选项:</h2>
+
+	<div class="book_box1">
+		<ul>
+			<li>
+				<span class="name">科室：</span>
+				<div class="selectContainer ks">
+					<span class="selectOption">科室2</span>
+					<dl class="">
+						<dd>科室1</dd>
+						<dd>科室2</dd>
+						<dd>科室3</dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<span class="name">医生：</span>
+				<div class="selectContainer ks">
+					<span class="selectOption">医生2</span>
+					<dl class="">
+						<dd>医生1</dd>
+						<dd>医生2</dd>
+						<dd>医生3</dd>
+					</dl>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+<div class="clear" style="margin-bottom:30px;"></div>
+<hr/>
+
+<h2 style="margin-top:30px;">javascript根据选中的option选项进行对应的跳转:</h2>
+
+    <select name="test" id="type" style="width:120px;padding:3px 5px;" onchange="check(this.text)">
+        
+        <option value="0">请选择</option>
+
+        <option value="http://www.baidu.com" selected="selected">百度</option>
+        <option value="http://www.901web.com">901web</option>
+        <option value="http://www.baoli100.com">保理100</option>
+       <option value="http://blog.csdn.net/">csdn</option>
+
+    </select>
+    <script type="text/javascript">
+    
+    function check(v) {
+
+        var obj = document.getElementById("type");
+
+        var selectValue = obj.options[obj.selectedIndex].value;
+        var selectText = obj.options[obj.selectedIndex].text;
+        console.log(selectValue+'-----'+selectText);
+        return false;
+        window.location.href = selectValue;
+
+    }
+
+</script>
+
+</body>
+</html>
+<script type="text/javascript" src="select.js"></script>

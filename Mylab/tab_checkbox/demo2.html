@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{margin:0; padding:0;}
+		img {border:0px;}
+		ul li {list-style:none;display:list-item;text-align:-webkit-match-parent;}
+		a{ text-decoration:none;font-size:12px;}
+		a:hover{ text-decoration:none;}
+		body{width:960px;margin:0 auto;font-family: "宋体","Microsoft YaHei","MicrosoftJhengHei",Arial,Tahoma,"Times New Roman"; font-size:12px;}
+		input,button,select,textarea{outline:none;}
+		.grid-m {clear:both;}
+		h1,h3,h4,h5,h6{ font-family:"宋体"!important;}
+        .highlight{background:#f1f1f1;}
+		.commercial .types{margin:20px auto; width:380px; border:1px solid #ddd; border-radius:5px; overflow:hidden;}
+		.commercial .types li{ width:126px; height:30px; line-height:30px; float:left; text-align:center; cursor:pointer; border-right:1px solid #ddd;}
+		.commercial .types .active{ background:#f1f1f1;}
+		.commercial{padding:10px 0;}
+		.commercial table{ width:100%;}
+		.commercial table td{ min-height:35px;padding:10px 0;}
+		.commercial .title{ width:120px;padding-left:10px;}
+		.commercial .title input,.commercial .title img{ vertical-align:middle; margin-top:-3px;}
+		.commercial .mid{ width:380px;padding-left:20px;}
+		.commercial .right{ text-align:center;}
+		.commercial dl dd{ display:block; height:25px; line-height:25px;}
+
+		.costtable{ overflow:hidden;padding:10px;}
+		.costtable .month,.costtable .nums{ width:310px; float:left; overflow:hidden; display:inline;margin-right:10px;}
+		.costtable table td{ height:30px;}
+		.costtable h3{ height:35px; line-height:35px;}
+		.costtable .title,.costtable .right{ padding-left:10px;}
+		.costtable .title{ background:#f1f1f1;}
+		.costtable h3 img{ vertical-align:middle; margin-top:-3px;}
+	  
+        .tsk {
+            background: #f8f8f8;
+            border: 1px solid #CCC;
+            box-shadow: 0 1px 5px #DDD;
+            line-height: 20px;
+            margin-top:8px;
+            padding: 10px;
+            position: absolute;
+            display: none;
+            z-index: 10000
+        }
+        .tsk .jt {
+            position: absolute;
+            top: -4px
+        }
+
+         .tsk .close {
+            float: right;
+            cursor: pointer
+        }
+
+        .tsk .nr {
+            color: #666;
+            font-size: 12px;
+            padding: 10px 0 5px
+        }
+
+	</style>
+<script type="text/javascript" src="http://901web.com/Mylab/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+    
+$(function() {
+
+    //表格的tr鼠标放上面变色效果
+    $("#table1 tr").hover(function(){
+        $(this).addClass("highlight");
+    },function() {
+        $(this).removeClass("highlight");
+    });
+    
+    $('.taxtype').bind('click', function() {
+
+        //添加移除class操作:
+        $(this).addClass('active').siblings().removeClass('active');
+        var bid =  $(this).attr('bid');
+        $('.disable').removeAttr('checked');
+        //alert(bid);
+        sel_bx(bid);
+
+    });
+    //默认选中第二个选项
+    sel_bx(2);
+    //$('.taxtype:eq(1)').click();
+
+     $('.wen').each(function(){
+            $(this).click(function(evt){
+                evt.stopPropagation();
+                //$('#' + $(this).attr('id') + '_help').toggle();
+                $(this).next().toggle();
+            });
+        });
+
+        $('.close').each(function(){
+            $(this).click(function(){
+                $(this).parent().hide();
+            });
+        });
+
+        $(document).click(function(){
+            $('.tsk').each(function(){
+                $(this).hide();    
+            });
+        });
+
+});
+//函数,点击不同的选项选中不同的复选框
+function sel_bx(f)
+            {
+                if (f == 3)
+                {
+                    $('input[name=chkbx]').each(function(){
+                        $(this).prop("checked", true);
+                    });
+                        
+                }
+                else
+                {
+                    $('input[name=chkbx]').each(function(){
+                        $(this).prop("checked", false);
+                    });
+                }
+
+                if (f == 1)
+                {
+                    $('#c_szx').prop("checked", true);
+                    $('#c_jdcssx').prop("checked", true);
+                    $('#c_wgzrx').prop("checked", true);
+                    $('#c_csryzrx').prop("checked", true);
+                    $('#c_cshhx').prop("checked", true);
+
+                    $("#c_jdcqdx").prop("checked",false);
+                    $("#c_blddpsx").prop("checked",false);
+                    $("#c_zrssx").prop("checked",false);
+                    $("#c_bjmptyx").prop("checked",false);
+                }
+                else if (f == 2)
+                {
+                    $('#c_szx').prop("checked", true);
+                    $('#c_jdcssx').prop("checked", true);
+                    $('#c_jdcqdx').prop("checked", true);
+                    $("#c_blddpsx").prop("checked",false);
+                    $('#c_bjmptyx').prop("checked", true);
+                    $('#c_wgzrx').prop("checked", true);
+                    $('#c_csryzrx').prop("checked", true);
+                    $("#c_zrssx").prop("checked",false);
+                    $('#c_cshhx').prop("checked", true);
+                }
+        }
+</script>
+
+</head>
+<body>
+	
+	<div class="commercial">
+	<div class="r_body" style="">
+                <ul class="types bxlx">
+                    <li bid="1" class="taxtype" data-type="0">基本保障</li>
+                    <li bid="2" class="active taxtype" data-type="1">经济型保障</li>
+                    <li bid="3" class="taxtype" data-type="2" style="border-right:0px;">全险</li>
+                </ul>
+
+                <table cellpadding="0" cellspacing="0" border="1" width="100%" style="border-collapse:collapse; border:1px solid #ddd;" id="table1">
+                    <tbody><tr>
+                        <td class="title"><input type="checkbox" name="chkbx" id="c_szx" class="xg disable">第三者责任险<img alt="" src="images/wen.jpg" class="wen">
+
+                        <div class="tsk" style="width:450px;">
+                            <img src="images/kuang-arrow-bg.png" class="jt" style="left:91px;*left:50px">
+                            <img src="images/close.png" class="close">
+                            <div class="nr">
+                                第三者责任险是指被保险人或其允许的驾驶人员在使用保险车辆过程中发生意外事故，致使第三者遭受人身伤亡或财产直接损毁，依法应当由被保险人承担的经济责任，保险公司负责赔偿。同时，若经保险公司书面同意，被保险人因此发生仲裁或诉讼费用的，保险公司在责任限额以外赔偿，但最高不超过责任限额的30％。因为交强险在对第三者的财产损失和医疗费用部分赔偿较低，可考虑购买第三者责任险作为交强险的补充。 
+                            </div>
+                            </div>
+                            </td>
+                        <td class="mid">
+                            <dl>
+                                <dt>赔付额度</dt>
+                                <dd><input class="insurance2" type="radio" name="_szbe" value="5">5万</dd>
+                                <dd><input class="insurance2" type="radio" name="_szbe" value="10">10万</dd>
+                                <dd><input class="insurance2" type="radio" name="_szbe" checked="checked" value="20">20万</dd>
+                                <dd><input class="insurance2" type="radio" name="_szbe" value="50">50万</dd>
+                                <dd><input class="insurance2" type="radio" name="_szbe" value="100">100万</dd>
+                            </dl>
+                        </td>
+                        <td class="right vl_insurance2">0元</td>
+                    </tr>
+                    <tr>
+                        <td class="title"><input type="checkbox" name="chkbx" id="c_jdcssx" class="xg disable">车辆损失险<img alt="" src="images/wen.jpg" class="wen">
+
+                            <div class="tsk" style="width:450px;">
+                            <img src="images/kuang-arrow-bg.png" class="jt" style="left:91px;*left:50px">
+                            <img src="images/close.png" class="close">
+                            <div class="nr">
+                                第三者责任险是指被保险人或其允许的驾驶人员在使用保险车辆过程中发生意外事故，致使第三者遭受人身伤亡或财产直接损毁，依法应当由被保险人承担的经济责任，保险公司负责赔偿。同时，若经保险公司书面同意，被保险人因此发生仲裁或诉讼费用的，保险公司在责任限额以外赔偿，但最高不超过责任限额的30％。因为交强险在对第三者的财产损失和医疗费用部分赔偿较低，可考虑购买第三者责任险作为交强险的补充。 
+                            </div>
+                            </div>
+
+                        </td>
+                        <td class="mid"></td>
+                        <td class="right vl_insurance3">0元</td>
+                    </tr>
+                    <tr>
+                        <td class="title"><input type="checkbox" name="chkbx" id="c_jdcqdx" class="xg disable">全车强盗险<img alt="" src="images/wen.jpg" class="wen">
+                              <div class="tsk" style="width:450px;">
+                            <img src="images/kuang-arrow-bg.png" class="jt" style="left:91px;*left:50px">
+                            <img src="images/close.png" class="close">
+                            <div class="nr">
+                                第三者责任险是指被保险人或其允许的驾驶人员在使用保险车辆过程中发生意外事故，致使第三者遭受人身伤亡或财产直接损毁，依法应当由被保险人承担的经济责任，保险公司负责赔偿。同时，若经保险公司书面同意，被保险人因此发生仲裁或诉讼费用的，保险公司在责任限额以外赔偿，但最高不超过责任限额的30％。因为交强险在对第三者的财产损失和医疗费用部分赔偿较低，可考虑购买第三者责任险作为交强险的补充。 
+                            </div>
+                            </div>
+                        </td>
+                        <td class="mid"></td>
+                        <td class="right vl_insurance4">0元</td>
+                    </tr>
+                    <tr>
+                        <td class="title"><input type="checkbox" name="chkbx" id="c_blddpsx" class="xg disable">玻璃单独破碎险<img alt="" src="images/wen.jpg" class="wen">
+
+                          <div class="tsk" style="width:450px;">
+                            <img src="images/kuang-arrow-bg.png" class="jt" style="left:91px;*left:50px">
+                            <img src="images/close.png" class="close">
+                            <div class="nr">
+                                第三者责任险是指被保险人或其允许的驾驶人员在使用保险车辆过程中发生意外事故，致使第三者遭受人身伤亡或财产直接损毁，依法应当由被保险人承担的经济责任，保险公司负责赔偿。同时，若经保险公司书面同意，被保险人因此发生仲裁或诉讼费用的，保险公司在责任限额以外赔偿，但最高不超过责任限额的30％。因为交强险在对第三者的财产损失和医疗费用部分赔偿较低，可考虑购买第三者责任险作为交强险的补充。 
+                            </div>
+                            </div>
+
+                        </td>
+                        <td class="mid">
+                            <input type="radio" name="origin" class="xg origin" checked="checked" value="foreign">进口
+                            <input type="radio" name="origin" checked="checked" class="xg origin" value="local">国产
+                        </td>
+                        <td class="right vl_insurance6">0元</td>
+                    </tr>
+                    <tr>
+                        <td class="title"><input type="checkbox" name="chkbx" id="c_zrssx" class="xg disable">自然损失险<img alt="" src="images/wen.jpg" class="wen">
+                            <div class="tsk" style="width:450px;">
+                            <img src="images/kuang-arrow-bg.png" class="jt" style="left:91px;*left:50px">
+                            <img src="images/close.png" class="close">
+                            <div class="nr">
+                                第三者责任险是指被保险人或其允许的驾驶人员在使用保险车辆过程中发生意外事故，致使第三者遭受人身伤亡或财产直接损毁，依法应当由被保险人承担的经济责任，保险公司负责赔偿。同时，若经保险公司书面同意，被保险人因此发生仲裁或诉讼费用的，保险公司在责任限额以外赔偿，但最高不超过责任限额的30％。因为交强险在对第三者的财产损失和医疗费用部分赔偿较低，可考虑购买第三者责任险作为交强险的补充。 
+                            </div>
+                            </div>
+                        </td>
+                        <td class="mid"></td>
+                        <td class="right vl_insurance5">0元</td>
+                    </tr>
+                    <tr>
+                        <td class="title"><input type="checkbox" name="chkbx" id="c_bjmptyx" class="xg disable">不计免赔特约险<img alt="" src="images/wen.jpg" class="wen">
+                              <div class="tsk" style="width:450px;">
+                            <img src="images/kuang-arrow-bg.png" class="jt" style="left:91px;*left:50px">
+                            <img src="images/close.png" class="close">
+                            <div class="nr">
+                                第三者责任险是指被保险人或其允许的驾驶人员在使用保险车辆过程中发生意外事故，致使第三者遭受人身伤亡或财产直接损毁，依法应当由被保险人承担的经济责任，保险公司负责赔偿。同时，若经保险公司书面同意，被保险人因此发生仲裁或诉讼费用的，保险公司在责任限额以外赔偿，但最高不超过责任限额的30％。因为交强险在对第三者的财产损失和医疗费用部分赔偿较低，可考虑购买第三者责任险作为交强险的补充。 
+                            </div>
+                            </div>
+
+                        </td>
+                        <td class="mid"></td>
+                        <td class="right vl_insurance7">0元</td>
+                    </tr>
+                    <tr>
+                        <td class="title"><input type="checkbox" name="chkbx" id="c_wgzrx" class="xg disable">无过责任险<img alt="" src="images/wen.jpg" class="wen">
+
+                            <div class="tsk" style="width:450px;">
+                            <img src="images/kuang-arrow-bg.png" class="jt" style="left:91px;*left:50px">
+                            <img src="images/close.png" class="close">
+                            <div class="nr">
+                                第三者责任险是指被保险人或其允许的驾驶人员在使用保险车辆过程中发生意外事故，致使第三者遭受人身伤亡或财产直接损毁，依法应当由被保险人承担的经济责任，保险公司负责赔偿。同时，若经保险公司书面同意，被保险人因此发生仲裁或诉讼费用的，保险公司在责任限额以外赔偿，但最高不超过责任限额的30％。因为交强险在对第三者的财产损失和医疗费用部分赔偿较低，可考虑购买第三者责任险作为交强险的补充。 
+                            </div>
+                            </div>
+
+                        </td>
+                        <td class="mid"></td>
+                        <td class="right vl_insurance8">0元</td>
+                    </tr>
+                    <tr>
+                        <td class="title"><input type="checkbox" name="chkbx" id="c_csryzrx" class="xg disable">车上人员责任险<img alt="" src="images/wen.jpg" class="wen">
+
+                            <div class="tsk" style="width:450px;">
+                            <img src="images/kuang-arrow-bg.png" class="jt" style="left:91px;*left:50px">
+                            <img src="images/close.png" class="close">
+                            <div class="nr">
+                                第三者责任险是指被保险人或其允许的驾驶人员在使用保险车辆过程中发生意外事故，致使第三者遭受人身伤亡或财产直接损毁，依法应当由被保险人承担的经济责任，保险公司负责赔偿。同时，若经保险公司书面同意，被保险人因此发生仲裁或诉讼费用的，保险公司在责任限额以外赔偿，但最高不超过责任限额的30％。因为交强险在对第三者的财产损失和医疗费用部分赔偿较低，可考虑购买第三者责任险作为交强险的补充。 
+                            </div>
+                            </div>
+
+                        </td>
+                        <td class="mid"> 投保人数 <input type="text" id="_tbrs" class="inpt xg tseats" style="width:30px" value="4"></td>
+                        <td class="right vl_insurance9">0元</td>
+                    </tr>
+                    <tr>
+                    <td class="title"><input type="checkbox" name="chkbx" id="c_cshhx" class="xg disable">车身划痕险<img alt="" src="images/wen.jpg" class="wen">
+
+                          <div class="tsk" style="width:450px;">
+                            <img src="images/kuang-arrow-bg.png" class="jt" style="left:91px;*left:50px">
+                            <img src="images/close.png" class="close">
+                            <div class="nr">
+                                第三者责任险是指被保险人或其允许的驾驶人员在使用保险车辆过程中发生意外事故，致使第三者遭受人身伤亡或财产直接损毁，依法应当由被保险人承担的经济责任，保险公司负责赔偿。同时，若经保险公司书面同意，被保险人因此发生仲裁或诉讼费用的，保险公司在责任限额以外赔偿，但最高不超过责任限额的30％。因为交强险在对第三者的财产损失和医疗费用部分赔偿较低，可考虑购买第三者责任险作为交强险的补充。 
+                            </div>
+                            </div>
+
+                    </td>
+                        <td class="mid">
+                                                        赔付额度<br>
+                            <input type="radio" name="_hhbe" value="2000" class="xg rec">2千
+                            <input type="radio" name="_hhbe" value="5000" checked="checked" class="xg rec">5千
+                            <input type="radio" name="_hhbe" value="10000" class="xg rec">1万
+                            <input type="radio" name="_hhbe" value="20000" class="xg rec">2万
+                        </td>
+                        <td class="right vl_insurance10">0元</td>
+                    </tr>
+                </tbody>
+                </table>
+                </div>
+
+	</div>
+
+</body>
+</html>
+

@@ -1,0 +1,32 @@
+.wrap{width:980px;margin:0 auto;}
+
+.content{padding-left:10px;}
+.wrap h2.title{font-size:22px; text-align:center; color:#333; padding:10px 0; margin-top:10px;}
+.case_list{margin-top:30px;margin-right:-45px;overflow: hidden;}
+.case_list li{position:relative; float:left; width: 200px; height:200px; margin:5px 45px 50px 5px;  
+background:#e8f5fe; overflow:hidden; cursor:pointer;} 
+.case_list li img{position:absolute; top:0; left:0} 
+
+
+.infomation{text-align: center;padding-top:10px;}
+.case_list li h3.info{font-size:16px; color:#333; padding:15px 0; }
+.case_list li p.info{line-height: 24px;margin-bottom:20px;}
+.case_list li p.link{margin-top:18px;}
+.case_list li p.date em{font-style: normal;color:red;margin-left:5px;}
+
+.case_list li p.link a{margin-top:12px;margin-left:30%;color:#fff;display: block;width: 78px;height: 33px;text-align: center;
+line-height: 33px;border-radius: 3px;font-size: 16px;background: #ffb904;}
+
+.case_list li p.link a.middle{width:50px;margin-left:15%;float:left;padding:0 4px;}
+
+.case_list li p.small{padding-left:5px;}
+.case_list li p.link a.small{width:40px;float:left;padding:0 2px;margin-left:3px;font-size:12px;}
+
+
+
+.sub_menu1{display: none;}
+.small_tip{float: right;width:50px;height:11px;background:#ffffff;position: absolute;top:-10px;right:90px;background: url(../images/icon-1.png) no-repeat;}
+.pop_content{/*width:214px;*/background:#ffffff;border:1px solid #c6c6c6;padding:3px 10px;background: #bcd9dd;}
+.pop_content .app_down{width:105px;margin-right:15px;float:left;}
+.pop_content .app_down h3{font-size:14px;color:#ff5d3d;}
+.pop_content .wx_pic img{margin-top:15px;}

@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>用户注册并发送邮件激活验证测试!</title>
+	<link rel="stylesheet" href="style/reset.css" />
+	<link rel="stylesheet" href="style/style.css" />
+	<script src="js/jquery-1.10.2.js"></script>
+	<script>
+	//点击验证码刷新验证码
+	function fleshVerify(){ 
+	    var time = new Date().getTime();
+	    document.getElementById('getcode_math').src= 'code_math.php?'+time;
+	}
+	$(function() {
+
+		//ajaxj检测用户名是否被占用
+		$("#check_user").click(function() {
+
+			var username = $("#user").val();
+			if(username==''||username.length<3) {$("span.check_tip").text("用户名不得为空且长度不得少于3位!");$('#user').select();return false;}
+			$.post("chkname.php",{username:username},function(msg){
+
+				if(msg == 1) {
+					
+					$("span.check_tip").text("该用户名可以注册!");
+					$("#password").focus();
+
+				} else{
+			
+					$("span.check_tip").text("对不起,该用户名已被占用,请更换!");
+					$("#user").select();
+					//$("#user").val('');
+					return false;
+				}
+			})
+
+		})
+
+		$("#getcode_math").click(function(){
+			//$(this).attr("src",'code_math.php?' + Math.random());
+			fleshVerify();
+		});
+
+
+		$("#reg").submit(function() {
+
+			//提交时候先执行检测用户名,提示信息不改变.始终为
+			//$("#check_user").click();
+
+			if($('#user').val().length <=3 || $('#user').val() == '') {
+
+				$("span.check_tip").text("用户名不得为空且长度不得少于3位!");$("#user").select();return false;
+
+
+			} else if($('#password').val().length <= 0 || $('#password').val() == '') {
+
+				$("span.check_tip").text("请输入您的注册密码!");$('#password').focus();return false;
+
+
+			} else if( $('#email').val().length <= 0 || $('#email').val() == '') {
+
+				$("span.check_tip").text("请输入您的邮箱地址!");$('#email').focus();return false;
+
+			} else if(!$('#email').val().match(/^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/)) {
+
+				$("span.check_tip").text("您输入的邮件地址不合法!");$('#email').select();return false;
+
+			} else if($("#nr").val() =="") {
+
+				$("span.check_tip").text("请填写注册备注信息!");$('#bz').focus();return false;
+				$("textarea").blur(function(){
+					  //console.log($("#nr").val() =="");
+					  $("span.check_tip").text("请填写注册备注信息!");$('#bz').focus();return false;
+				});
+
+			} else if($('#verify').val() == ''){
+					
+				
+				$('.check-tips').text('验证码不能为空');$('#verifyImg').focus();return false;
+				
+				
+			} 
+			else if($("#verify").val()!='') {
+
+				verify = $("#verify").val();
+				$.post("chkcode.php",{verify:verify},function(msg){
+				if(msg == 1) {
+					
+					$("span.check_tip").text("验证码正确");
+					$.ajax({  
+					    type: "POST",  
+					    url:'register.php',  
+					    data:$('#reg').serialize(),  
+					    async: false,  
+					    error: function(request) {  
+					        alert("Connection error");  
+					    },  
+					    success: function(data) {  
+					        //alert(data);
+					        //if(data == 'success') {
+					        	$('.pbd').html(data);
+					        	//弹出层居中显示
+					        	$("#mask").show();
+						$(".plogin").show();
+						var left = ($(window).width()-498)/2;
+						var top = ($(window).height()-300)/2;
+						$(".plogin").css({"top":top,"left":left});
+					        //}
+					    }  
+					  });
+					
+				} else{
+			
+					$("span.check_tip").text("验证码错误");
+					return false;
+					}
+				})
+
+			} 
+			else {
+
+				
+				return false;
+
+				
+
+			}
+
+			return false;
+		});
+		
+		//关闭按钮
+		$('.close').on('click',function() {
+			$(".plogin").hide();
+			$("#mask").hide();
+			 window.location.reload();
+
+		})
+
+	})
+
+
+
+
+	</script>
+
+</head>
+<body>
+
+	<div class="content">
+		
+		<h2>会员注册并发送邮件验证激活测试(建议QQ邮箱测试)</h2>
+		
+
+		<form id="reg" action="register.php" method="post">
+
+	    	<p class="first">用户名:<input type="text" class="input" name="username" id="user" placeholder="您的用户名：">
+
+			<input type="button" value="检测" id="check_user"/>
+
+	    	</p>
+
+	        <p>密　码:<input type="password" class="input" name="password" id="password" placeholder="您的密码："></p>
+
+	        <p>E-mail:<input type="text" class="input" name="email" id="email" placeholder="您的邮箱："></p>
+
+
+	        <p style="vertical-align:top">备注信息:<textarea name="content" id="nr"></textarea></p>
+
+	        <p class="yzm">验证码:<input type="text" class="input" name="verify" id="verify" placeholder="验证码：">
+
+	        	<a href="#"  onclick="fleshVerify()">点击刷新</a>
+				
+			<img src="code_math.php" id="getcode_math" title="看不清，点击换一张" align="absmiddle">
+	        </p>
+			
+	        <p>
+	        	<input type="submit" class="btn" value="提交注册"/><span class="check_tip"></span>
+
+	        </p>
+
+	
+	     </form>
+	     <br/><br/>
+	     <a href="list.php" style="margin-left:300px;">查看注册用户列表</a>
+	</div>
+	
+
+	<div id="mask" class="mask"></div>
+
+	<div class="plogin" style="display:none;">
+		
+
+		<div class="phd"><span class="name">弹出层标题部分</span><a href="Javascript:void(0);" class="close icons" title="关闭">X</a></div>
+
+
+		<div class="pbd"></div> 
+
+	</div>
+
+
+	
+</body>
+</html>

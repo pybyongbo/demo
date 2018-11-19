@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>网页弹出层测试!</title>
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/drag.js"></script>
+	<script src="js/index.js"></script>
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+
+<div id="content">
+	
+	<div class="news_list fl">
+		
+	</div>
+
+	<div class="calculator fr">
+		<div class="index_calculator">
+
+			<img src="images/index_cal.png" alt="计算器" />
+		</div>
+
+		<div class="words_info">
+			
+			<h3>理财小工具 收益计算器</h3>
+			<span>算算能赚多少钱？</span>
+
+			<a href="javascript:;" class="calcul_btn" onclick="show_box()">
+				<i class="icon arr_right"></i>
+				马上体验
+			</a>
+		</div>
+	</div>
+
+	
+	<div class="clear"></div>
+
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	
+
+</div>
+
+<!--首页计算器弹出层内容部分,遮罩层与弹出层 同级写法-->
+<div class="show_pop_cal">
+	<div id="mask" class="mask"></div>
+	<div id="calcu" class="popup calcu" >
+	        <div class="title">
+	            <h6 id="text_info">收益计算器</h6>
+	            <i class="close_pop"></i>
+	        </div>
+	        <div class="con">
+	            <form action="#" method="post">
+	                <div class="item">
+	                    <label for="">投资金额</label>
+	                    <span class="money">
+	                        <input id="tzje" class="inputText" type="text" value="10000" name="money" onkeyup="checkNum(this)"><i>元</i>
+	                    </span>
+	                </div>
+	                <div class="item">
+	                    <label for="">年化收益</label>
+	                    <span class="income">
+	                        <input id="nhsy" class="inputText" type="text" value="12.5" name="qhl" onkeyup="checkNum(this)"><i>%</i>
+	                    </span>
+	                </div>
+	                <div class="item">
+	                    <label for="">投资期限</label>
+	                    <span class="limit">
+	                        <input id="tzqx" class="inputText" type="text" value="12" name="danwei" onkeyup="checkNum(this)">
+	                        <i id="jzqxUnit" class="dow">月</i>
+	                        <ul id="dropdown" class="downlist" style="display:none;">
+	                            <li class="month">月</li>
+	                            <li class="day">日</li>
+	                        </ul>
+	                      
+	                    </span>
+	                </div>
+	                <div class="item btns">
+	                    <a href="javascript:;" id="calcu-btn" class="join-btn">计算</a>
+	                    <a href="javascript:;" id="recalcu-btn" class="join-btn unjoin-btn">重新计算</a>
+	                </div>
+	                <div class="line"></div>
+	                <div class="tip">请输入正确的投资金额和年化收益</div>
+	                <div class="item expected">
+	                    <label for="">预期收益</label>
+	                    <span class="result">
+	                        <strong id="result">11250</strong>
+	                    </span>元
+	                </div>
+	                <div class="intro">
+	                  <!-- 
+	                    <strong>计算公式：</strong>
+	                    <p>收益=购买资金×(年化收益率÷365)×理财实际天数以月为单位的，默认一个自然月为30天。</p> 
+	                    -->
+	                     <p>(计算公式：<span id="gs">10000+10000*0.15/12*12</span>)</p>
+
+	                </div>
+	            </form>
+	        </div>
+	</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,button,textarea,p,th,td{margin:0;padding:0;}
+body{font:12px/1.5 Verdana,Tahoma,Arial,simsun,sans-serif;}/* 中文宋体，英文Arial */
+h1,h2,h3,h4,h5,h6{*font-size:100%;font-weight:400;}
+img{border:0; vertical-align:middle;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+ol,ul,li{list-style:none outside;}
+table{border-collapse:collapse;border-spacing:0;}
+input,textarea,select,button{font-family:inherit;font-size:inherit;*font-size:100%;font-weight:inherit;resize:none;}
+button{cursor:pointer;}
+:focus{outline:0;}
+a{text-decoration:none;}
+a:hover{text-decoration:none;}
+.clr{*zoom:1;}
+.clr:after{content:"";display:block;height:0;visibility:hidden;clear:both;}
+
+/*原来样式添加*/
+.clear {clear:both;font-size:0px;width:0;height:0;overflow:hidden;}
+.fl{float:left;}
+.fr{float:right;}
+.f14{ font-size:14px;}
+.p_top{ padding-top:6px;}
+.blue{ color:#22b0ca;}
+
+.inside_nav_right .nav_tit{height:55px;}

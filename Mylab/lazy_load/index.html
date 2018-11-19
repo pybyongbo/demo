@@ -1,0 +1,796 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>前端开发框架Bootstrap练习-demo!</title>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/respond.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/scrollup.min.js"></script>
+	<script type="text/javascript" src="js/bootstro.min.js"></script>
+    <script type="text/javascript" src="js/jquery.lazyload.min.js"></script>
+
+    <script type="text/javascript" src="js/base.js"></script>
+    
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css" media="all" />
+	
+	<link rel="stylesheet" type="text/css" href="css/global.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/public.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/bootstro.min.css" media="all" />
+    <!--[if lt IE 9]>
+     <script type="text/javascript" src="js/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+	
+    <nav class="navbar navbar-fixed-top">
+	<!--
+	<section class="navbar-over"></section>
+	-->
+		<section class="navbar-inner">
+			<section class="container">
+                <!--
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+                -->
+				<a class="brand" href="#"></a>
+				<section class="nav-collapse collapse">
+					<ul class="nav pull-right">
+						<li class="line"><a href="#"><i class="icon-home"></i> 首页</a></li>
+						<li class="line"><a href="#" class="bootstro" data-bootstro-title="这里不但提供了所有免费课程的在线学习、高清下载、讲义源码下载，还提供了赞助课程的试学和目录参考。" data-bootstro-placement="bottom"  data-bootstro-step="0"><i class="icon-headphones"></i> 课程</a></li>
+						<li class="line"><a href="#" class="bootstro" data-bootstro-title="这里记录着为大家分享的各种文章，有自己撰写、有转载的，含有技术、人文、社会、经济等博文。" data-bootstro-placement="bottom"  data-bootstro-step="1"><i class="icon-pencil"></i> 博文</a></li>
+						<li><a href="#about"><i class="icon-question-sign"></i> 关于</a></li>
+					</ul>
+				</section>
+			</section>
+		</section>
+  </nav>	
+
+		
+    <section class="container resource">
+    
+        
+    <article class="content">
+        <h1>资源合作伙伴</h1>
+        <p class="small">瓢城Web俱乐部与多家机构进行了深度合作，比如推广合作、在线视频、资源下载等。</p>
+        
+        <ul class="thumbnails">
+           
+            
+              <li class="span4">
+                <section class="thumbnail bootstro" data-bootstro-title="从2009年开始，本站一直委托北风网在电驴大全上发布各种免费视频，深受大家的喜爱。" data-bootstro-placement="right" data-bootstro-step="5" data-original-title="" title="">
+                    <a href="#" target="_blank"><img class="img-round lazy" src="img/textloading.gif" data-original="img/jquery.png" alt="北方网"></a>
+                    <h3 class="text-left">北风网</h3>
+                    <p class="text-left">国内最权威的IT培训、技术网站，是本站深度合作伙伴，提供了推广、营销等策划方案...</p>
+                    <p class="text-right"><a href="#" class="btn btn-success" target="_blank">进入合作页面</a> <a href="#" class="btn btn-warning" target="_blank">访问官网</a></p>
+                </section>
+             </li>
+             <li class="span4">
+                <section class="thumbnail">
+                    <a href="#" target="_blank"><img class="img-round lazy" src="img/textloading.gif" data-original="img/jquery.png" alt="北方网"></a>
+                    <h3 class="text-left">北风网</h3>
+                    <p class="text-left">国内最权威的IT培训、技术网站，是本站深度合作伙伴，提供了推广、营销等策划方案...</p>
+                    <p class="text-right"><a href="#" class="btn btn-success" target="_blank">进入合作页面</a> <a href="#" class="btn btn-warning" target="_blank">访问官网</a></p>
+                </section>
+            </li>
+            
+           <li class="span4">
+                <section class="thumbnail">
+                    <a href="#" target="_blank"><img class="img-round lazy" src="img/textloading.gif" data-original="img/jquery.png" alt="北方网"></a>
+                    <h3 class="text-left">北风网</h3>
+                    <p class="text-left">国内最权威的IT培训、技术网站，是本站深度合作伙伴，提供了推广、营销等策划方案...</p>
+                    <p class="text-right"><a href="#" class="btn btn-success" target="_blank">进入合作页面</a> <a href="#" class="btn btn-warning" target="_blank">访问官网</a></p>
+
+                 
+                </section>
+            
+            </li>
+           
+              
+
+        </ul>
+    </article>
+    
+      <article class="content">
+          
+        <ul class="thumbnails">
+          
+          <li class="span4">
+            <section class="thumbnail">
+            <a href="#"><img class="img-round lazy" src="img/textloading.gif" data-original="img/jquery.png" alt="jquery"></a>
+            <h3 class="text-left">(更新至1-41课时)</h3>
+            <p class="text-left">Jquery是一个兼容多浏览器的Javascript库,核心理念是write less,do more.....</p>
+                <section style="height:35px;padding:0 5px 0 0px">
+                <section class="btn-group pull-right">
+                    <a href="#" class="btn btn-info">
+                        <i class="icon-share-alt icon-white"></i>
+                        "进入课堂"
+                    </a>
+                    
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu text-left">
+                        <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Exe首发版(含讲义源码)"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-th"></i>
+                                "Avi通用版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-file"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                "讲义和源码"
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </section>  
+              </section>  
+              </section>
+          </li>
+            
+             <li class="span4">
+            <section class="thumbnail">
+            <a href="#"><img class="img-round lazy" src="img/textloading.gif" data-original="img/jquery.png" alt="jquery"></a>
+            <h3 class="text-left">(更新至1-41课时)</h3>
+            <p class="text-left">Jquery是一个兼容多浏览器的Javascript库,核心理念是write less,do more.....</p>
+                <section style="height:35px;padding:0 5px 0 0px">
+                <section class="btn-group pull-right">
+                    <a href="#" class="btn btn-info">
+                        <i class="icon-share-alt icon-white"></i>
+                        "进入课堂"
+                    </a>
+                    
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu text-left">
+                        <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Exe首发版(含讲义源码)"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-th"></i>
+                                "Avi通用版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-file"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                "讲义和源码"
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </section>  
+              </section>  
+              </section>
+          </li>
+           <li class="span4">
+            <section class="thumbnail">
+            <a href="#"><img class="img-round lazy" src="img/textloading.gif" data-original="img/jquery.png" alt="jquery"></a>
+            <h3 class="text-left">(更新至1-41课时)</h3>
+            <p class="text-left">Jquery是一个兼容多浏览器的Javascript库,核心理念是write less,do more.....</p>
+                <section style="height:35px;padding:0 5px 0 0px">
+                <section class="btn-group pull-right">
+                    <a href="#" class="btn btn-info">
+                        <i class="icon-share-alt icon-white"></i>
+                        "进入课堂"
+                    </a>
+                    
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu text-left">
+                        <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Exe首发版(含讲义源码)"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-th"></i>
+                                "Avi通用版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-file"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                "讲义和源码"
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </section>  
+              </section>  
+              </section>
+          </li>
+           <li class="span4">
+            <section class="thumbnail">
+            <a href="#"><img class="img-round lazy" src="img/textloading.gif" data-original="img/jquery.png" alt="jquery"></a>
+            <h3 class="text-left">(更新至1-41课时)</h3>
+            <p class="text-left">Jquery是一个兼容多浏览器的Javascript库,核心理念是write less,do more.....</p>
+                <section style="height:35px;padding:0 5px 0 0px">
+                <section class="btn-group pull-right">
+                    <a href="#" class="btn btn-info">
+                        <i class="icon-share-alt icon-white"></i>
+                        "进入课堂"
+                    </a>
+                    
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu text-left">
+                        <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Exe首发版(含讲义源码)"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-th"></i>
+                                "Avi通用版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-file"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                "讲义和源码"
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </section>  
+              </section>  
+              </section>
+          </li>
+           <li class="span4">
+            <section class="thumbnail">
+            <a href="#"><img class="img-round lazy" src="img/textloading.gif" data-original="img/jquery.png" alt="jquery"></a>
+            <h3 class="text-left">(更新至1-41课时)</h3>
+            <p class="text-left">Jquery是一个兼容多浏览器的Javascript库,核心理念是write less,do more.....</p>
+                <section style="height:35px;padding:0 5px 0 0px">
+                <section class="btn-group pull-right">
+                    <a href="#" class="btn btn-info">
+                        <i class="icon-share-alt icon-white"></i>
+                        "进入课堂"
+                    </a>
+                    
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu text-left">
+                        <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Exe首发版(含讲义源码)"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-th"></i>
+                                "Avi通用版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-file"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                "讲义和源码"
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </section>  
+              </section>  
+              </section>
+          </li>
+           <li class="span4">
+            <section class="thumbnail">
+            <a href="#"><img class="img-round lazy" src="img/textloading.gif" data-original="img/jquery.png" alt="jquery"></a>
+            <h3 class="text-left">(更新至1-41课时)</h3>
+            <p class="text-left">Jquery是一个兼容多浏览器的Javascript库,核心理念是write less,do more.....</p>
+                <section style="height:35px;padding:0 5px 0 0px">
+                <section class="btn-group pull-right">
+                    <a href="#" class="btn btn-info">
+                        <i class="icon-share-alt icon-white"></i>
+                        "进入课堂"
+                    </a>
+                    
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu text-left">
+                        <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Exe首发版(含讲义源码)"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-th"></i>
+                                "Avi通用版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-file"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                "讲义和源码"
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </section>  
+              </section>  
+              </section>
+          </li>
+           <li class="span4">
+            <section class="thumbnail">
+            <a href="#"><img class="img-round lazy" src="img/textloading.gif" data-original="img/jquery.png" alt="jquery"></a>
+            <h3 class="text-left">(更新至1-41课时)</h3>
+            <p class="text-left">Jquery是一个兼容多浏览器的Javascript库,核心理念是write less,do more.....</p>
+                <section style="height:35px;padding:0 5px 0 0px">
+                <section class="btn-group pull-right">
+                    <a href="#" class="btn btn-info">
+                        <i class="icon-share-alt icon-white"></i>
+                        "进入课堂"
+                    </a>
+                    
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu text-left">
+                        <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Exe首发版(含讲义源码)"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-th"></i>
+                                "Avi通用版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-file"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                "讲义和源码"
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </section>  
+              </section>  
+              </section>
+          </li>
+           <li class="span4">
+            <section class="thumbnail">
+            <a href="#"><img class="img-round lazy" src="img/textloading.gif" data-original="img/jquery.png" alt="jquery"></a>
+            <h3 class="text-left">(更新至1-41课时)</h3>
+            <p class="text-left">Jquery是一个兼容多浏览器的Javascript库,核心理念是write less,do more.....</p>
+                <section style="height:35px;padding:0 5px 0 0px">
+                <section class="btn-group pull-right">
+                    <a href="#" class="btn btn-info">
+                        <i class="icon-share-alt icon-white"></i>
+                        "进入课堂"
+                    </a>
+                    
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu text-left">
+                        <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Exe首发版(含讲义源码)"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-th"></i>
+                                "Avi通用版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-file"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                "讲义和源码"
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </section>  
+              </section>  
+              </section>
+          </li>
+           <li class="span4">
+            <section class="thumbnail">
+            <a href="#"><img class="img-round lazy" src="img/textloading.gif" data-original="img/jquery.png" alt="jquery"></a>
+            <h3 class="text-left">(更新至1-41课时)</h3>
+            <p class="text-left">Jquery是一个兼容多浏览器的Javascript库,核心理念是write less,do more.....</p>
+                <section style="height:35px;padding:0 5px 0 0px">
+                <section class="btn-group pull-right">
+                    <a href="#" class="btn btn-info">
+                        <i class="icon-share-alt icon-white"></i>
+                        "进入课堂"
+                    </a>
+                    
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu text-left">
+                        <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Exe首发版(含讲义源码)"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-th"></i>
+                                "Avi通用版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-file"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                "讲义和源码"
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </section>  
+              </section>  
+              </section>
+          </li>
+           <li class="span4">
+            <section class="thumbnail">
+            <a href="#"><img class="img-round lazy" src="img/textloading.gif" data-original="img/jquery.png" alt="jquery"></a>
+            <h3 class="text-left">(更新至1-41课时)</h3>
+            <p class="text-left">Jquery是一个兼容多浏览器的Javascript库,核心理念是write less,do more.....</p>
+                <section style="height:35px;padding:0 5px 0 0px">
+                <section class="btn-group pull-right">
+                    <a href="#" class="btn btn-info">
+                        <i class="icon-share-alt icon-white"></i>
+                        "进入课堂"
+                    </a>
+                    
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu text-left">
+                        <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Exe首发版(含讲义源码)"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-th"></i>
+                                "Avi通用版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-file"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                "讲义和源码"
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </section>  
+              </section>  
+              </section>
+          </li>
+            
+            <li class="span4">
+            <section class="thumbnail">
+            <a href="#"><img class="img-round lazy" src="img/textloading.gif" data-original="img/jquery.png" alt="jquery"></a>
+            <h3 class="text-left">(更新至1-41课时)</h3>
+            <p class="text-left">Jquery是一个兼容多浏览器的Javascript库,核心理念是write less,do more.....</p>
+                <section style="height:35px;padding:0 5px 0 0px">
+                <section class="btn-group pull-right">
+                    <a href="#" class="btn btn-info">
+                        <i class="icon-share-alt icon-white"></i>
+                        "进入课堂"
+                    </a>
+                    
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu text-left">
+                        <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Exe首发版(含讲义源码)"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-th"></i>
+                                "Avi通用版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-file"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                "讲义和源码"
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </section>  
+              </section>  
+              </section>
+          </li>
+            
+             <li class="span4">
+            <section class="thumbnail">
+            <a href="#"><img class="img-round lazy" src="img/textloading.gif" data-original="img/jquery.png" alt="jquery"></a>
+            <h3 class="text-left">(更新至1-41课时)</h3>
+            <p class="text-left">Jquery是一个兼容多浏览器的Javascript库,核心理念是write less,do more.....</p>
+                <section style="height:35px;padding:0 5px 0 0px">
+                <section class="btn-group pull-right">
+                    <a href="#" class="btn btn-info">
+                        <i class="icon-share-alt icon-white"></i>
+                        "进入课堂"
+                    </a>
+                    
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu text-left">
+                        <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Exe首发版(含讲义源码)"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-th"></i>
+                                "Avi通用版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-download-alt"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-file"></i>
+                                "Lxemu母版"
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                "讲义和源码"
+                            </a>
+                        </li>
+                    </ul>
+                </section>  
+              </section>  
+              </section>
+          </li>
+        </ul>
+        
+        
+      </article>  
+    </section>
+    
+   
+    
+    <footer class="footer">
+        
+        <section class="container">
+            <p>合作邮箱：<a title="李炎恢老师的Gmail邮箱" style="padding:0 5px 0 0" href="mailto:yc60.com@gmail.com" target="_blank">yc60.com@gmail.com</a> 咨询QQ：727697810</p>
+                <p class="text-error lead">pyb永不言败 web前端开发框架-----bootstrap练习案例--仿站练习(www.ycku.com)</p>
+        <p>&copy; 2009-2014 瓢城Web俱乐部. Powered by <a href="http://bootcss.com/" target="_blank">Bootstrap</a> and <a href="#" target="_blank">WordPress</a></p>
+
+        </section>
+    
+    </footer>
+    
+</body>
+</html>

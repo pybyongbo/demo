@@ -1,0 +1,23 @@
+/* CSS Document */
+@charset "utf-8";
+/*****************************************************************-/
+初始化及公用CSS
+/-*****************************************************************/
+body{font-family: "Microsoft YaHei","微软雅黑","MicrosoftJhengHei",Arial,Tahoma,"Times New Roman";font-size:14px;font-family:"微软雅黑"!important;}
+input,button,select,textarea{outline:none;font-family:"Microsoft YaHei";}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, 
+pre, form, fieldset, input, textarea, p, blockquote, th, td { 
+    padding: 0;
+    margin: 0;
+}
+em{font-style: normal;}
+img {border:0px;}
+ul li {list-style-type:none;}
+a{text-decoration:none;color:#666;}
+a:hover{text-decoration:none;}
+div:after {content: '.'; display: block; height: 0; clear: both; visibility: hidden;}
+.clear{clear:both;font-size:0px;width:0px;height: 0px;overflow: hidden;}
+.font{font-style:normal;}
+h1,h2,h3,h4,h5,h6{ font-family:"微软雅黑!important"}
+.fl{float:left;}
+.fr{float:right;}
